@@ -5,7 +5,7 @@ var address = document.getElementById("address");
 
 function searchEmail(){
     const email = $("#email").val();
-    var exists
+    var exists;
     //Realizar busca no banco de dados para verificar se o email existe
  
     if (email != ""){
@@ -14,7 +14,7 @@ function searchEmail(){
         init.style.display = "none";
         //Ajax 
         $.ajax({
-            url : '../php/searchEmail.php',
+            url : './php/searchEmail.php',
             type: 'post',
             data: {
                 email : email
@@ -23,17 +23,15 @@ function searchEmail(){
             exists = res;
             //exists = 1 TRUE
             //exists = 0 FALSE
+            
+            if (exists == '0'){
+                login.style.display = "none";
+                singScreen.style.display = "block";
+            }else{   
+                singScreen.style.display = "none";
+                login.style.display = "block";
+            }
         });
-        
-        if (exists == '0'){
-            login.style.display = "none";
-            singScreen.style.display = "block";
-        }else{   
-            singScreen.style.display = "none";
-            login.style.display = "block";
-        }
-
-
 
     }
 }
