@@ -8,7 +8,7 @@ Iprint é uma loja digital que possui seus produtos relacionados a impressoras e
 - [ ] Finalizar HTML e CSS da tela de login e cadastro
 - [x] Implementar conexão ao banco de dados
 - [x] Verificar se email do cliente já existe
-- [ ] Preencher endereço a partir do CEP
+- [X] Preencher endereço a partir do CEP
 - [ ] Realizar cadastro com senha em md5
 - [ ] Realizar login de clientes
 - [ ] Implementar autenticação pelo facebook
