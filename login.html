@@ -29,15 +29,15 @@
 
                 <div id="login-screen">
                     <p class="welcome"> Bem-vindo(a) de volta, <user> Vivi Programmer Designer! </user></p>
-                    <input type="password" name="password" id="" placeholder="Senha" class="field"><p></p>
-                    <input type="submit" value="Entrar">
+                    <input type="password" name="password" id="password" placeholder="Senha" class="field"><p></p>
+                    <input type="button" value="Entrar" onclick="signIn()">
                 </div>
 
                 <div id="sign-screen">
                         <p class="welcome"> Hmm... Nós não reconhecemos esse endereço de e-mail. Gostaria de se cadastrar?</p>
                         <label>Tipo de pessoa: </label>
-                        <input type="radio" name="person" id="" checked onclick="radioCheck('fisica')"> Física
-                        <input type="radio" name="person" id="" onclick="radioCheck('juridica')"> Jurídica<br>
+                        <input type="radio" name="person" checked onclick="radioCheck('fisica')"> Física
+                        <input type="radio" name="person" onclick="radioCheck('juridica')"> Jurídica<br>
 
                         <div id="form-physical">
                             <input type="text" name="name" id="namePF" placeholder="Nome completo" class="field"><br>

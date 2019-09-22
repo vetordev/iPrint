@@ -111,11 +111,11 @@ function registerClient() {
     const cidade = $('[name=cidade]').val();
     const uf = $('[name=uf]').val();
     const cep = $('#cep').val();
+    const email = $("#email").val();
 
     //Verificar se as senhas são iguais
-    if (option == 'fisica'){
+    if (!(option == 'juridica')){
         const name = $('#namePF').val();
-        const email = $("#email").val();
         const senha = $('#password2PF').val();
         const cpf = $('#cpf').val();
         const ddn = $('#ddn').val();
@@ -147,7 +147,7 @@ function registerClient() {
         }).done(function (res) {
             
         });
-    }else{
+    } else {
         const cnpj = $('#cnpj').val();
         const rs = $('#rs').val();
         const nameF = $('#name-f').val();
@@ -161,9 +161,10 @@ function registerClient() {
             data : {
                 cnpj : cnpj,
                 rs : rs,
-                nameF = nameF,
+                nameF : nameF,
                 ie : ie,
                 name : name,
+                email : email,
                 senha : senha,
                 logradouro : logradouro,
                 numero : numero,
@@ -173,13 +174,19 @@ function registerClient() {
                 uf : uf,
                 cep : cep,
                 numero : numero,
-                telefone : telefone
+                // telefone : telefone
             }
+        }).done(function(res) {
+            alert(res);
         });
     }
     
 
 }
 
+
+function signIn(){
+    alert($('#email').val());
+}
 
 

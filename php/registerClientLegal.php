@@ -5,8 +5,13 @@ require './connection.php';
 $cnpj = $_POST['cnpj'];
 $rs = $_POST['rs'];
 $ie = $_POST['ie'];
-$name = $_POST['name'];
+$nameRes = $_POST['name'];
 $senha = md5($_POST['senha']);
+$nomeF = $_POST['nameF'];
+$email = $_POST['email'];
+// $telComerc = $_POST['telComerc'];
+// $telResid = $_POST['telResid'];
+// $telCel = $_POST['telCel'];
 
 $logradouro = $_POST['logradouro'];
 $complemento = $_POST['complemento'] ?: null;
@@ -16,10 +21,11 @@ $uf =  $_POST['uf'];
 $cep = $_POST['cep'];
 $numero = $_POST['numero'];
 
-$telefone =  $_POST['telefone'];
+
+// $telefone =  $_POST['telefone'];
 
 //Inserindo o cliente
-insertClientData($name, $ddn, $cpf, $telefone, $email, $senha, $con);
+insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nameRes, $con);
 //Verificando se o cep existe
 if(!existsCep($cep, $con)){
     //Inserindo endereço na tabela de endereços
@@ -31,14 +37,16 @@ if(!existsCep($cep, $con)){
 $endereço = ['cep' => $cep, 'numero' => $numero];
 insertClienteAdressData($endereço, $email, $con);
 
-function insertClientData($name, $ddn, $cpf, $telefone, $email, $senha, $con){
-    $stmt = $con->prepare('INSERT INTO `tb_fisica`(`nome_pf`, `ddn_pf`, `cpf_pf`, `telefone_pf`, `email_pf`, `senha_pf`) VALUES(?, ?, ?, ?, ?, ?)');
-    $stmt->bindParam(1, $name);
-    $stmt->bindParam(2, $ddn);
-    $stmt->bindParam(3, $cpf);
-    $stmt->bindParam(4, $telefone);
-    $stmt->bindParam(5, $email);
-    $stmt->bindParam(6, $senha);
+function insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nomeRes, $con){
+    $stmt = $con->prepare('INSERT INTO `tb_juridica`(`cpnj_pj`, `rs_pj`, `ie_pj`, `nomeFant_pj`, `nomeResp_pj`, `email_pj`, `senha_pj`) VALUES(?, ?, ?, ?, ?, ?, ?)');
+    $stmt->bindParam(1, $cnpj);
+    $stmt->bindParam(2, $rs);
+    $stmt->bindParam(3, $ie);
+    $stmt->bindParam(4, $nomeF);
+    $stmt->bindParam(5, $nomeRes);
+    $stmt->bindParam(6, $email);
+    $stmt->bindParam(7, $senha);
+
     $stmt->execute();
 
 }
@@ -71,7 +79,7 @@ function insertAddress($endereço, $con){
     $stmt->bindParam(5, $uf);
 
     if($stmt->execute()){
-        echo 'ola';
+        
     };
 }
 
@@ -80,14 +88,14 @@ function insertClienteAdressData($endereço, $email, $con){
     $cep = $endereço['cep'];
     $numero = $endereço['numero'];
 
-    $rs = $con->prepare('SELECT `id_pf` FROM `tb_fisica` WHERE `email_pf` = ?');
+    $rs = $con->prepare('SELECT `id_pj` FROM `tb_juridica` WHERE `email_pj` = ?');
     $rs->bindParam(1, $email);
     $rs->execute();
     
     $row = $rs->fetch(PDO::FETCH_OBJ);
-    $id = $row->id_pf;
+    $id = $row->id_pj;
     
-    $stmt = $con->prepare('INSERT INTO `tb_clienteEnd`(`id_pf`, `cep`, `numero_clienteEnd`) VALUES(?, ?, ?) ');
+    $stmt = $con->prepare('INSERT INTO `tb_clienteEnd`(`id_pj`, `cep`, `numero_clienteEnd`) VALUES(?, ?, ?) ');
     $stmt->bindParam(1, $id);
     $stmt->bindParam(2, $cep);
     $stmt->bindParam(3, $numero);
