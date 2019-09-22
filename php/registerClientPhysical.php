@@ -21,7 +21,9 @@ insertClientData($name, $ddn, $cpf, $telefone, $email, $senha, $con);
 //Verificando se o cep existe
 if(!existsCep($cep, $con)){
     //Inserindo endereço na tabela de endereços
+    
     $endereço = ['cep' => $cep, 'logradouro' => $logradouro, 'bairro' => $bairro, 'cidade' => $cidade, 'uf' => $uf];
+    
     insertAddress($endereço, $con);
 }
 $endereço = ['cep' => $cep, 'numero' => $numero];
@@ -39,7 +41,7 @@ function insertClientData($name, $ddn, $cpf, $telefone, $email, $senha, $con){
 
 }
 function existsCep($cep, $con){
-    $stmt = $con->prepare('SELECT `cep` FROM `tb_endereço` WHERE `cep` = ?');
+    $stmt = $con->prepare("SELECT `cep` FROM `tb_endereco` WHERE `cep` = ?");
     $stmt->bindParam(1, $cep);
     $stmt->execute();
 
@@ -53,18 +55,28 @@ function existsCep($cep, $con){
 
 }
 function insertAddress($endereço, $con){
-    $stmt = $con->prepare('INSERT INTO `tb_endereço` VALUES (?, ?, ?, ?, ?)');
+    $cep = $endereço['cep'];
+    $logradouro = $endereço['logradouro'];
+    $bairro = $endereço['bairro'];
+    $cidade = $endereço['cidade'];
+    $uf = $endereço['uf'];
 
-    $stmt->bindParam(1, $endereço['cep']);
-    $stmt->bindParam(2, $endereço['logradouro']);
-    $stmt->bindParam(3, $endereço['bairro']);
-    $stmt->bindParam(4, $endereço['cidade']);
-    $stmt->bindParam(5, $endereço['uf']);
+    $stmt = $con->prepare('INSERT INTO `tb_endereco` VALUES (?, ?, ?, ?, ?)');
+    $stmt->bindParam(1, $cep);
+    $stmt->bindParam(2, $logradouro);
+    $stmt->bindParam(3, $bairro);
+    $stmt->bindParam(4, $cidade);
+    $stmt->bindParam(5, $uf);
 
-    $stmt->execute();
+    if($stmt->execute()){
+        echo 'ola';
+    };
 }
 
 function insertClienteAdressData($endereço, $email, $con){
+
+    $cep = $endereço['cep'];
+    $numero = $endereço['numero'];
 
     $rs = $con->prepare('SELECT `id_pf` FROM `tb_fisica` WHERE `email_pf` = ?');
     $rs->bindParam(1, $email);
@@ -73,10 +85,10 @@ function insertClienteAdressData($endereço, $email, $con){
     $row = $rs->fetch(PDO::FETCH_OBJ);
     $id = $row->id_pf;
     
-    $stmt = $con->prepare('INSERT INTO `tb_clienteEnd`(`id_pf`, ` id_cep`, `numero_clienteEnd`) VALUES(?, ?, ?) ');
+    $stmt = $con->prepare('INSERT INTO `tb_clienteEnd`(`id_pf`, `cep`, `numero_clienteEnd`) VALUES(?, ?, ?) ');
     $stmt->bindParam(1, $id);
-    $stmt->bindParam(2, $endereço['cep']);
-    $stmt->bindParam(3, $endereço['numero']);
+    $stmt->bindParam(2, $cep);
+    $stmt->bindParam(3, $numero);
 
     $stmt->execute();
 }

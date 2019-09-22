@@ -1,6 +1,6 @@
 create database iprint;
 use iprint;
-
+#drop database iprint;
 /*tabela pessoa física, quinta a ser executada*/
 create table tb_fisica(
 	id_pf int primary key auto_increment,
@@ -30,12 +30,12 @@ create table tb_juridica(
     telCel_pj varchar(45)
 );
 
-create table tb_endereço(
-	cep int primary key ,
-    logra_endereço varchar(70),
-    bairro_endereço varchar(45),
-    cidade_endereço varchar(45),
-    uf_endereço varchar(45)
+create table tb_endereco(
+	cep char(8) primary key ,
+    logra_endereco varchar(70),
+    bairro_endereco varchar(45),
+    cidade_endereco varchar(45),
+    uf_endereco varchar(45)
 );
 
 /*tabela endereço do cliente, terceira a ser executada*/
@@ -44,8 +44,8 @@ create table tb_clienteEnd(
     id_pf int,
     constraint fk_idPF foreign key (id_pf) references tb_fisica (id_pf)
 	on update cascade on delete cascade,
-    id_cep int,
-	constraint fk_cep foreign key (id_cep) references tb_endereço (id_cep)
+    cep char(8),
+	constraint fk_cep foreign key (cep) references tb_endereco (cep)
     on update cascade on delete cascade,
     id_pj int,
 	constraint fk_idPJ foreign key (id_pj) references tb_juridica (id_pj)
@@ -56,8 +56,8 @@ create table tb_clienteEnd(
 /*tabela fornecedor, sexta a ser executada*/
 create table tb_forn(
 	id_forn int primary key auto_increment,
-	id_cep int,
-	constraint fk_CepForn foreign key (id_cep) references tb_endereço (id_cep)
+	cep char(8),
+	constraint fk_CepForn foreign key (cep) references tb_endereco (cep)
 	on update cascade on delete cascade,
     nome_forn varchar(45),
     email_forn varchar(45),

@@ -118,7 +118,7 @@ function registerClient() {
     const cidade = $('[name=cidade]').val();
     const uf = $('[name=uf]').val();
     const cep = $('#cep').val();
-    const numero = $('#num').val();
+    
     const telefone = $('[name=telefone]').val();
 
     
@@ -143,7 +143,7 @@ function registerClient() {
             telefone : telefone
         }
     }).done(function (res) {
-        
+        alert(res);
     });
 
 }
