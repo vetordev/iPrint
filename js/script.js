@@ -2,7 +2,7 @@ var init = document.getElementById("init");
 var login = document.getElementById("login-screen");
 var singScreen = document.getElementById("sign-screen");
 var address = document.getElementById("address");
-
+var option;
 function searchEmail(){
     const email = $("#email").val();
     var exists;
@@ -72,10 +72,10 @@ function showAddress(){
 
 }
 
-function radioCheck(option){
+function radioCheck(option_){
     var formPhy = document.getElementById("form-physical");
     var formLeg = document.getElementById("form-legal");
-
+    option = option_;
     address.style.display = "none";
     if (option == "juridica"){
         formPhy.style.display = "none";
@@ -104,13 +104,6 @@ fields.forEach(field => {
 
 function registerClient() {
 
-    //Verificar se as senhas são iguais
-
-    const name = $('#namePF').val();
-    const email = $("#email").val();
-    const senha = $('#password2').val();
-    const cpf = $('#cpf').val();
-    const ddn = $('#ddn').val();
     const logradouro = $('[name=logradouro]').val();
     const numero = $('[name=numero]').val();
     const complemento = $('[name=complemento]').val();
@@ -118,33 +111,73 @@ function registerClient() {
     const cidade = $('[name=cidade]').val();
     const uf = $('[name=uf]').val();
     const cep = $('#cep').val();
-    
-    const telefone = $('[name=telefone]').val();
 
+    //Verificar se as senhas são iguais
+    if (option == 'fisica'){
+        const name = $('#namePF').val();
+        const email = $("#email").val();
+        const senha = $('#password2PF').val();
+        const cpf = $('#cpf').val();
+        const ddn = $('#ddn').val();
     
-    $.ajax({
-        url : './php/registerClientPhysical.php',
-        type: 'post',
+        
+        const telefone = $('[name=telefone]').val();
 
-        data : {
-            name : name,
-            email : email,
-            senha : senha,
-            cpf : cpf,
-            ddn : ddn,
-            logradouro : logradouro,
-            numero : numero,
-            complemento : complemento,
-            bairro : bairro,
-            cidade : cidade,
-            uf : uf,
-            cep : cep,
-            numero : numero,
-            telefone : telefone
-        }
-    }).done(function (res) {
-        alert(res);
-    });
+        
+        $.ajax({
+            url : './php/registerClientPhysical.php',
+            type: 'post',
+
+            data : {
+                name : name,
+                email : email,
+                senha : senha,
+                cpf : cpf,
+                ddn : ddn,
+                logradouro : logradouro,
+                numero : numero,
+                complemento : complemento,
+                bairro : bairro,
+                cidade : cidade,
+                uf : uf,
+                cep : cep,
+                numero : numero,
+                telefone : telefone
+            }
+        }).done(function (res) {
+            
+        });
+    }else{
+        const cnpj = $('#cnpj').val();
+        const rs = $('#rs').val();
+        const nameF = $('#name-f').val();
+        const ie = $('#ie').val();
+        const name = $('#namePJ').val();
+        const senha = $('#password2PJ').val();
+
+        $.ajax({
+            url : './php/registerClientLegal.php',
+            type: 'post', 
+            data : {
+                cnpj : cnpj,
+                rs : rs,
+                nameF = nameF,
+                ie : ie,
+                name : name,
+                senha : senha,
+                logradouro : logradouro,
+                numero : numero,
+                complemento : complemento,
+                bairro : bairro,
+                cidade : cidade,
+                uf : uf,
+                cep : cep,
+                numero : numero,
+                telefone : telefone
+            }
+        });
+    }
+    
 
 }
 
