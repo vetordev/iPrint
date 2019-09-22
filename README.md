@@ -1,7 +1,7 @@
 # IPRINT
 
-Projeto proposto pelo orientador Marcos Renato
-Iprint é uma loja digital que possui seus produtos relacionados à impressoras e acessórios no geral
+
+Iprint é uma loja digital que possui seus produtos relacionados a impressoras e acessórios no geral.
 
 
 ### Objetivos
@@ -17,3 +17,5 @@ Iprint é uma loja digital que possui seus produtos relacionados à impressoras 
 - Vitor da Silva
 - Vitoria Lopes
 - Yan Velho
+
+Projeto proposto pelo orientador Marcos Renato.  
