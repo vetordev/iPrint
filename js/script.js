@@ -63,7 +63,12 @@ function showAddress(){
         $('[name=cidade]').val(res.localidade);
         $('[name=uf]').val(res.uf);
 
-    })
+    });
+
+    var objDiv = $("#sign-screen");
+    
+
+    $('#sign-screen').animate({scrollTop: objDiv.scrollHeight}, "low");
 
 }
 
@@ -102,20 +107,42 @@ function registerClient() {
     //Verificar se as senhas são iguais
 
     const name = $('#namePF').val();
+    const email = $("#email").val();
+    const senha = $('#password2').val();
     const cpf = $('#cpf').val();
     const ddn = $('#ddn').val();
     const logradouro = $('[name=logradouro]').val();
-    const numero = $('[name=numero]');
+    const numero = $('[name=numero]').val();
     const complemento = $('[name=complemento]').val();
     const bairro = $('[name=bairro]').val();
     const cidade = $('[name=cidade]').val();
     const uf = $('[name=uf]').val();
+    const cep = $('#cep').val();
     const telefone = $('[name=telefone]').val();
 
+    
     $.ajax({
-        url : './php/registerClientPhysical',
-        type: 'post'
-    })
+        url : './php/registerClientPhysical.php',
+        type: 'post',
+
+        data : {
+            name : name,
+            email : email,
+            senha : senha,
+            cpf : cpf,
+            ddn : ddn,
+            logradouro : logradouro,
+            numero : numero,
+            complemento : complemento,
+            bairro : bairro,
+            cidade : cidade,
+            uf : uf,
+            cep : cep,
+            telefone : telefone
+        }
+    }).done(function (res) {
+        
+    });
 
 }
 
