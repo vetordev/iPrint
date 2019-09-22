@@ -14,8 +14,7 @@
 ( function( global, factory ) {
 
 	"use strict";
-	
-	
+
 	if ( typeof module === "object" && typeof module.exports === "object" ) {
 
 		// For CommonJS and CommonJS-like environments where a proper `window`
@@ -36,7 +35,6 @@
 	} else {
 		factory( global );
 	}
-
 
 // Pass this if window is not defined yet
 } )( typeof window !== "undefined" ? window : this, function( window, noGlobal ) {
@@ -10454,8 +10452,6 @@ jQuery.fn.extend( {
 		return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );
 	}
 } );
-
-
 
 
 jQuery.fn.extend( {

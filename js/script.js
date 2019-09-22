@@ -3,18 +3,38 @@ var login = document.getElementById("login-screen");
 var singScreen = document.getElementById("sign-screen");
 var address = document.getElementById("address");
 
-function countTime(){
-    const email = document.getElementById("email");
+function searchEmail(){
+    const email = $("#email").val();
+    var exists
+    //Realizar busca no banco de dados para verificar se o email existe
+ 
+    if (email != ""){
 
-    if (email.value != ""){
+        // Informações iniciais somem
         init.style.display = "none";
-        if (email.value != "heyvitoria.lopes@gmail.com"){
+        //Ajax 
+        $.ajax({
+            url : '../php/searchEmail.php',
+            type: 'post',
+            data: {
+                email : email
+            }
+        }).done(function(res){
+            exists = res;
+            //exists = 1 TRUE
+            //exists = 0 FALSE
+        });
+        
+        if (exists == '0'){
             login.style.display = "none";
             singScreen.style.display = "block";
         }else{   
             singScreen.style.display = "none";
             login.style.display = "block";
         }
+
+
+
     }
 }
 

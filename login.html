@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
     <link rel="stylesheet" href="style/style.css">
     <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
     <title>iPrint - Login</title>
 
 </head>
@@ -16,7 +17,7 @@
         <div class="child row">
             <form id="form" class="col-sm-6 col-xs-12">
                 <p class="title"> <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!</p>
-                    <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(countTime, 1000)" class="field">
+                    <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1000)" class="field">
                     <!-- <i class="far fa-times-circle"></i> -->
                 <div id="init">
                     <p class="text-init"> Se você já possui uma conta, pode fazer login com ela! Se ainda não possui, não se preocupe, nós cadastraremos você.</p>
