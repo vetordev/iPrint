@@ -14,13 +14,6 @@ create table tb_fisica(
     rg_pf varchar(14)
 );
 
-create table tb_endereço(
-	id_cep int primary key auto_increment,
-    logra_endereço varchar(70),
-    bairro_endereço varchar(45),
-    cidade_endereço varchar(45),
-    uf_endereço varchar(45)
-);
 
 /*tabela pessoa jurídica, quarta a ser executada*/
 create table tb_juridica(
@@ -37,6 +30,14 @@ create table tb_juridica(
     telCel_pj varchar(45)
 );
 
+create table tb_endereço(
+	cep int primary key ,
+    logra_endereço varchar(70),
+    bairro_endereço varchar(45),
+    cidade_endereço varchar(45),
+    uf_endereço varchar(45)
+);
+
 /*tabela endereço do cliente, terceira a ser executada*/
 create table tb_clienteEnd(
 	id_clienteEnd int primary key auto_increment,
@@ -49,7 +50,7 @@ create table tb_clienteEnd(
     id_pj int,
 	constraint fk_idPJ foreign key (id_pj) references tb_juridica (id_pj)
 	on update cascade on delete cascade,
-    numero_clienteEnd int
+    numero_clienteEnd varchar(10)
 );
 
 /*tabela fornecedor, sexta a ser executada*/

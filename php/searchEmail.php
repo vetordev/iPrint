@@ -41,7 +41,7 @@ function existsInJuridica($email, $con){
         $result['exists'] = '1';
         $result['name'] = $row->nomeFant_pj;
     }else{
-        $result['exists'] = '0';    
+        $result['exists'] = "0";    
     }
     return $result;
 }
