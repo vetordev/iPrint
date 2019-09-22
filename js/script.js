@@ -50,6 +50,21 @@ function cpfValidate(){
 function showAddress(){
     singScreen.style.overflow = "auto";
     address.style.display = "block";
+    //ajax para buscar as informaçõe de endereço
+    $.ajax({
+        url: 'https://viacep.com.br/ws/'+$('#cep').val()+'/json/unicode/',
+
+        dataType: 'json'
+
+    }).done(function(res){
+        console.log(res);
+        $('[name=logradouro]').val(res.logradouro);
+        $('[name=bairro]').val(res.bairro);
+        $('[name=cidade]').val(res.localidade);
+        $('[name=uf]').val(res.uf);
+
+        // $('#bar').val(res.bairro);
+    })
 
 }
 
