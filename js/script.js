@@ -186,7 +186,22 @@ function registerClient() {
 
 
 function signIn(){
-    alert($('#email').val());
+    const email = $('#email').val();
+    const senha = $('#password').val();
+
+    $.ajax({
+        url : './php/signInClient.php',
+        type: 'post',
+
+        data: {
+            email : email,
+            senha : senha
+        }
+        
+    }).done(function(res){
+        res = JSON.parse(res);
+        alert(res.id);
+    });
 }
 
 
