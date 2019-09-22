@@ -63,7 +63,6 @@ function showAddress(){
         $('[name=cidade]').val(res.localidade);
         $('[name=uf]').val(res.uf);
 
-        // $('#bar').val(res.bairro);
     })
 
 }
@@ -97,6 +96,28 @@ fields.forEach(field => {
     });
 
 });
+
+function registerClient() {
+
+    //Verificar se as senhas são iguais
+
+    const name = $('#namePF').val();
+    const cpf = $('#cpf').val();
+    const ddn = $('#ddn').val();
+    const logradouro = $('[name=logradouro]').val();
+    const numero = $('[name=numero]');
+    const complemento = $('[name=complemento]').val();
+    const bairro = $('[name=bairro]').val();
+    const cidade = $('[name=cidade]').val();
+    const uf = $('[name=uf]').val();
+    const telefone = $('[name=telefone]').val();
+
+    $.ajax({
+        url : './php/registerClientPhysical',
+        type: 'post'
+    })
+
+}
 
 
 

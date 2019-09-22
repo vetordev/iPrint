@@ -1,12 +1,12 @@
-
 create database iprint;
 use iprint;
+
 /*tabela pessoa física, quinta a ser executada*/
 create table tb_fisica(
 	id_pf int primary key auto_increment,
     email_pf varchar(45),
     senha_pf varchar(20),
-    ddn_pf varchar(45),
+    ddn_pf DATE,
     telefone_pf varchar(13),
     celular_pf varchar(13),
     nome_pf varchar(45),
@@ -15,7 +15,7 @@ create table tb_fisica(
 );
 
 create table tb_endereço(
-	id_cep int primary key,
+	id_cep int primary key auto_increment,
     logra_endereço varchar(70),
     bairro_endereço varchar(45),
     cidade_endereço varchar(45),

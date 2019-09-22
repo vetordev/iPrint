@@ -40,7 +40,7 @@
                         <input type="radio" name="person" id="" onclick="radioCheck('juridica')"> Jurídica<br>
 
                         <div id="form-physical">
-                            <input type="text" name="name" id="name" placeholder="Nome completo" class="field"><br>
+                            <input type="text" name="name" id="namePF" placeholder="Nome completo" class="field"><br>
                             <input type="text" name="cpf" id="cpf" placeholder="CPF" class="field num-state" onblur="cpfValidate()">
                             <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="field">
                             <input type="password" name="password1" id="password1" placeholder="Senha (mínimo 6 caracteres)" class="field">
@@ -49,13 +49,13 @@
 
                         <div id="form-legal">
                             <b>Dados da empresa</b>
-                            <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="field num-state">
-                            <input type="text" name="name" id="rs" placeholder="Razão social" class="field">
-                            <input type="text" name="name" id="name-f" placeholder="Nome fantasia">
-                            <input type="text" name="name" id="ie" placeholder="Inscrição estadual" ><br>
+                            <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ" class="field num-state">
+                            <input type="text" name="razaoSocial" id="rs" placeholder="Razão social" class="field">
+                            <input type="text" name="nomeFantasia" id="name-f" placeholder="Nome fantasia">
+                            <input type="text" name="IE" id="ie" placeholder="Inscrição estadual" ><br>
 
                             <b>Dados pessoais</b>
-                            <input type="text" name="name" id="name" placeholder="Nome completo" class="field">
+                            <input type="text" name="name" id="namePJ" placeholder="Nome completo" class="field">
                             <input type="password" name="password1" id="password1" placeholder="Senha (mínimo 6 caracteres)" class="field">
                             <input type="password" name="password2" id="password2" placeholder="Confirme a senha" class="field">
                             
@@ -72,7 +72,7 @@
                             <input type="text" name="cidade" placeholder="Cidade" id="cidade" class="field">
                             <input type="text" name="uf" placeholder="UF" id="uf" class="field">
                             <input type="text" name="telefone" placeholder="Telefone" id="telefone" class="field">
-                            <input type="button" value="Cadastrar" id="btn-login">
+                            <input type="button" value="Cadastrar" id="btn-login" onclick="registerClient()">
                         </div>
                 </div>
                 <span id="span-invalid"></span>
