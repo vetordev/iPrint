@@ -20,16 +20,18 @@ function searchEmail(){
                 email : email
             }
         }).done(function(res){
-            exists = res;
+            res = JSON.parse(res);
+            exists = res.exists;
             //exists = 1 TRUE
             //exists = 0 FALSE
-            
             if (exists == '0'){
                 login.style.display = "none";
                 singScreen.style.display = "block";
-            }else{   
+            }else{
+                
                 singScreen.style.display = "none";
                 login.style.display = "block";
+                $("user").html(res.name);
             }
         });
 

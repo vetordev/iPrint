@@ -1,3 +1,4 @@
+
 create database iprint;
 use iprint;
 /*tabela pessoa física, quinta a ser executada*/
@@ -109,8 +110,6 @@ create table tb_carrinho(
     		on update cascade on delete cascade,
 	quantidade_carrinho varchar(3)
 );
-
-
 
 
 
