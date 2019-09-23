@@ -110,7 +110,7 @@ input {
 }
 
 /* TELA INICIAL */
-.field:focus {
+/* .field:focus { */
    /* -webkit-box-shadow: 0px 0px 11px 1px rgba(255,77,1,1);
    -moz-box-shadow: 0px 0px 11px 1px rgba(255,77,1,1);
    box-shadow: 0px 0px 11px 1px rgba(255,77,1,1); */
@@ -118,7 +118,7 @@ input {
    /* -webkit-box-shadow: 0px 0px 3px 1px rgba(255, 77, 1, 1);
     box-shadow: 0px 0px 3px 1px rgba(255, 77, 1, 1);
     -moz-box-shadow: 0px 0px 3px 1px rgba(255, 77, 1, 1); */
-}
+/* } */
 #init {
    display: block;
    flex-direction: column;
@@ -265,7 +265,9 @@ button, [type = button] {
 
 #sign-screen::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 4px;
 	background-color: #F5F5F5;
 }
@@ -279,7 +281,9 @@ button, [type = button] {
 #sign-screen::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+   box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #FF4D01;
 }
 #span-invalid{
