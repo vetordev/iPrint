@@ -145,7 +145,8 @@ function registerClient() {
                 telefone : telefone
             }
         }).done(function (res) {
-            
+            // alert(res);
+        
         });
     } else {
         const cnpj = $('#cnpj').val();

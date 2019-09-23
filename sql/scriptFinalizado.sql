@@ -5,7 +5,7 @@ use iprint;
 create table tb_fisica(
 	id_pf int primary key auto_increment,
     email_pf varchar(45),
-    senha_pf varchar(20),
+    senha_pf varchar(100),
     ddn_pf DATE,
     telefone_pf varchar(13),
     celular_pf varchar(13),
@@ -19,7 +19,7 @@ create table tb_fisica(
 create table tb_juridica(
 	id_pj int primary key auto_increment,
     email_pj varchar(45),
-    senha_pj varchar(45),
+    senha_pj varchar(100),
     rs_pj varchar(45),
     cpnj_pj varchar(45),
     ie_pj varchar(45),

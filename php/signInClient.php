@@ -5,7 +5,6 @@ require './connection.php';
 $email = $_POST['email'];
 $senha = md5($_POST['senha']);
 
-
 $result = existsInFisica($email, $senha, $con);
 if ($result['id'] != '0'){
     echo json_encode($result);

@@ -5,6 +5,7 @@ require './connection.php';
 $name = $_POST['name'];
 $email = $_POST['email'];
 $senha = md5($_POST['senha']);
+// echo $senha;
 $ddn = $_POST['ddn'];
 $cpf = $_POST['cpf'];
 $logradouro = $_POST['logradouro'];
@@ -68,9 +69,9 @@ function insertAddress($endereço, $con){
     $stmt->bindParam(4, $cidade);
     $stmt->bindParam(5, $uf);
 
-    if($stmt->execute()){
-        echo 'ola';
-    };
+    $stmt->execute();
+        
+    
 }
 
 function insertClienteAdressData($endereço, $email, $con){

@@ -10,7 +10,7 @@ Iprint é uma loja digital que possui seus produtos relacionados a impressoras e
 - [x] Verificar se email do cliente já existe
 - [X] Preencher endereço a partir do CEP
 - [x] Realizar cadastro com senha em md5 e endereço
-- [ ] Realizar login de clientes
+- [x] Realizar login de clientes
 - [ ] Implementar autenticação pelo facebook
 
 
