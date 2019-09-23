@@ -24,53 +24,6 @@ email.addEventListener("keydown", event =>{
     load.style.display = "block";
 })
 
-function countTime(){
-    if (email.value != ""){
-        init.classList.add("init-fade");
-        load.style.display = "none";   
-        init.addEventListener("animationend", event => {
-            if (event.animationName == "fade"){
-                init.style.display = "none";
-
-                // IR PARA CADASTRO
-                if (email.value != "heyvitoria.lopes@gmail.com"){
-                    login.style.display = "none";
-                    singScreen.style.display = "block";
-                    
-                    singScreen.classList.add("form-show");
-                    init.classList.remove("init-fade");
-
-                // IR PARA WELCOME
-                }else{   
-                    singScreen.style.display = "none";
-                    login.style.display = "block";
-
-                    login.classList.add("form-show");
-                    init.classList.remove("init-fade");
-                }
-            }
-        });
-        // IR PARA CADASTRO
-        if (email.value != "heyvitoria.lopes@gmail.com"){
-            init.style.display = "none";
-            login.style.display = "none";
-            singScreen.style.display = "block";
-            
-            singScreen.classList.add("form-show");
-            init.classList.remove("init-fade");
-
-        // IR PARA WELCOME
-        }else{   
-            init.style.display = "none";
-            singScreen.style.display = "none";
-            login.style.display = "block";
-
-            login.classList.add("form-show");
-            init.classList.remove("init-fade");
-        }
-    }
-}
-
 const fields = [... document.querySelectorAll(".required-field")];
 
 fields.forEach(field => {

@@ -107,7 +107,6 @@ function searchEmail(){
         wrongf.classList.remove("wrong-field");
         wrongf.style.border = "none";
     });
-
     if (email != ""){
         init.classList.add("init-fade");
         load.style.display = "none";   
@@ -143,11 +142,6 @@ function searchEmail(){
                         $("user").html(res.name);
                     }
                 });
-                var wrongFields = [... document.querySelectorAll(".wrong-field")];
-                wrongFields.forEach(wrongf => {
-                wrongf.classList.remove("wrong-field");
-                wrongf.style.border = "none";
-        });
             }
         });
         
@@ -183,6 +177,9 @@ function searchEmail(){
        
     }else{
         load.style.display = "none";
+        singScreen.style.display = "none";
+        login.style.display = "none";
+        init.style.display = "block";
     }
 }
 function registerClient() {
