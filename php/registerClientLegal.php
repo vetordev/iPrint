@@ -5,13 +5,13 @@ require './connection.php';
 $cnpj = $_POST['cnpj'];
 $rs = $_POST['rs'];
 $ie = $_POST['ie'];
-$nameRes = $_POST['name'];
+$nomeRes = $_POST['name'];
 $senha = md5($_POST['senha']);
 $nomeF = $_POST['nameF'];
 $email = $_POST['email'];
-// $telComerc = $_POST['telComerc'];
-// $telResid = $_POST['telResid'];
-// $telCel = $_POST['telCel'];
+$telComerc = $_POST['telComerc'];
+$telResid = $_POST['telResid'];
+$telCel = $_POST['telCel'];
 
 $logradouro = $_POST['logradouro'];
 $complemento = $_POST['complemento'] ?: null;
@@ -21,11 +21,13 @@ $uf =  $_POST['uf'];
 $cep = $_POST['cep'];
 $numero = $_POST['numero'];
 
+$a = 'sdasdas';
 
+$aaaaaaaa = 'sadasd';
 // $telefone =  $_POST['telefone'];
 
 //Inserindo o cliente
-insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nameRes, $con);
+insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nomeRes, $telCel, $telResid, $telComerc, $con);
 //Verificando se o cep existe
 if(!existsCep($cep, $con)){
     //Inserindo endereço na tabela de endereços
@@ -37,8 +39,8 @@ if(!existsCep($cep, $con)){
 $endereço = ['cep' => $cep, 'numero' => $numero];
 insertClienteAdressData($endereço, $email, $con);
 
-function insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nomeRes, $con){
-    $stmt = $con->prepare('INSERT INTO `tb_juridica`(`cpnj_pj`, `rs_pj`, `ie_pj`, `nomeFant_pj`, `nomeResp_pj`, `email_pj`, `senha_pj`) VALUES(?, ?, ?, ?, ?, ?, ?)');
+function insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nomeRes, $telCel, $telResid, $telComerc, $con){
+    $stmt = $con->prepare('INSERT INTO `tb_juridica`(`cpnj_pj`, `rs_pj`, `ie_pj`, `nomeFant_pj`, `nomeResp_pj`, `email_pj`, `senha_pj`, `telCel_pj`, `telResid_pj`, `telComerc_pj`) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $stmt->bindParam(1, $cnpj);
     $stmt->bindParam(2, $rs);
     $stmt->bindParam(3, $ie);
@@ -46,7 +48,10 @@ function insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nomeRes, $co
     $stmt->bindParam(5, $nomeRes);
     $stmt->bindParam(6, $email);
     $stmt->bindParam(7, $senha);
-
+    $stmt->bindParam(8, $telCel);
+    $stmt->bindParam(9, $telResid);
+    $stmt->bindParam(10, $telComerc);
+    
     $stmt->execute();
 
 }

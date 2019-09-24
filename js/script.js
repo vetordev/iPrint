@@ -199,8 +199,6 @@ function registerClient() {
         const senha = $('#password2PF').val();
         const cpf = $('#cpf').val();
         const ddn = $('#ddn').val();
-    
-        
         const telefone = $('[name=telefone]').val();
 
         
@@ -235,6 +233,9 @@ function registerClient() {
         const ie = $('#ie').val();
         const name = $('#namePJ').val();
         const senha = $('#password2PJ').val();
+        const telefoneCelular = $('#telefone').val();
+        const telefoneResidencial = $('#telefoneR').val();
+        const telefoneComercial = $('#telefoneCom').val();
 
         $.ajax({
             url : './php/registerClientLegal.php',
@@ -255,7 +256,9 @@ function registerClient() {
                 uf : uf,
                 cep : cep,
                 numero : numero,
-                // telefone : telefone
+                telCel : telefoneCelular,
+                telResid : telefoneResidencial,
+                telComerc : telefoneComercial
             }
         }).done(function(res) {
             // alert(res);
