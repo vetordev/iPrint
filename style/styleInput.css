@@ -1,0 +1,60 @@
+.title{
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    
+    /*MUDANÇAS VETOR*/
+    text-align: center;
+    /* padding: 30px 50px 10px 50px; */
+}
+.child form {
+    background-color: #3D1550;
+    height: 615px;
+    border-radius: 15px;
+    z-index: 3;
+    left: calc(50% - 250px);
+ 
+    -webkit-box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
+
+    /*MUDANÇAS VETOR*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px;
+    /*align-items: stretch*/
+    
+}
+
+#init {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.btn-social {
+   -webkit-box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
+   -moz-box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
+   box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
+   border-radius: 4px;
+   outline: none;
+
+   /* MUDANÇAS VETOR */
+   /* margin-top: 20px; */
+   /* width: 350px;  */
+    color: white;
+    border-color:  #4267b2;
+}
+/* MUDANÇAS VETOR */
+.container-or{
+    text-align: center;
+}
+or {
+    position: relative;
+    top: 5px;
+    padding: 0 5px 0 5px;
+}
+#login-screen {
+    display: none;
+    
+}

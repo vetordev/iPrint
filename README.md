@@ -14,6 +14,17 @@ Iprint é uma loja digital que possui seus produtos relacionados a impressoras e
 - [x] Implementar autenticação pelo facebook 
 - [ ] Realizar HTML responsivo
 
+
+
+Irei limpar todas as formatações do style ...
+
+
+
+
+
+
+
+
 ### Autores
 - Júlia Oliveira
 - Otávio Magalhães

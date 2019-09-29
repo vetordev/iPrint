@@ -38,21 +38,7 @@
    justify-content: center;
    align-items: center
 }
-.child form {
-   background-color: #3D1550;
-   height: 615px;
-   border-radius: 15px;
-   z-index: 3;
-   left: calc(50% - 250px);
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: center;
-   text-align: center;
-   -webkit-box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
-   -moz-box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
-   box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.75);
-}
+
 
 .child #slider {
    background-color: #FFFFFF;
@@ -81,25 +67,17 @@ body {
 
 }
 
-.title{
-   padding: 30px 50px 10px 50px;
-   font-size: 24px;
-   font-family: 'Raleway', sans-serif;
-}
 
-input[type = text], input[type = password], input[type = number] {
+/* MUDANÇAS VETOR */
+/* input[type = text], input[type = password], input[type = number] {
    width: 400px;
-   /* background-color: #FFF; */
-   /* border-top: 0;
-   border-left: 0;
-   border-right: 0; */
    border-color: transparent;
    padding: 7px;
    margin-bottom: 10px;
    color: black;
    border-radius: 4px;
    font-size: 17px;
-}
+} */
 
 input {
    outline: none;
@@ -119,35 +97,16 @@ input {
     box-shadow: 0px 0px 3px 1px rgba(255, 77, 1, 1);
     -moz-box-shadow: 0px 0px 3px 1px rgba(255, 77, 1, 1); */
 /* } */
-#init {
-   display: block;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-}
-or {
-   position: relative;
-   top: 5px;
-   padding: 0 5px 0 5px;
-}
+
+
 .text-init {
    padding: 10px 50px 0px 50px;
    color: rgba(255, 255, 255, 0.5);
    line-height: 102%; 
    width: 500px;
+   /* MUDANÇAS VETOR */
+   text-align: center;
 }
-/* i {
-   position: relative;
-   top: -35px;
-   right: 0px;
-   padding: 0;
-   margin: 0;
-   text-align: right;
-   font-size: 24px;
-   color: red;
-} */
-
 *{
    outline: none;
 }
@@ -173,15 +132,7 @@ button, [type = button] {
    width: 440px;
    box-shadow: 0 3px 9px 0 rgba(53,109,196,.33);
 }
-.btn-social {
-   -webkit-box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
-   -moz-box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
-   box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
-   border-radius: 4px;
-   outline: none;
-   margin-top: 20px;
-   width: 350px;
-}
+
 .ico-facebook {
    font-size: 25px;
    right: 5px;
@@ -210,12 +161,11 @@ button, [type = button] {
    display: none;
    margin-bottom: -25px;
 }
-#login-screen {
-   display: none;
-}
+
 .welcome {
    padding: 5px 50px 10px 50px;
    color: rgba(255, 255, 255, 0.7);
+   text-align: center;
 }
 #btn-login, #btn-entrar{
    width: 312px;
