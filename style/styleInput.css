@@ -55,6 +55,13 @@ or {
     padding: 0 5px 0 5px;
 }
 #login-screen {
-    display: none;
-    
+    display: none;    
+}
+.container-people{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+label{
+    margin-right: 10px;
 }
