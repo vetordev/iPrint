@@ -241,14 +241,14 @@ input {
    color: red;
    font-weight: bold;
 }
-
-#cpf, #ddn, #cep{
+/* MUDANÇAS VETOR */
+/* #cpf, #ddn, #cep{
    width: 197px;
 }
 #cep {
    margin-top: 10px;
    margin-bottom: 0;
-}
+} */
 #span-cep{
    padding-bottom: 20px;
    color: rgba(255, 255, 255, 0.5);
@@ -394,6 +394,7 @@ input {
 /* RESPONSIVIDADE */
 @media only screen and (max-width: 900px) {
    
+   /* MUDANÇAS VETOR */
    input[type=number], input[type=text], input[type = password] {
          width: 300px;
       }

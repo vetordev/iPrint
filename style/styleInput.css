@@ -62,6 +62,6 @@ or {
     flex-direction: row;
     justify-content: center;
 }
-label{
+.container-people>label{
     margin-right: 10px;
 }

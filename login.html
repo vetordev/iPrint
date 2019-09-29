@@ -72,11 +72,23 @@
                         
 
                         <div id="form-physical">
-                            <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field word-field"><br>
-                            <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field num-field" onblur="cpfValidate()">
-                            <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field">
-                            <input type="password" name="password1" id="password1PF" placeholder="Senha (mínimo 6 caracteres)" class="required-field field">
-                            <input type="password" name="password2" id="password2PF" placeholder="Confirme a senha" class="required-field field">
+                            <div class="form-group">
+                                <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field word-field form-control">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field num-field form-control" onblur="cpfValidate()">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password1" id="password1PF" placeholder="Senha (mínimo 6 caracteres)" class="required-field field form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password2" id="password2PF" placeholder="Confirme a senha" class="required-field field form-control">
+                            </div>                            
                         </div>
 
                         <div id="form-legal">
