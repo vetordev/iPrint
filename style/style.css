@@ -252,7 +252,7 @@ input {
 #span-cep{
    color: rgba(255, 255, 255, 0.5);
    text-decoration: underline;
-   
+
    /* MUDANÇAS VETOR */
    /* padding-bottom: 20px; */
    
@@ -268,21 +268,29 @@ input {
 }
 
 #address{
-   margin-top: 30px;
+   
    display: none;
+
+   /* MUDANÇAS VETOR */
+   /* margin-top: 30px; */
 }
-#num {
+/* MUDANÇAS VETOR */ 
+/* #num {
+   
    width: 100px;
-}
-#complemento{
+} */
+
+/* MUDANÇAS VETOR */
+/* #complemento{
    width: 295px;
-}
-#cidade{
+} */
+/* #cidade{
    width: 320px;
 }
 #uf{
    width: 75px;
-}
+} */
+
 #form-physical {
    display: block;
 }
