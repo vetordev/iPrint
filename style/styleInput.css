@@ -73,5 +73,16 @@ or {
     margin-bottom: 1rem;
 
     font-size: 18px;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
+.container-endereco{
+    display: flex;
+    flex-direction: column;
+
+}
+.container-cep{
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+    
+ }

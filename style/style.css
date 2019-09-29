@@ -250,20 +250,23 @@ input {
    margin-bottom: 0;
 } */
 #span-cep{
-   padding-bottom: 20px;
    color: rgba(255, 255, 255, 0.5);
    text-decoration: underline;
+   
+   /* MUDANÇAS VETOR */
+   /* padding-bottom: 20px; */
+   
 }
+
 .btn-ok {
-   width: 60px;
    background-color: #FF4D01;
    text-align: center;
+
+   /*MUDANÇAS VETOR*/
+   /* width: 60px; */
+   
 }
-.cep-container{
-   align-items: center;
-   justify-content: row;
-   display: flex;
-}
+
 #address{
    margin-top: 30px;
    display: none;
@@ -395,7 +398,7 @@ input {
 @media only screen and (max-width: 900px) {
    
    /* MUDANÇAS VETOR */
-   input[type=number], input[type=text], input[type = password] {
+   /* input[type=number], input[type=text], input[type = password] {
          width: 300px;
       }
-   }
+   } */
