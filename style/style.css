@@ -99,14 +99,7 @@ input {
 /* } */
 
 
-.text-init {
-   padding: 10px 50px 0px 50px;
-   color: rgba(255, 255, 255, 0.5);
-   line-height: 102%; 
-   width: 500px;
-   /* MUDANÇAS VETOR */
-   text-align: center;
-}
+
 *{
    outline: none;
 }
@@ -168,23 +161,7 @@ input {
    color: rgba(255, 255, 255, 0.7);
    text-align: center;
 }
-/* MUDANÇAS VETOR */
-/* #btn-login, #btn-entrar{
-   width: 312px;
-   height: 45px;
-   background: #FF4D01;
-   border: 2px solid #FF4D01;
-   box-sizing: border-box;
-   border-radius: 8px;
-   color: #FFF;
-   position: relative;
-   top: -5px;
-   font-size: 20px;
-   font-family: 'Roboto', sans-serif;
-   -webkit-box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
-   -moz-box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
-   box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
-} */
+
 
 #btn-login {
    top: 10px;

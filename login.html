@@ -17,21 +17,24 @@
     <div class="container-fluid">
         <div class="child row">
             <form id="form" class="col-sm-6 col-xs-12">
-                <div class="title">
-                    <p class="">
-                         <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!
-                    </p>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1500)" class="required-field field form-control">
-                </div>
-                <!-- Arrumar isso -->
-                <div>
+                <div class="paddingVertical">
+                    <div class="title">
+                        <p class="">
+                            <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1500)" class="required-field field form-control">
+                    </div>
+                        <!-- Arrumar isso -->
+                    <div>
                         <img src="img/loading.gif" id="load">
+                    </div>
                 </div>
+                
                     
                     
-                <div id="init">
+                <div id="init" class="paddingVertical">
                     <div class="text-init">
                         <p class=""> Se você já possui uma conta, pode fazer login com ela! Se ainda não possui, não se preocupe, nós cadastraremos você.</p>
                     </div>
@@ -71,7 +74,7 @@
                     </div>
                         
 
-                        <div id="form-physical">
+                        <div id="form-physical" class="paddingVertical">
                             <div class="form-group">
                                 <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field word-field form-control">
                             </div>
@@ -91,7 +94,7 @@
                             </div>                            
                         </div>
 
-                        <div id="form-legal">
+                        <div id="form-legal" class="paddingVertical">
                             <div class="container-data">
                                 <b>Dados da empresa</b>
                             </div>
@@ -123,7 +126,7 @@
                             
                             
                         </div>
-                        <div class="container-endereco">
+                        <div class="container-endereco paddingVertical" >
                         
                             <div class="form-row container-cep">
                                 <div class="form-group col-md-6">
@@ -164,16 +167,18 @@
                                     <input type="text" name="telefone" placeholder="Telefone" id="telefone" class="required-field num-field form-control">
                                 </div>
                                 
-                                
-                                
-                                
                                 <div id="legal-tel">
-                                    <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field">
-                                    <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field">
+                                    <div class="form-group">
+                                        <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field form-control">
+                                    </div>
+                                    
                                 </div>
 
-                                <div class="form-group">
-                                    <input type="button" class="btn"value="Cadastrar" id="btn-login" onclick="registerClient()">
+                                <div class="form-group btnPadding">
+                                    <input type="button" class="btn form-control"value="Cadastrar" id="btn-login" onclick="registerClient()">
                                 </div>
                                 
                             </div>
