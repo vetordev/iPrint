@@ -168,7 +168,8 @@ input {
    color: rgba(255, 255, 255, 0.7);
    text-align: center;
 }
-#btn-login, #btn-entrar{
+/* MUDANÇAS VETOR */
+/* #btn-login, #btn-entrar{
    width: 312px;
    height: 45px;
    background: #FF4D01;
@@ -183,7 +184,7 @@ input {
    -webkit-box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
    -moz-box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
    box-shadow: 1px 1px 7px -2px rgba(0,0,0,0.75);
-}
+} */
 
 #btn-login {
    top: 10px;
@@ -409,4 +410,5 @@ input {
    /* input[type=number], input[type=text], input[type = password] {
          width: 300px;
       }
-   } */
+      */
+   } 
