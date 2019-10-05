@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home - iPrint</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../site.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../navbar.js"></script>
+    <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-part1">
+            <div class="logo">
+                <img src="../logo.jpeg" alt="" id="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" name="" id="search-bar" placeholder="O que você procura?">
+            </div>
+        </div>
+        <div class="header-part2">
+                <div class="buttons">
+                    <button type="button" class="btn-header">Impressoras</a></button>
+                    <button type="button" class="btn-header">Scanners</a></button>
+                    <button type="button" class="btn-header">Tonners</a></button>
+                </div>
+                <split></split>
+                <div class="user-menu">
+                    <div class="icons">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                        <button type="button" class="btn" id="btn-login">Login</button>
+                </div>
+        </div>
+        <div class="ico-menu" onclick="showNavbar()"><i class="fas fa-bars" id="ico-menu"></i></div>
+    </div>
+    <div id="navbar">
+        <div class="div-flex flex-nav">
+            <button type="button" class="btn-navbar">Impressoras</button>
+            <button type="button" class="btn-navbar">Scanners</button>
+            <button type="button" class="btn-navbar">Tooners</button>
+            <button type="button" class="btn-navbar" id="btn-car">Carrinho</button>
+            <button type="button" class="btn-navbar">Lista de desejos</button>
+            <button type="button" class="btn-navbar btn" id="btn-login-navbar">Login</button>
+        </div>
+    </div>
+
+    <div id="containerr">
+        <div class="account">
+          <p>Edite sua conta</p>
+          <div class="box-gray div-flex">
+                <div id="photo-profile"></div>
+                <form class="div-flex paddingVertical">
+                    
+                    <input type="text" name="email" id="email" placeholder="heyvitoria.lopes@gmail.com">
+                    <input type="text" name="name" id="name" placeholder="Nome completo">
+                    <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field num-field form-control" onblur="cpfValidate()">
+                    <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field form-control">
+                    <input type="password" name="older-pass" id="older-pass" placeholder="Senha antiga">
+                    <input type="password" name="newer-pass" id="newer-pass" placeholder="Nova senha">
+                    <input type="password" name="newer-pass2" id="newer-pass2" placeholder="Confirmar senha">
+                    <button id='button'>Salvar alterações</button>
+                </form>
+          </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script type="text/javascript" src="../routes.js"></script>
+</body>
+</html>

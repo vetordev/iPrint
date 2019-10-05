@@ -1,0 +1,89 @@
+#containerr {
+    width: 100%;
+    height: calc(100vh - 70px);    
+    position: absolute;
+    /* background-color: royalblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* background-color: red; */
+}
+#banner {
+    width: 80%;
+    height: 250px;
+    background-color: rgb(153, 0, 0);
+    margin: 30px;
+}
+.div-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blue; */
+}
+.div-flex-h {
+    flex-direction: row;
+}
+
+.account{
+    margin-top: 30px;
+    max-width: 700px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+.account>p {
+    font-size: 24px;
+    margin: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #444;
+}
+#photo-profile {
+    width: 150px;
+    height: 150px;
+    /* position: absolute; */
+    border-radius: 50%;
+    border: 2px solid #130241;
+    margin: 0;
+    background-image: url('../img/avatar2.jpeg');
+    background-size: contain;
+    /* -webkit-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
+    box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35); */
+}
+input[type=text], input[type=password] {
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 7px;
+    margin-bottom: 10px;
+    color: black;
+    border-radius: 4px;
+    font-size: 17px;
+}
+* {
+    outline: none;
+}
+form {
+    /* background-color: royalblue; */
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    justify-content: flex-start !important;
+}
+#button {
+    height: 50px;
+    width: 200px;
+    color: #FFF;
+    border: none;
+    background-color: #FF4D01;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 524px){
+    input[type=text], input[type=password]{
+        width: 300px;
+    }
+}
