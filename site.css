@@ -17,7 +17,7 @@ button{
 .header {
     height: 70px;
     border: 0.5px solid black;
-    padding: 3px 50px 3px 70px;
+    padding: 3px 30px 3px 70px;
     flex-direction: row;
     display: flex;
     background-color: #130241;
@@ -29,7 +29,7 @@ button{
 }
 .search-bar {
     align-self: center;
-    width: 80%;
+    width: 85%;
     padding-left: 30px;
     /* background-color: aqua; */
 }
@@ -39,16 +39,17 @@ button{
     border-radius: 4px;
     border: 1px solid black;
     padding: 7px;
+    padding-right: 0;
 
 }
 .header-part1 {
     display: flex;
-    width: 45%;
+    width: 40%;
 }
 .header-part2 {
     display: flex;
     justify-content: space-between;
-    width: 55%;
+    width: 60%;
     /* background-color: red; */
     /* padding-left: 30px; */
 }
@@ -61,10 +62,13 @@ button{
     justify-content: space-between;
     width: 249px;
     height: 50px;
+    margin: 0;
     /* background-color: royalblue; */
 }
 .buttons {
     /* background-color: aqua; */
+    /* left: 30px; */
+    /* width: 50%; */
 }
 #navbar {
     position: absolute;
@@ -99,7 +103,7 @@ button{
 #btn-login-navbar {
     background-color: #FF4D01;
     color: #FFF;
-     border: none;
+    border: none;
     font-weight: 600;
     border-radius: 5px;
     font-size: 21px;
@@ -123,9 +127,9 @@ i {
     border: none;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    margin-right: 20px;
+    margin-left: 20px;
     height: 48px;
-    width: 115px;
+    width: 110px;
     border-radius: 4px;
 }
 .btn-header:hover{
@@ -155,7 +159,7 @@ split {
     width: 0;
     height: 40px;
     position: relative;
-    left: -20px;
+    left: -15px;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .ico-menu {
@@ -163,16 +167,29 @@ split {
     visibility: hidden;
     position: relative;
     float: left;
+    /* right: -20px; */
     /* background-color: #FFF; */
     /* right: calc(100% - 100px); */
-    /* left: 55%; */
+    /* left: 20%; */
     align-items: center;
 }
 .ico-menu:hover {
     cursor: pointer;
 }
-
 @media only screen and (max-width: 1200px) {
+    .header {
+        padding: 3px 0 3px 20px;
+        margin: 0;
+    }
+    .buttons {
+        width: 50%;
+    }
+    split {
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
     .header-part2 {
         display: none;
     }
@@ -184,7 +201,7 @@ split {
         left: 55%;
     }
     .header {
-        padding: 3px 50px 3px 15px;
+        padding: 3px 20px 3px 15px;
     }
 }
 

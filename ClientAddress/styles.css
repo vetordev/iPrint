@@ -1,3 +1,12 @@
+.body-darker {
+    /* position: fixed; */
+    width: 100vw;
+    height: 100vh;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(#000, .4);
+    z-index: 1;
+    background-color: red;
+}
 #containerr {
     width: 100%;
     height: calc(100vh - 70px);    
@@ -17,12 +26,12 @@
 }
 .div-flex {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     /* background-color: blue; */
-    z-index: 1; 
 }
 .div-flex-h {
     flex-direction: row;
@@ -34,6 +43,12 @@
 .address{
     width: 80%;
     font-family: 'Roboto', sans-serif;
+    
+    /* position: absolute;
+	bottom: 0;   */
+}
+.box-gray {
+    /* padding: 0px !important; */
 }
 .address>p {
     font-size: 24px;
@@ -58,4 +73,81 @@ ul.address-list li {
     flex-direction: column;
     background-color: blue;
     border: 1px springgreen solid
+}
+
+.box-address {
+    width: 250px;
+    height: 200px;
+    /* background-color: aqua; */
+    margin-right: 15px;
+}
+.client-address {
+    border: 2px #ddd solid;
+}
+
+#add-address {
+    border: 2px #ddd dashed;
+    cursor: pointer;
+}
+.plus-ico {
+    color: #ddd !important;
+    align-items: center;
+    font-size: 40px;
+}
+#add-address .div-flex {
+    /* background-color: red; */
+    /* width: 250%; */
+}
+
+/* body {
+    background-color: #444;
+    opacity: 1.3;   
+} */
+#form-address {
+    width: 450px;
+    height: 500px;
+    background-color: #FFF;
+    position: absolute;
+    -webkit-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
+    box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
+    z-index: 1;
+    display: none;
+}
+#divv {
+    width: 100vw !important;
+    height: calc(100vh - 70px) !important;
+    margin: 0px;
+}
+input[type=text], input[type=password] {
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 7px;
+    margin-bottom: 10px;
+    color: black;
+    border-radius: 4px;
+    font-size: 17px;
+}
+
+#form-address img {
+    max-width: 30px;
+    text-align: right;
+    margin: 10px;
+    cursor: pointer;
+}
+.info-address {
+    padding: 10px;
+}
+.info-address p{
+    margin: 0;
+}
+.btn-box {
+    margin: 0 10px 10px 0;
+}
+.btn-box button {
+    margin-left: 5px;
+}
+.btn-box .div-flex {
+    text-align: right;
+    justify-content: flex-end;
 }
