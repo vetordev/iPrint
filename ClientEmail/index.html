@@ -59,51 +59,18 @@
     <div id="containerr">
         <div id="banner"></div>
         <div class="address">
-        <p>Endereços de entrega</p>
+        <p>Alterar e-mail</p>
         <div class="box-gray">
-            <div class="row div-flex div-flex-h" id="divmae">
-                <div class="box-address" id="add-address" onclick="showAddAddress()">
-                    <div class="div-flex">
-                        <i class="fas fa-plus-circle plus-ico"></i>
-                    </div>
-                </div>
-                <div class="box-address client-address">
-                    <div class="info-address">
-                        <p id="cep_cli" class="info">06765-000</p>
-                        <p id="logradouro_cli" class="info">Estrada do São Francisco</p>
-                        <p id="numero" class="info"> 1900 </p>
-                        <p id="bairro_cli" class="info">Parque Taboão</p>
-                        <p id="cidade_cli" class="info">Taboão da Serra</p>
-                        <p id="uf_cli" class="info">SP</p>
-                    </div>
-                    <div class="btn-box">
-                        <div class="div-flex div-flex-h">
-                            <button type="button">Editar</button>
-                            <button type="button">Excluir</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="row div-flex">
+                <input type="text" name="email-older" id="email-older" placeholder="Seu e-mail antigo">
+                <input type="text" name="email1" id="email1" placeholder="Seu novo e-mail">
+                <input type="text" name="email2" id="email2" placeholder="Confirme seu novo e-mail">
+                <input type="password" name="password" id="password" placeholder="Sua senha atual">
+                <button type="button">Salvar alteração</button>
             </div>
         </div>
     </div>
     </div>
-
-    <div class="div-flex" id="divv">
-    <div id="form-address">
-        <img src="../img/clsoe.png" alt="" onclick="closeAddAddress()">
-        <div class="div-flex">
-            <p>Seu novo endereço</p>
-            <input type="text" class="field-form" name="cep" id="cep" placeholder="CEP">
-            <input type="text" name="logradouro" class="field-form" id="logradouro" placeholder="Endereço">
-            <input type="text" name="numero" class="field-form" id="numero" placeholder="Número">
-            <input type="text" name="bairro" class="field-form" id="bairro" placeholder="Bairro">
-            <input type="text" name="cidade" class="field-form" id="cidade" placeholder="Cidade">
-            <input type="text" name="uf" class="field-form" id="uf" placeholder="UF">
-            <button type="button" onclick="addAddress()">Adicionar endereço</button>
-        </div>
-    </div>
-    </div>
-
 </div>
     <script type="text/javascript" src="../routes.js"></script>
 </body>

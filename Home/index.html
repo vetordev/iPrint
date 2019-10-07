@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="../site.css">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../navbar.js"></script>
@@ -19,7 +21,7 @@
     <div class="header">
         <div class="header-part1">
             <div class="logo">
-                <img src="img/logo.jpeg" alt="" id="logo">
+                <img src="img/logo.jpeg" alt="" id="logo-header">
             </div>
             <div class="search-bar">
                 <input type="text" name="" id="search-bar" placeholder="O que você procura?">
@@ -39,7 +41,7 @@
                         <i class="fas fa-heart"></i>
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                        <button type="button" class="login" id="btn-login">Login</button>
+                        <button type="button" class="login" id="btn-login-header">Login</button>
                 </div>
         </div>
         <div class="ico-menu" onclick="showNavbar()"><i class="fas fa-bars" id="ico-menu"></i></div>
@@ -52,28 +54,27 @@
         <button type="button" class="btn-navbar">Lista de desejos</button>
         <button type="button" class="btn-navbar login" id="btn-login-navbar">Login</button>
     </div>
-
-
-
-
+<div id="container-visibility">
+    <div class="container-fluid">
     <div class="child row">
             <form id="form" class="col-sm-6 col-xs-12">
                 <p class="title"> <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!</p>
                     <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1500)" class="required-field field">
-                    <img src="img/loading.gif" id="load">
+                    <img src="../img/loading.gif" id="load">
                     <!-- <i class="far fa-times-circle"></i> -->
                 <div id="init">
                     <p class="text-init"> Se você já possui uma conta, pode fazer login com ela! Se ainda não possui, não se preocupe, nós cadastraremos você.</p>
                     <p>_________________________ <or> OU </or> _________________________</p>
                     
-                        <button id="btn-facebook" class="acol-sm-6 btn-social" value=""><i class="fab fa-facebook-square ico-facebook"></i> Entre com o Facebook </button> 
+                        <button id="btn-facebook" class="acol-sm-6 btn-social btns" value=""><i class="fab fa-facebook-square ico-facebook"></i> Entre com o Facebook </button> 
                         <!-- <button id="btn-google" class="acol-sm-6 btn-social" value=""><img class="fa-google ico-google" src="img/google-icon.png">  Entre com o Google</button> -->
+                        <button type="button" id="pspsps" onclick="pspsps(window.location.href = '../ClientArea/index.html')">pspsps</button>
                 </div>
 
                 <div id="login-screen">
                     <p class="welcome"> Bem-vindo(a) de volta, <user> Vivi Programmer Designer! </user></p>
                     <input type="password" name="password" id="password" placeholder="Senha" class="required-field field"><p></p>
-                    <input type="button" id="btn-entrar" value="Entrar" onclick="signIn()">
+                    <input type="button" id="btn-entrar" class="btns" value="Entrar" onclick="signIn()">
                 </div>
 
                 <div id="sign-screen">
@@ -114,7 +115,7 @@
                         </div>
                         <div id="cep-container">
                             <input type="text" name="cep" id="cep" placeholder="CEP" class="required-field num-state field num-field">
-                            <input type="button" class="btn-ok" value="OK" onclick="showAddress()"><br>
+                            <input type="button" class="btn-ok btns" value="OK" onclick="showAddress()"><br>
                         </div>
                             <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" id="span-cep">Não sei o CEP</a><br>
                         <div id="address">
@@ -129,7 +130,7 @@
                                 <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field">
                                 <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field">
                             </div>
-                            <input type="button" value="Cadastrar" id="btn-login" onclick="registerClient()">
+                            <input type="button" class="btns" value="Cadastrar" id="btn-login" onclick="registerClient()">
                         </div>
                 </div>
                 <span id="span-invalid"></span>
@@ -140,12 +141,11 @@
                 
             </div>
         </div>
+    </div>
+</div>
 
     <script src="../style/style.js"></script>
     <script src="../js/script.js"></script>
-
-
-
 
     <script type="text/javascript" src="../routes.js"></script>
 </body>

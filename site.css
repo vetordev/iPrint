@@ -24,7 +24,7 @@ button{
     width: 100%;
     margin: 0;
 }
-#logo {
+#logo-header {
     max-width: 60px;   
 }
 .search-bar {
@@ -138,7 +138,7 @@ i {
     -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
 }
-#btn-login {
+#btn-login-header {
     background-color: #FF4D01;
     color: #FFF;
     border: none;
