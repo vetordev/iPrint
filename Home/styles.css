@@ -22,7 +22,7 @@
 }
 #body {
     width: 100vw;
-    height: 2900px;
+    height: 364vh;
     padding: 0 50px;
     /* background-color: pink; */
     z-index:4;
@@ -61,8 +61,6 @@ body, html {
     position: relative;
     margin-top: 30px;
     left: calc(50% - 720px);
-}
-#products1 {
 }
 .product {
     max-width: 300px;
@@ -236,8 +234,11 @@ footer i {
     width: 100%;
     background-color: #130248c7;
     color: wheat;
+    /* position: fixed; */
     position: absolute;
-    top: calc(2900px + 200px);
+
+    /* top: 200px; */
+    top: calc(364vh + 200px);
 }
 .social-networks {
     width: 50px;
