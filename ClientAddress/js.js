@@ -38,6 +38,8 @@ function addAddress() {
             newDivFlex.setAttribute('class', 'div-flex div-flex-h');
                 newBtn.setAttribute('type', 'button');
                 newBtn2.setAttribute('type', 'button');
+                newBtn2.setAttribute('onclick', 'deleteAddress()');
+                newBtn2.setAttribute('class', 'btn-del');
 
 
     if (divQtd < 4){
@@ -59,4 +61,19 @@ function addAddress() {
 
         formAddress.style.display = 'none';
     }
+}
+
+function deleteAddress() {
+    alert('maoi');
+    const divmae = document.getElementById("div-little-mae");
+    const dels = [... document.querySelectorAll("btn-del")];
+
+    dels.forEach(del => {
+        alert('oi');
+        del.addEventListener('click', event => {
+            alert('cobra');
+            // del.remove();
+        })
+    })
+
 }

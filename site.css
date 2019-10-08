@@ -20,9 +20,11 @@ button{
     padding: 3px 30px 3px 70px;
     flex-direction: row;
     display: flex;
+    position: fixed;
     background-color: #130241;
     width: 100%;
     margin: 0;
+    z-index: 1;
 }
 #logo-header {
     max-width: 60px;   
@@ -71,7 +73,7 @@ button{
     /* width: 50%; */
 }
 #navbar {
-    position: absolute;
+    position: fixed;
     right: 0;
     /* left: calc(100% - 450px); */
     max-width: 450px;
@@ -82,7 +84,7 @@ button{
     -webkit-box-shadow: -2px 3px 11px -2px rgba(0,0,0,0.45);
     -moz-box-shadow: -2px 3px 11px -2px rgba(0,0,0,0.45);
     box-shadow: -2px 3px 11px -2px rgba(0,0,0,0.45);
-    z-index: 3;
+    z-index: 1;
 }
 
 .flex-nav {
@@ -137,6 +139,7 @@ i {
     -webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
 }
 #btn-login-header {
     background-color: #FF4D01;

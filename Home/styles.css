@@ -1,12 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta+Mahee&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:600&display=swap');
+
 .div-flex {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     /* background-color: blue; */
 }
+.flex-exception {
+    height: auto !important;
+}
 .div-flex-h {
     flex-direction: row;
 }
+.flex-start {
+    justify-content: flex-start;
+}
+#body {
+    width: 100vw;
+    height: 3000px;
+    padding: 0 50px;
+    /* background-color: pink; */
+    z-index:4;
+}
+.carousel {
+    /* margin: 0px 30px 0px 30px; */
+    margin-bottom: 80px;
+    position: relative;
+    top: 35px;
+}
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(90%);
+}
+#img-bigger {
+    /* max-width: 95%; */
+    min-width: 110%;
+    /* background-color: pink;  */
+}
+#img-bigger img {
+    min-width: 90%;
+    position: relative;
+    left: 0px;
+}
+body, html {
+    overflow: auto;
+}
+
+.carousel-products {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+#products {
+    width: 1440px;
+    position: relative;
+    margin-top: 30px;
+    left: calc(50% - 720px);
+}
+#products1 {
+}
+.product {
+    max-width: 300px;
+}
+.images-align{
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+}
+.cardp a {
+    font-family: 'Mukta Mahee', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #24282b;
+    line-height: 5px;
+    /* margin-top: 10px; */
+}
+.cardp a:hover {
+    color: #24282b;
+}
+.card>p {
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.cardp .price {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+}
+.btn-add-car {
+    background-color: transparent;
+    border-radius: 4px;
+    color: #000;
+    border: 1px solid black;
+    height: 45px;
+    width: 180px;
+    font-family: 'Mukta Mahee', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+.btn-add-car:hover {
+    /* background-color: #FF4D01; */
+    /* background-color: #130248; */
+    /* background-color: #3D1550; */
+    background-color: #130248c7;
+    border: none;
+    color: #FFF;
+    transition: 0.3s;
+}
+.cardp {
+    border-radius: 4px;
+    background-color: #FFF;
+    width: 300px;
+    height: 400px;
+    /* margin: 7px; */
+    border: 0.8px #dddddd solid;
+    border-right: none;
+    padding: 10px;
+}
+.cardp:hover {
+    animation: fqade 0.5s;
+    /* transform: scale(1.1); */
+}
+.inivisible {
+    visibility: hidden;
+    /* display: none; */
+    /* position: absolute; */
+    width: 170px;
+    height: 150px;
+}
+.line {
+    width: 95%;
+    height: 0;
+    border: 1px #130248 solid;
+    /* margin: 10px 30px 30px 20px;  */
+}
+.titles h2 {
+    text-align: left;
+    font-size: 26px;
+}
+.titles {
+    position: relative;
+    top: 35px;
+    margin-left: 130px;
+    margin-bottom: 20px;
+}
+.product {
+    max-width: 700px;
+}
+
+.marcas-container{
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.marcas {
+    width: 180.02px;
+    height: 100.29px;
+    background-color: #130248;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 9px;
+    flex-direction: row;
+    margin: 10px;
+}
+.marcas-logos {
+    max-width: 180px;
+}
+
+/* .carousel-control-next, .control-product{
+    background-color: black;
+    opacity: 1;
+    height: 100px;
+    width: 50px;
+    position: relative;
+    top: 20px;
+} */
+footer {
+    background-color: #130248;
+    width: 100%;
+    /* top: 50px;
+    position: relative; */
+    height: 185px;
+}
+
+
+/* @keyframes fqade {
+    from {
+        /* opacity: 0; */
+        transform: scale(1)
+    }
+    to {
+        /* opacity: 1; */
+        transform: scale(1.2)
+    }
+} */
