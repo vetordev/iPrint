@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta+Mahee&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:500&display=swap');
 
 .div-flex {
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +22,7 @@
 }
 #body {
     width: 100vw;
-    height: 3000px;
+    height: 2900px;
     padding: 0 50px;
     /* background-color: pink; */
     z-index:4;
@@ -122,6 +123,9 @@ body, html {
     border-right: none;
     padding: 10px;
 }
+.last-cardp {
+    border-right: .8px #dddddd solid;
+}
 .cardp:hover {
     animation: fqade 0.5s;
     /* transform: scale(1.1); */
@@ -139,20 +143,19 @@ body, html {
     border: 1px #130248 solid;
     /* margin: 10px 30px 30px 20px;  */
 }
-.titles h2 {
-    text-align: left;
-    font-size: 26px;
-}
 .titles {
     position: relative;
     top: 35px;
     margin-left: 130px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 26px;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 .product {
-    max-width: 700px;
+    max-width: 200px;
+    cursor: pointer;
 }
-
 .marcas-container{
     position: relative;
     flex-direction: row;
@@ -171,6 +174,7 @@ body, html {
     border-radius: 9px;
     flex-direction: row;
     margin: 10px;
+    cursor: pointer;
 }
 .marcas-logos {
     max-width: 180px;
@@ -187,19 +191,78 @@ body, html {
 footer {
     background-color: #130248;
     width: 100%;
-    /* top: 50px;
-    position: relative; */
-    height: 185px;
+    height: 200px;
 }
-
-
-/* @keyframes fqade {
-    from {
-        /* opacity: 0; */
-        transform: scale(1)
-    }
-    to {
-        /* opacity: 1; */
-        transform: scale(1.2)
-    }
+footer h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 24px !important;
+    color: #FFF !important;
+    margin-bottom: 15px;
+}
+footer img {
+    max-width: 130px;
+}
+footer li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* .flex-footer {
+    justify-content: space-between;
 } */
+.footer-conteudo {
+    margin: 100px;
+    /* background-color: red; */
+    
+}
+.footer-text {
+    height: 100px;
+    text-align: justify;
+    color: #ddd;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 17px;
+    line-height: 25px;
+}
+footer i {
+    font-size: 19px;
+    font-weight: 100;
+    padding-right: 10px;
+}
+.contact-text div{
+    margin-bottom: 5px;
+}
+#sub-footer {
+    height: 70px;
+    width: 100%;
+    background-color: #130248c7;
+    color: wheat;
+    position: absolute;
+    top: calc(2900px + 200px);
+}
+.social-networks {
+    width: 50px;
+    height: 50px;
+    margin: 0px 15px;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    cursor: pointer;
+}
+.social-networks i {
+    /* background-color: #000; */
+    padding-left: 10px;
+    align-self: center;
+    text-align: center;
+    align-items: center;
+    font-size: 25px;
+}
+#youtube-icon {
+    background-color: red;
+}
+#facebook-icon {
+    background-color: #3b5998;
+}
+#instagram-icon {
+    background-color: #bc2a8d;
+}

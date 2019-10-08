@@ -10,6 +10,9 @@ body {
 button{
     outline: none;
 }
+.flex-start {
+    justify-content: flex-start;
+}
 .box-gray {
     box-shadow: 1px 3px 20px 0 rgba(30,86,78,.15);
     padding: 20px;
@@ -148,8 +151,8 @@ i {
     font-weight: 600;
     border-radius: 5px;
     font-size: 21px;
-    width: 120px;
-    height: 50px;
+    width: 110px;
+    height: 45px;
     -webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);

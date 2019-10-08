@@ -1,9 +1,12 @@
 const btnsLogin = [... document.querySelectorAll(".login")];
 const loginForm = document.querySelector("#container-visibility");
+const body = document.body;
 btnsLogin.forEach(btnLogin => {
     btnLogin.addEventListener("click", event => {
         // window.location.href = "../ClientArea/index.html";
         loginForm.style.display = 'block';
+        body.style.overflow = 'hidden';
+        // document.style.overflow = 'hidden';
     })
 });
 
