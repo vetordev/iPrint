@@ -64,11 +64,21 @@
     font-family: 'Source Sans Pro', sans-serif;
     color: #444;
 }
+.address>p span {
+    font-size: 16px;
+    color: #afafaf;
+    margin-left: 10px;
+}
+.address>p span blu {
+    
+    color: #19abfa;
+}
 .box-address {
     width: 250px;
     height: 230px;
     /* background-color: aqua; */
     margin-right: 15px;
+    border-radius: 4px;
 }
 .client-address {
     border: 2px #ddd solid;
@@ -80,6 +90,12 @@
 #add-address {
     border: 2px #ddd dashed;
     cursor: pointer;
+    color: #dddd;
+}
+#add-address h2 {
+    margin-top: 10px;
+    font-size: 19px;
+    text-align: center;
 }
 .plus-ico {
     color: #ddd !important;
@@ -173,8 +189,7 @@ input[type=text], input[type=password] {
     height: 35px;
     color: #FFF;
 }
-.btn-del {
-}
+
 .btn-editar {
     color: #3D1550 !important;
     font-family: 'Roboto', sans-serif;
@@ -183,6 +198,10 @@ input[type=text], input[type=password] {
     /* background-color: #3D1550; */
     background-color: #FFF;
     transition: 0.3s;  
+}
+.btn-editar:hover {
+    color: #FFFF !important;
+    background-color: #3D1550;
 }
 .btn-box .div-flex {
     text-align: right;

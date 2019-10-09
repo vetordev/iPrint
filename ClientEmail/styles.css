@@ -1,12 +1,6 @@
-.body-darker {
-    /* position: fixed; */
-    width: 100vw;
-    height: 100vh;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background: rgba(#000, .4);
-    z-index: 1;
-    background-color: red;
-}
+@import url('https://fonts.googleapis.com/css?family=Mukta+Mahee&display=swap');
+
+
 #containerr {
     width: 100%;
     height: calc(100vh - 70px);    
@@ -22,7 +16,7 @@
     width: 80%;
     height: 150px;
     background-color: rgb(153, 0, 0);
-    margin: 30px;
+    margin: 100px 30px 30px 30px;
 }
 .div-flex {
     width: 100%;
@@ -41,7 +35,7 @@
     height: 300px;
 }
 .address{
-    width: 80%;
+    width: 40%;
     font-family: 'Roboto', sans-serif;
     
     /* position: absolute;
@@ -64,4 +58,18 @@ input[type=text], input[type=password] {
     color: black;
     border-radius: 4px;
     font-size: 17px;
+}
+
+#btn-save {
+    background-color: #FF4D01;
+    /* background-color: #130248; */
+    border: none;
+    border-radius: 4px;
+    width: 170px;
+    height: 40px;
+    color: #FFF;
+    margin-top: 20px;
+    font-family: 'Mukta Mahee', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
 }
