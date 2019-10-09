@@ -49,11 +49,11 @@
     border-radius: 50%;
     border: 3px solid #ddd;
     margin: 0;
-    background-image: url(../img/avatar2.jpeg);
+    background-image: url(../../img/avatar2.jpeg);
     background-size: contain;
     background-color: #444;
     cursor: pointer;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .photo-filter {
     border: none;
@@ -110,6 +110,9 @@ form {
     height: 100%;
     margin-top: 20px;
     justify-content: flex-start !important;
+}
+#email {
+    margin-top: 20px;
 }
 #physical {
     display: flex;

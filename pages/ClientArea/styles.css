@@ -23,7 +23,7 @@
     width: 80%;
     height: 250px;
     background-color: rgb(153, 0, 0);
-    margin: 30px;
+    margin: 100px 30px 30px 30px;
 }
 /* .banner {
     height: 200px;
@@ -122,7 +122,7 @@
     position: absolute;
     border-radius: 8px;
     border: 3px solid #FFF;
-    background-image: url('../img/avatar2.jpeg');
+    background-image: url('../../img/avatar2.jpeg');
     background-size: contain;
     -webkit-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
     -moz-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
