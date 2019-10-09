@@ -4,14 +4,14 @@
 - [x] Adicionar novo endereço
 - [x] Selecionar endereço principal
 - [x] Excluir endereços
-- [ ] Editar endereços
+- [x] Editar endereços
 - [ ] Aviso de exclusão
 - [ ] Validação (animações)
 
 - ClientAccount
-- [ ] Escolha de avatares
-- [ ] Formulários específicos para cada tipo de pessoa
-- [ ] Estilização
+- [x] Escolha de avatares
+- [x] Formulários específicos para cada tipo de pessoa
+- [x] Estilização
 - [ ] Validação (animações)
 
 - ClientArea
