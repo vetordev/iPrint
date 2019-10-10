@@ -1,3 +1,33 @@
+window.onload = function onload(){
+    loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+}
+
+function loadAddresses(address) {
+    var cep = document.getElementById('cep_cli');
+    var logradouro = document.getElementById('logradouro_cli');
+    var numero = document.getElementById('numero_cli');
+    var bairro = document.getElementById('bairro_cli');
+    var cidade = document.getElementById('cidade_cli');
+    var uf = document.getElementById('uf_cli');
+    var complemento = document.getElementById('complemento_cli');
+
+    var campos1 = address[0].split(',');
+
+    cep.innerHTML = campos1[0];
+    logradouro.innerHTML = campos1[1];
+    numero.innerHTML = campos1[2];
+    bairro.innerHTML = campos1[3];
+    cidade.innerHTML = campos1[4];
+    uf.innerHTML = campos1[5];
+    complemento.innerHTML = campos1[6];
+
+    if (address.length == 2){
+        var campos2 = address[1].split(',');
+
+        
+    }
+}
+
 function showAddAddress() {
     var formAddress = document.getElementById('form-address');
     var bodyFilter = document.getElementById('body-filter');

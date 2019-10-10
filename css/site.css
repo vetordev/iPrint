@@ -10,6 +10,29 @@ body {
 button{
     outline: none;
 }
+.search-bar i {
+    position: absolute;
+    font-size: 22px;
+    color: #dddd;
+    /* padding */
+    /* left: -2px; */
+    z-index: 4;
+}
+.search-bar #search-ico {
+    height: 32px;
+    cursor: pointer;
+    width: 30px;
+    background-color: #FFF;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 13px;
+    border-radius: 4px;
+    /* left: calc(200% - 30px); */
+    /* left: 510px; */
+    left: 37.5%;
+}
 .flex-start {
     justify-content: flex-start;
 }
