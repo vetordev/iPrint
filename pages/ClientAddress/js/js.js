@@ -126,42 +126,41 @@ function createElement(info) {
     }
 }
 
-
 function showAddAddress() {
     var formAddress = document.getElementById('form-address');
     var bodyFilter = document.getElementById('body-filter');
     formAddress.style.display = 'block';
     bodyFilter.style.display = 'block';
+    
+    var btnAdd = document.getElementById('btn-add-address');
+    var btnEdit = document.getElementById('btn-edit-address');
+    btnAdd.style.display = "block";
+    btnEdit.style.display = "none";
+
 }
 function filterHidden() {
     var formAddress = document.getElementById('form-address');
     var bodyFilter = document.getElementById('body-filter');
     formAddress.style.display = 'none';
     bodyFilter.style.display = 'none';
+
+    const fields = document.getElementsByClassName('field-form');
+    for (i = 0; i < fields.length; i++){
+        fields[i].value = "";
+    }
 }
 
 var aux = 0;
 function addAddress() {
-    var btn = document.getElementById('btn-add-address');
     const fields = document.getElementsByClassName('field-form');
 
-    if (btn.innerHTML != "Salvar Alterações"){
-        createElement(fields);
+    createElement(fields);
 
-        for (var i = 0; i < fields.length; i++) {
-            fields[i].value = "";
-        }
-        filterHidden();
-        
-    }else{
-        const words = document.getElementsByClassName(aux);
-        for (var i = 0; i < words.length; i++){
-            
-            words[i].innerHTML = fields[i].value;
-        }
-        btn.innerHTML = "Adicionar endereço";
-        filterHidden();
+    for (var i = 0; i < fields.length; i++) {
+        fields[i].value = "";
     }
+    filterHidden();
+        
 }
 
 function deleteAddress(del) {
@@ -199,10 +198,19 @@ function editAddress(boxId){
         fields[i].value = words[i].innerHTML;
     }
     showAddAddress();
-    var btn = document.getElementById('btn-add-address');
-        btn.innerHTML = "Salvar Alterações";
-    aux = boxId;
-    // // alert (fields.length)
-    // alert (words[0].innerHTML);
-    // alert (fields[0].placeholder);
+    var btnAdd = document.getElementById('btn-add-address');
+    var btnEdit = document.getElementById('btn-edit-address');
+    btnAdd.style.display = "none";
+    btnEdit.style.display = "block";
+    aux = boxId;    
+}
+
+function saveEditions() {
+    const words = document.getElementsByClassName(aux);
+    const fields = document.getElementsByClassName('field-form');
+    for (var i = 0; i < words.length; i++){
+        
+        words[i].innerHTML = fields[i].value;
+    }
+    filterHidden();
 }

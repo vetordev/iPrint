@@ -38,3 +38,14 @@ fields.forEach(field => {
 
 });
 
+function showLogin() {
+    var loginContainer = document.getElementById("body-filter");
+    loginContainer.style.display = "flex";
+    document.body.style.overflowY = "hidden";
+    document.html.style.overflowY = "hidden";
+}
+
+function filterHidden() {
+    var bodyFilter = document.getElementById('body-filter');
+    bodyFilter.style.display = 'none';
+}

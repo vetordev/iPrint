@@ -118,6 +118,12 @@
     font-family: 'Mukta Mahee', sans-serif;
 }
 #btn-add-address {
+    display: block;
+}
+#btn-edit-address {
+    display: none;
+}
+.btn-card {
     background-color: #FF4D01;
     /* background-color: #130248; */
     border: none;
