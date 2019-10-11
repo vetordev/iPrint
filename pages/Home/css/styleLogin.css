@@ -4,7 +4,28 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
 
-
+#body-filter1 {
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+   z-index: 40;
+   position: fixed;  
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+   display: none;
+}
+#body-filter {
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+   z-index: 41;
+   position: fixed;  
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+   display: none;
+}
 ::-moz-selection { /* Code for Firefox */
    color: #3D1550;
    background: #FFF;
@@ -19,19 +40,17 @@
    color: #FFF
 }
 
-#container-visibility {
-   display: none;
-}
 .container-fluid {
-    max-width: 100vw;
-    height: 1000px;
-    /* background: #130241; */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -100px;
+   max-width: 100vw;
+   height: 100vh;
+   /* background: #130241; */
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   /* position: absolute; */
+   top: -100px;
+   z-index: 30;
 }
 .child{
    

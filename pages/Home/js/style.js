@@ -38,3 +38,17 @@ fields.forEach(field => {
 
 });
 
+function showLogin() {
+    var loginContainer = document.getElementById("body-filter");
+    loginContainer.style.display = "flex";
+    var container = document.getElementsByClassName("container-fluid")[0];
+    container.style.display = "flex";
+}
+
+function filterHidden() {
+    var bodyFilter = document.getElementById('body-filter');
+    bodyFilter.style.display = 'none';
+    var container = document.getElementsByClassName("container-fluid")[0];
+    container.style.display = "none";
+    // alert('raios');
+}

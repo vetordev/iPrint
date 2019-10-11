@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
+#body-filter {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 60;
+    position: absolute;
+    display: none;
+}
 body {
     margin: 0 auto;
     padding: 0;
@@ -9,6 +17,29 @@ body {
 }
 button{
     outline: none;
+}
+.search-bar i {
+    position: absolute;
+    font-size: 22px;
+    color: #dddd;
+    /* padding */
+    /* left: -2px; */
+    z-index: 4;
+}
+.search-bar #search-ico {
+    height: 32px;
+    cursor: pointer;
+    width: 30px;
+    background-color: #FFF;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 13px;
+    border-radius: 4px;
+    /* left: calc(200% - 30px); */
+    /* left: 510px; */
+    left: 37.5%;
 }
 .flex-start {
     justify-content: flex-start;
@@ -27,7 +58,7 @@ button{
     background-color: #130241;
     width: 100%;
     margin: 0;
-    z-index: 1;
+    z-index: 50;
 }
 #logo-header {
     max-width: 60px;   

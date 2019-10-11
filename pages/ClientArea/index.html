@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home - iPrint</title>
+    <title>iPrint - Meu Espaço</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../../css/site.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../js/navbar.js"></script>
     <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
+    <script src="js/fetchData.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/js.js"></script>
 </head>
 <body>
+    <div id="body-filter" onclick="filterHidden()"></div>
     <div class="header">
         <div class="header-part1">
             <div class="logo">
-                <img src="../../img/logo.jpeg" alt="" id="logo-header">
+                <img src="../../img/newlogo2.jpeg" alt="" id="logo-header">
             </div>
             <div class="search-bar">
                 <input type="text" name="" id="search-bar" placeholder="O que você procura?">
+                <div id="search-ico"><i class="fas fa-search"></i></div>
             </div>
         </div>
         <div class="header-part2">
@@ -59,27 +66,36 @@
                 <p>Meu espaço</p>
                 <!-- <div class="line"></div> -->
                 <div class="box-gray">
+                    <div class="div-flex">
+                        <div id="card-confirm">
+                            <p>Deseja mesmo excluir sua conta? Essa ação não poderá ser desfeita.</p>
+                            <div id="buttons" class="div-flex div-flex-h flex-end">
+                                <button type="button" class="btn-card">Cancelar</button>
+                                <button type="button" class="btn-card btn-danger btn" id="btn-exclud">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
                 <i class="fas fa-power-off" title="Sair"></i>
                 <div class="div-flex">
                     <div class="row row1 div-flex div-flex-h">
-                                <div class="div-flex col-lg-1 col-xs-12 div-flex">
-                                    <div id="photo-profile"></div>
-                                </div>
+                        <div class="div-flex col-lg-1 col-xs-12 div-flex">
+                            <div id="photo-profile"></div>
+                        </div>
 
-                                <div class="col-lg-3 col-xs-12 div-flex">
-                                    <label for="name">Seu nome</label>
-                                    <p>Vitória Lopes</p>
-                                </div>
+                        <div class="col-lg-3 col-xs-12 div-flex">
+                            <label for="name">Seu nome</label>
+                            <p id="username">Vitória Lopes</p>
+                        </div>
 
-                                <div class="col-lg-4 col-xs-12 div-flex">
-                                    <label for="email">Seu melhor email</label>
-                                    <p>heyvitoria.lopes@gmail.com</p>
-                                </div>
+                        <div class="col-lg-4 col-xs-12 div-flex">
+                            <label for="email">Seu melhor email</label>
+                            <p id="useremail">heyvitoria.lopes@gmail.com</p>
+                        </div>
 
-                                <div class="col-lg-3 col-xs-12 div-flex">
-                                    <label for="tel">Telefone</label>
-                                    <p>(11) 4002-8922</p>
-                                </div>
+                        <div class="col-lg-3 col-xs-12 div-flex">
+                            <label for="tel">Telefone</label>
+                            <p id="usertel">(11) 4002-8922</p>
+                        </div>
                     </div>
                 </div>
                 <div class="div-flex">
@@ -95,7 +111,7 @@
                         </div>
                     </div>
                         <div class="btn-dg-container">
-                            <button type="button" class="btn btn-danger">Excluir conta</button>
+                            <button type="button" class="btn btn-danger" id="btn-del-account" onclick="showCard()">Excluir conta</button>
                         </div>
                 </div>
                 </div>

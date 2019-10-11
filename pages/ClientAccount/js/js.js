@@ -9,13 +9,16 @@ function photoHidden() {
 function photoClick() {
     var avatares = document.getElementById("avatares");
     avatares.style.display = "block";
-
+    var bodyFilter = document.getElementById('body-filter');
+    bodyFilter.style.display = 'block';
 }
 function photoChoice(avatar) {
     var avatares = document.getElementById("avatares");
     var photo = document.getElementsByClassName("photo-profile")[0];
     avatares.style.display = "none";
     photo.style.backgroundImage = avatar;
+    var bodyFilter = document.getElementById('body-filter');
+    bodyFilter.style.display = 'none';
 }
 
 window.onload = function verificaP() {
@@ -29,4 +32,10 @@ window.onload = function verificaP() {
         legal.style.display = 'none';
         physical.style.display = 'flex';
     }
+}
+function filterHidden() {
+    var bodyFilter = document.getElementById('body-filter');
+    bodyFilter.style.display = 'none';
+    var avatares = document.getElementById("avatares");
+    avatares.style.display = "none";
 }

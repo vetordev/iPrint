@@ -4,34 +4,40 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Home - iPrint</title>
+        <title>iPrint - Endereços de entrega</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="../../css/site.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../../js/navbar.js"></script>
         <script type="text/javascript" src="js/js.js"></script>
         <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
+        <script src="js/updateAddress.js"></script>
+        <script src="js/fetchAddress.js"></script>
+        <script src="js/loadAddress.js"></script>
     </head>
     <body>
-        <div id="body-filter" onclick="filterHidden()"></div>
-        <div class="header">
+    <div id="body-filter" onclick="filterHidden()"></div>
+    <div class="header">
             <div class="header-part1">
                 <div class="logo">
-                    <img src="../../img/logo.jpeg" alt="" id="logo-header">
+                        <img src="../../img/newlogo2.jpeg" alt="" id="logo-header">
                 </div>
                 <div class="search-bar">
                     <input type="text" name="" id="search-bar" placeholder="O que você procura?">
+                    <div id="search-ico"><i class="fas fa-search"></i></div>
                 </div>
             </div>
             <div class="header-part2">
                     <div class="buttons">
                         <div class="div-flex div-flex-h">
-                            <button type="button" class="btn-header">Impressoras</a></button>
-                            <button type="button" class="btn-header">Scanners</a></button>
-                            <button type="button" class="btn-header">Tonners</a></button>
+                            <button type="button" class="btn-header">Impressoras</button>
+                            <button type="button" class="btn-header">Scanners</button>
+                            <button type="button" class="btn-header">Toners</button>
                         </div>
                     </div>
                     <split></split>
@@ -40,71 +46,77 @@
                             <i class="fas fa-heart"></i>
                             <i class="fas fa-shopping-cart"></i>
                         </div>
-                            <button type="button" class="btn" id="btn-login-header">Login</button>
+                            <button type="button" class="login show-login" id="btn-login-header" onclick="showLogin()">Login</button>
                     </div>
             </div>
             <div class="ico-menu" onclick="showNavbar()"><i class="fas fa-bars" id="ico-menu"></i></div>
         </div>
-        <div id="navbar">
-            <div class="div-flex flex-nav">
-                <button type="button" class="btn-navbar">Impressoras</button>
-                <button type="button" class="btn-navbar">Scanners</button>
-                <button type="button" class="btn-navbar">Tooners</button>
-                <button type="button" class="btn-navbar" id="btn-car">Carrinho</button>
-                <button type="button" class="btn-navbar">Lista de desejos</button>
-                <button type="button" class="btn-navbar btn" id="btn-login-navbar">Login</button>
-            </div>
+    <div id="navbar">
+        <div class="div-flex flex-nav">
+            <button type="button" class="btn-navbar">Impressoras</button>
+            <button type="button" class="btn-navbar">Scanners</button>
+            <button type="button" class="btn-navbar">Tooners</button>
+            <button type="button" class="btn-navbar" id="btn-car">Carrinho</button>
+            <button type="button" class="btn-navbar">Lista de desejos</button>
+            <button type="button" class="btn-navbar btn" id="btn-login-navbar">Login</button>
         </div>
+    </div>
 
-        <div id="containerr">
-            <div id="banner"></div>
-            <div class="address">
-            <p>Endereços de entrega <span>(seu endereço padrão está contornado de <b>azul</b>. Clique em outro endereço para torná-lo padrão.)</span></p>
-            <div class="box-gray">
-                <div class="row div-flex div-flex-h" id="divmae">
-                    <div class="box-address" id="add-address" onclick="showAddAddress()">
-                        <div class="div-flex">
-                            <i class="fas fa-plus-circle plus-ico"></i>
-                            <h2>Adicionar endereço</h2>
-                        </div>
+    <div id="containerr">
+        <div id="banner"></div>
+        <div class="address">
+        <p>Endereços de entrega <span>(seu endereço padrão está contornado de <b>azul</b>. Clique em outro endereço para torná-lo padrão.)</span></p>
+        <div class="box-gray">
+            <div class="row div-flex div-flex-h" id="divmae">
+                <div class="box-address" id="add-address" onclick="showAddAddress()">
+                    <div class="div-flex">
+                        <i class="fas fa-plus-circle plus-ico"></i>
+                        <h2>Adicionar endereço</h2>
                     </div>
-                    <div class="box-address client-address 1" id="dos" onclick="mainAddress(id)">
-                        <div class="info-address" id="teste">
-                            <div class="endereco"><b>CEP: </b><span id="cep_cli" class="info end-uno">06765-000</span> <br>
-                            <span id="logradouro_cli" class="info end-uno">Estrada do São Francisco</span><span>, </span><span id="numero_cli" class="info end-uno">1900</span>
-                            <span> - </span><span id="bairro_cli" class="info end-uno">Parque Taboão</span> <br> 
-                            <span id="cidade_cli" class="info end-uno">Taboão da Serra</span><span> - </span><span id="uf_cli" class="info end-uno">SP</span> <br>
-                            <span id="complemento_cli" class="info end-uno">Apto 102 bloco C</span></div>
-                        </div>
-                        <div class="btn-box">
-                            <div class="div-flex div-flex-h" id="div-little-mae">
-                                <button type="button" class="btn-editar" onclick="editAddress('end-uno')">Editar</button>
-                                <button type="button" class="btn-del btn btn-danger" id="2" onclick="deleteAddress(id)">Excluir</button>
-                            </div>
+                </div>
+                <div class="box-address client-address" id="dos" onclick="mainAddress(id)">
+                    <div class="info-address" id="teste">
+                        <div class="endereco"><b>CEP: </b><span id="cep_cli" class="info end-uno">06765-000</span> <br>
+                        <span id="logradouro_cli" class="info end-uno">Estrada do São Francisco</span><span>, </span><span id="numero_cli" class="info end-uno">1900</span>
+                        <span> - </span><span id="bairro_cli" class="info end-uno">Parque Taboão</span> <br> 
+                        <span id="cidade_cli" class="info end-uno">Taboão da Serra</span><span> - </span><span id="uf_cli" class="info end-uno">SP</span> <br>
+                        <span id="complemento_cli" class="info end-uno">Apto 102 bloco C</span></div>
+                    </div>
+                    <div class="btn-box">
+                        <div class="div-flex div-flex-h" id="div-little-mae">
+                            <button type="button" class="btn-editar" onclick="editAddress('end-uno')">Editar</button>
+                            <button type="button" class="btn-del btn btn-danger" id="2" onclick="deleteAddress(id)">Excluir</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-
-        <div class="div-flex" id="divv">
-        <div id="form-address">
-            <img src="../img/clsoe.png" alt="" onclick="filterHidden()">
-            <div class="div-flex flex-start">
-                <h2>Seu novo endereço</h2>
-                <input type="text" class="field-form" name="cep" id="cep" placeholder="CEP">
-                <input type="text" name="logradouro" class="field-form" id="logradouro" placeholder="Endereço">
-                <input type="text" name="numero" class="field-form" id="numero" placeholder="Número">
-                <input type="text" name="bairro" class="field-form" id="bairro" placeholder="Bairro">
-                <input type="text" name="cidade" class="field-form" id="cidade" placeholder="Cidade">
-                <input type="text" name="uf" class="field-form" id="uf" placeholder="UF">
-                <input type="text" name="complemento" class="field-form" id="complemento" placeholder="Complemento">
-                <button type="button" onclick="addAddress()" id="btn-add-address">Adicionar endereço</button>
+    </div>
+    </div>
+<!-- 
+        <div class="div-flex">
+            <div id="card-confirm">
+                <p>Deseja mesmo escluir e</p>
             </div>
+        </div> -->
+    <div class="div-flex" id="divv">
+    <div id="form-address">
+        <img src="../img/clsoe.png" alt="" onclick="filterHidden()">
+        <div class="div-flex flex-start">
+            <h2>Seu novo endereço</h2>
+            <input type="text" class="field-form" name="cep" id="cep" placeholder="CEP">
+            <input type="text" name="logradouro" class="field-form" id="logradouro" placeholder="Endereço">
+            <input type="text" name="numero" class="field-form" id="numero" placeholder="Número">
+            <input type="text" name="bairro" class="field-form" id="bairro" placeholder="Bairro">
+            <input type="text" name="cidade" class="field-form" id="cidade" placeholder="Cidade">
+            <input type="text" name="uf" class="field-form" id="uf" placeholder="UF">
+            <input type="text" name="complemento" class="field-form" id="complemento" placeholder="Complemento">
+            <button type="button" onclick="addAddress()" class="btn-card" id="btn-add-address">Adicionar endereço</button>
+            <button type="button" onclick="saveEditions()" class="btn-card" id="btn-edit-address">Salvar alterações</button>
         </div>
-        </div>
+    </div>
+    </div>
 
-        <script type="text/javascript" src="../../routes.js"></script>
-    </body>
-    </html>
+    <script type="text/javascript" src="../../routes.js"></script>
+</body>
+</html>

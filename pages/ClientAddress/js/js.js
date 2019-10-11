@@ -1,126 +1,184 @@
+window.onload = function onload(){
+    // loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+    // loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+    loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,']);
+
+}
+
+function loadAddresses(address) {
+    var cep = document.getElementById('cep_cli');
+    var logradouro = document.getElementById('logradouro_cli');
+    var numero = document.getElementById('numero_cli');
+    var bairro = document.getElementById('bairro_cli');
+    var cidade = document.getElementById('cidade_cli');
+    var uf = document.getElementById('uf_cli');
+    var complemento = document.getElementById('complemento_cli');
+
+    var campos1 = address[0].split(',');
+
+    cep.innerHTML = campos1[0];
+    logradouro.innerHTML = campos1[1];
+    numero.innerHTML = campos1[2];
+    bairro.innerHTML = campos1[3];
+    cidade.innerHTML = campos1[4];
+    uf.innerHTML = campos1[5];
+    complemento.innerHTML = campos1[6];
+
+    if (address.length == 2){
+        var campos2 = address[1].split(',');
+        createElement(campos2);
+    }
+    else if (address.length == 3) {
+        var campos2 = address[1].split(',');
+        var campos3 = address[2].split(',');
+
+        createElement(campos2);
+        createElement(campos3);
+    }
+}
+
+function createElement(info) {
+    var idDel = Math.random()+1;
+    var boxId = 'end' + idDel;
+
+    const divmae = document.getElementById("divmae");
+    const divQtd =  document.getElementsByClassName('box-address').length;
+
+    var newBox = document.createElement('div');
+    var newInfo = document.createElement('div');
+    var newEndereco = document.createElement('p');
+    var newLogr = document.createElement('span');
+    var newCep = document.createElement('span');
+    var newNum = document.createElement('span');
+    var newBairro = document.createElement('span');
+    var newCidade = document.createElement('span');
+    var newUf = document.createElement('span');
+    var newCompl = document.createElement('span');
+    var newbr = document.createElement('br');
+    var newbr2 = document.createElement('br');
+    var newbr3 = document.createElement('br');
+    var newB = document.createElement('b');
+    var newBtnBox = document.createElement('div');
+    var newDivFlex = document.createElement('div');
+    var newBtn = document.createElement('button');
+    var newBtn2 = document.createElement('button');
+    var newVirg = document.createElement('span');
+    var newTraco = document.createElement('span');
+    var newTraco2 = document.createElement('span');
+
+    
+    const show = [newCep, newLogr, newNum, newBairro, newCidade, newUf, newCompl];
+
+    newBox.setAttribute('class', 'box-address client-address');
+    newBox.setAttribute('id', idDel);
+    newBox.setAttribute('onclick', 'mainAddress(id)');
+        newInfo.setAttribute('class', 'info-address');
+            newEndereco.setAttribute('p', 'endereco');
+        // itens dentro de info-address adicionados no for
+
+        newBtnBox.setAttribute('class', 'btn-box');
+            newDivFlex.setAttribute('class', 'div-flex div-flex-h');
+                newBtn.setAttribute('type', 'button');
+                newBtn.setAttribute('class', 'btn-editar');
+                newBtn.setAttribute('onclick', "editAddress('"+boxId+"')")
+                newBtn2.setAttribute('type', 'button');
+                newBtn2.setAttribute('id', idDel);
+                newBtn2.setAttribute('onclick', 'deleteAddress(id)');
+                newBtn2.setAttribute('class', 'btn-del btn btn-danger');
+
+
+    if (divQtd < 4){
+        newBtn.innerHTML = "Editar";
+        newBtn2.innerHTML = "Excluir";
+        newB.innerHTML = "CEP: ";
+        newVirg.innerHTML = ", ";
+        newTraco.innerHTML = " - ";
+        newTraco2.innerHTML = " - ";
+        // newbr.innerHTML = "\n";
+
+        divmae.appendChild(newBox);
+        newBox.appendChild(newInfo);
+        newInfo.appendChild(newEndereco);
+        for (var i = 0; i < info.length; i++) {
+            if (info[i].tagName == "INPUT") show[i].innerHTML = info[i].value;
+            else show[i].innerHTML = info[i];
+            show[i].setAttribute('class', 'info '+boxId);
+        }
+        newEndereco.appendChild(newB);
+        newEndereco.appendChild(show[0]);
+        newEndereco.appendChild(newbr2);
+        newEndereco.appendChild(show[1]);
+        newEndereco.appendChild(newVirg);
+        newEndereco.appendChild(show[2]);
+        newEndereco.appendChild(newTraco2);
+        newEndereco.appendChild(show[3]);
+        newEndereco.appendChild(newbr3);
+        newEndereco.appendChild(show[4]);
+        newEndereco.appendChild(newTraco);
+        newEndereco.appendChild(show[5]);
+        newEndereco.appendChild(newbr);
+        newEndereco.appendChild(show[6]);
+
+        newBox.appendChild(newBtnBox);
+        newBtnBox.appendChild(newDivFlex);
+        newDivFlex.appendChild(newBtn);
+        newDivFlex.appendChild(newBtn2);
+    }
+}
+
 function showAddAddress() {
     var formAddress = document.getElementById('form-address');
     var bodyFilter = document.getElementById('body-filter');
     formAddress.style.display = 'block';
     bodyFilter.style.display = 'block';
+    
+    var btnAdd = document.getElementById('btn-add-address');
+    var btnEdit = document.getElementById('btn-edit-address');
+    btnAdd.style.display = "block";
+    btnEdit.style.display = "none";
+
 }
 function filterHidden() {
     var formAddress = document.getElementById('form-address');
     var bodyFilter = document.getElementById('body-filter');
     formAddress.style.display = 'none';
     bodyFilter.style.display = 'none';
+
+    const fields = document.getElementsByClassName('field-form');
+    for (i = 0; i < fields.length; i++){
+        fields[i].value = "";
+    }
 }
 
 var aux = 0;
 function addAddress() {
-    var btn = document.getElementById('btn-add-address');
     const fields = document.getElementsByClassName('field-form');
 
-    if (btn.innerHTML != "Salvar Alterações"){
-        
-        var idDel = Math.random();
-        var boxId = 'end' + idDel;
+    createElement(fields);
 
-        const divmae = document.getElementById("divmae");
-        const divQtd =  document.getElementsByClassName('box-address').length;
-
-        var newBox = document.createElement('div');
-        var newInfo = document.createElement('div');
-        var newEndereco = document.createElement('p');
-        var newLogr = document.createElement('span');
-        var newCep = document.createElement('span');
-        var newNum = document.createElement('span');
-        var newBairro = document.createElement('span');
-        var newCidade = document.createElement('span');
-        var newUf = document.createElement('span');
-        var newCompl = document.createElement('span');
-        var newbr = document.createElement('br');
-        var newbr2 = document.createElement('br');
-        var newbr3 = document.createElement('br');
-        var newB = document.createElement('b');
-        var newBtnBox = document.createElement('div');
-        var newDivFlex = document.createElement('div');
-        var newBtn = document.createElement('button');
-        var newBtn2 = document.createElement('button');
-        var newVirg = document.createElement('span');
-        var newTraco = document.createElement('span');
-        var newTraco2 = document.createElement('span');
-
-        
-        const show = [newCep, newLogr, newNum, newBairro, newCidade, newUf, newCompl];
-
-        newBox.setAttribute('class', 'box-address client-address');
-        newBox.setAttribute('id', idDel);
-        newBox.setAttribute('onclick', 'mainAddress(id)');
-            newInfo.setAttribute('class', 'info-address');
-                newEndereco.setAttribute('p', 'endereco');
-            // itens dentro de info-address adicionados no for
-
-            newBtnBox.setAttribute('class', 'btn-box');
-                newDivFlex.setAttribute('class', 'div-flex div-flex-h');
-                    newBtn.setAttribute('type', 'button');
-                    newBtn.setAttribute('class', 'btn-editar');
-                    newBtn.setAttribute('onclick', "editAddress('"+boxId+"')")
-                    newBtn2.setAttribute('type', 'button');
-                    newBtn2.setAttribute('id', idDel);
-                    newBtn2.setAttribute('onclick', 'deleteAddress(id)');
-                    newBtn2.setAttribute('class', 'btn-del btn btn-danger');
-
-
-        if (divQtd < 4){
-            newBtn.innerHTML = "Editar";
-            newBtn2.innerHTML = "Excluir";
-            newB.innerHTML = "CEP: ";
-            newVirg.innerHTML = ", ";
-            newTraco.innerHTML = " - ";
-            newTraco2.innerHTML = " - ";
-            // newbr.innerHTML = "\n";
-
-            divmae.appendChild(newBox);
-            newBox.appendChild(newInfo);
-            newInfo.appendChild(newEndereco);
-            for (var i = 0; i < fields.length; i++) {
-                show[i].innerHTML = fields[i].value;
-                show[i].setAttribute('class', 'info '+boxId);
-            }
-            newEndereco.appendChild(newB);
-            newEndereco.appendChild(show[0]);
-            newEndereco.appendChild(newbr2);
-            newEndereco.appendChild(show[1]);
-            newEndereco.appendChild(newVirg);
-            newEndereco.appendChild(show[2]);
-            newEndereco.appendChild(newTraco2);
-            newEndereco.appendChild(show[3]);
-            newEndereco.appendChild(newbr3);
-            newEndereco.appendChild(show[4]);
-            newEndereco.appendChild(newTraco);
-            newEndereco.appendChild(show[5]);
-            newEndereco.appendChild(newbr);
-            newEndereco.appendChild(show[6]);
-
-            for (var i = 0; i < fields.length; i++) {
-                fields[i].value = "";
-            }
-            newBox.appendChild(newBtnBox);
-            newBtnBox.appendChild(newDivFlex);
-            newDivFlex.appendChild(newBtn);
-            newDivFlex.appendChild(newBtn2);
-
-            filterHidden();
-        }
-    }else{
-        const words = document.getElementsByClassName(aux);
-        for (var i = 0; i < words.length; i++){
-            
-            words[i].innerHTML = fields[i].value;
-        }
-        btn.innerHTML = "Adicionar endereço";
-        filterHidden();
+    for (var i = 0; i < fields.length; i++) {
+        fields[i].value = "";
     }
+    filterHidden();
+        
 }
+
+// function showCard(del) {
+//     var card = document.getElementById('card-confirm');
+//     card.style.display = "block";
+
+//     deleteAddress(del);
+// }
+// function confirmExclud(del) {
+
+// }
+
 
 function deleteAddress(del) {
     var coiso = document.getElementById(del);
+    
+    var boxaddress = document.getElementsByClassName('box-address');
+    
     var a;
     if (del == 2)
         a = coiso.parentNode.parentNode.parentNode;
@@ -129,6 +187,9 @@ function deleteAddress(del) {
     if (divQtd > 2)
         a.remove();
     else alert('você não pode remover todos seus endereços');
+    if (coiso.style.border == '3px solid rgb(25, 171, 250)'){
+        boxaddress[1].style.border = '3px solid rgb(25, 171, 250)';
+    }
 }
 
 function mainAddress(id) {
@@ -154,10 +215,19 @@ function editAddress(boxId){
         fields[i].value = words[i].innerHTML;
     }
     showAddAddress();
-    var btn = document.getElementById('btn-add-address');
-        btn.innerHTML = "Salvar Alterações";
-    aux = boxId;
-    // // alert (fields.length)
-    // alert (words[0].innerHTML);
-    // alert (fields[0].placeholder);
+    var btnAdd = document.getElementById('btn-add-address');
+    var btnEdit = document.getElementById('btn-edit-address');
+    btnAdd.style.display = "none";
+    btnEdit.style.display = "block";
+    aux = boxId;    
+}
+
+function saveEditions() {
+    const words = document.getElementsByClassName(aux);
+    const fields = document.getElementsByClassName('field-form');
+    for (var i = 0; i < words.length; i++){
+        
+        words[i].innerHTML = fields[i].value;
+    }
+    filterHidden();
 }

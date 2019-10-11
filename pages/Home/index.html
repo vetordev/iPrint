@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home - iPrint</title>
+    <title>iPrint</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="../../css/site.css">
     <link rel="stylesheet" href="css/styleLogin.css">
@@ -16,12 +16,104 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../js/navbar.js"></script>
     <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+    <script src="js/address.js"></script>
 </head>
 <body>
+    <div id="body-filter" onclick="filterHidden()">
+    <!-- <div id="body-filter" onclick="filterHidden()"></div> -->
+    <div class="container-fluid">
+        <div class="child row">
+                <form id="form" class="col-sm-6 col-xs-12">
+                    <p class="title"> <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!</p>
+                        <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1500)" class="required-field field">
+                        <img src="../../img/loading.gif" id="load">
+                        <!-- <i class="far fa-times-circle"></i> -->
+                    <div id="init">
+                        <p class="text-init"> Se você já possui uma conta, pode fazer login com ela! Se ainda não possui, não se preocupe, nós cadastraremos você.</p>
+                        <p>_________________________ <or> OU </or> _________________________</p>
+                        
+                            <button id="btn-facebook" class="acol-sm-6 btn-social btns" value=""><i class="fab fa-facebook-square ico-facebook"></i> Entre com o Facebook </button> 
+                            <!-- <button id="btn-google" class="acol-sm-6 btn-social" value=""><img class="fa-google ico-google" src="img/google-icon.png">  Entre com o Google</button> -->
+                            <button type="button" id="pspsps" onclick="pspsps(window.location.href = '../ClientArea/index.html')">pspsps</button>
+                    </div>
+    
+                    <div id="login-screen">
+                        <p class="welcome"> Bem-vindo(a) de volta, <user> Vivi Programmer Designer! </user></p>
+                        <input type="password" name="password" id="password" placeholder="Senha" class="required-field field"><p></p>
+                        <input type="button" id="btn-entrar" class="btns" value="Entrar" onclick="signIn()">
+                    </div>
+    
+                    <div id="sign-screen">
+                            <p class="welcome"> Hmm... Nós não reconhecemos esse endereço de e-mail. Gostaria de se cadastrar?</p>
+                            <label>Tipo de pessoa: </label>
+                            <!-- <input type="radio" name="person" id="" checked onclick="radioCheck('fisica')"> Física
+                            <input type="radio" name="person" id="" onclick="radioCheck('juridica')"> Jurídica<br> -->
+    
+                            <div class="custom-control custom-radio custom-control-inline" id="option">
+                                <input type="radio" id="customRadioInline1" name="person" class="custom-control-input" checked onclick="radioCheck('fisica')">
+                                <label class="custom-control-label" for="customRadioInline1">Física</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" name="person" class="custom-control-input" onclick="radioCheck('juridica')">
+                                <label class="custom-control-label" for="customRadioInline2">Jurídica</label>
+                            </div>
+    
+                            <div id="form-physical">
+                                <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field word-field"><br>
+                                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field num-field" onblur="cpfValidate()">
+                                <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field">
+                                <input type="password" name="password1" id="password1PF" placeholder="Senha (mínimo 6 caracteres)" class="required-field field">
+                                <input type="password" name="password2" id="password2PF" placeholder="Confirme a senha" class="required-field field">
+                            </div>
+    
+                            <div id="form-legal">
+                                <b>Dados da empresa</b>
+                                <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="required-field num-state field num-field">
+                                <input type="text" name="name" id="rs" placeholder="Razão social" class="required-field field word-field">
+                                <input type="text" name="name" id="name-f" placeholder="Nome fantasia" class="field">
+                                <input type="text" name="name" id="ie" placeholder="Inscrição estadual" class="field num-field"><br>
+    
+                                <b>Dados pessoais</b>
+                                <input type="text" name="name" id="namePJ" placeholder="Nome completo" class="required-field field word-field">
+                                <input type="password" name="password1" id="password1PJ" placeholder="Senha (mínimo 6 caracteres)" class="required-field field">
+                                <input type="password" name="password2" id="password2PJ" placeholder="Confirme a senha" class="required-field field">
+                                
+                            </div>
+                            <div id="cep-container">
+                                <input type="text" name="cep" id="cep" placeholder="CEP" class="required-field num-state field num-field">
+                                <input type="button" class="btn-ok btns" value="OK" onclick="showAddress()"><br>
+                            </div>
+                                <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" id="span-cep">Não sei o CEP</a><br>
+                            <div id="address">
+                                <input type="text" name="logradouro" placeholder="Endereço" class="required-field field word-field"><br>
+                                <input type="number" name="numero" id="num" placeholder="Número" class="required-field field num-field">
+                                <input type="text" name="complemento" id="complemento" placeholder="Complemento">
+                                <input type="text" name="bairro" placeholder="Bairro" id="bairro" class="required-field word-field">
+                                <input type="text" name="cidade" placeholder="Cidade" id="cidade" class="required-field word-field">
+                                <input type="text" name="uf" placeholder="UF" id="uf" class="required-field word-field"><p></p>
+                                <input type="text" name="telefone" placeholder="Telefone" id="telefone" class="required-field num-field">
+                                <div id="legal-tel">
+                                    <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field">
+                                    <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field">
+                                </div>
+                                <input type="button" class="btns" value="Cadastrar" id="btn-login" onclick="registerClient()">
+                            </div>
+                    </div>
+                    <span id="span-invalid"></span>
+                </form>
+    
+                <div id="slider" class="col-sm-6 d-none d-lg-block">
+                    <img src="../../img/printer.png" id="logo">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="header">
         <div class="header-part1">
             <div class="logo">
-                <img src="../../img/logo.jpeg" alt="" id="logo-header">
+                    <img src="../../img/newlogo2.jpeg" alt="" id="logo-header">
             </div>
             <div class="search-bar">
                 <input type="text" name="" id="search-bar" placeholder="O que você procura?">
@@ -42,7 +134,7 @@
                         <i class="fas fa-heart"></i>
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                        <button type="button" class="login" id="btn-login-header">Login</button>
+                        <button type="button" class="login show-login" id="btn-login-header" onclick="showLogin()">Login</button>
                 </div>
         </div>
         <div class="ico-menu" onclick="showNavbar()"><i class="fas fa-bars" id="ico-menu"></i></div>
@@ -55,7 +147,7 @@
             <button type="button" class="btn-navbar">Toners</button>
             <button type="button" class="btn-navbar" id="btn-car">Carrinho</button>
             <button type="button" class="btn-navbar">Lista de desejos</button>
-            <button type="button" class="btn-navbar btn" id="btn-login-navbar">Login</button>
+            <button type="button" class="btn-navbar btn show-login" id="btn-login-navbar" onclick="showLogin()">Login</button>
         </div>
     </div>
 
@@ -114,39 +206,43 @@
                     <div class="images-align">
                         <div class=" inivisible"><img class="d-block w-100 product" src="" alt="First slide"></div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" id="unique" src="img/impressora.png" alt="First slide"></div>
+                            <div class="text-cardp">
+                                <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
+                                <p class="price">R$ 219,00</p>
+                                <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            </div>
+                        </div>
+                        <div class="cardp">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_2.jpeg" alt="First slide"></div>
+                            <div class="text-cardp">
+                                <p><a href="*">Impressora Monocromática Brother HL1202</a></p>
+                                <p class="price">R$ 429,00</p>
+                                <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            </div>
+                        </div>
+                        <div class="cardp">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_3.jpeg" alt="First slide"></div>
+                            <p><a href="*">Impressora Multifuncional Tanque de Tinta InkTank DCP-T310 Brother</a></p>
+                            <p class="price">R$ 794,87</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
                         </div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
-                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
-                        </div>
-                        <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
-                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
-                        </div>
-                        <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_4.jpeg" alt="First slide"></div>
+                            <p><a href="*">Impressora Multifuncional Wireless Laser Mono Dcp1617nw Brother</a></p>
+                            <p class="price">R$ 1.086,70</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
                         </div>
                         <div class="cardp last-cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_5.jpeg" alt="First slide"></div>
+                            <p><a href="*">Impressora Multifuncional Canon Maxx Tinta G2100 Tanque de Tinta</a></p>
+                            <p class="price">R$ 619,00</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
                         </div>
                         <div class="inivisible">
                             <img class="d-block w-100 product" src="" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
+                            <p><a href="*">Multifuncional Canon Jato De Tinta Color Pixma Mg2510</a></p>
+                            <p class="price">R$ 239,00</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
                         </div>
                     </div>
@@ -155,34 +251,44 @@
                     <div class="images-align">
                         <div class=" inivisible"><img class="d-block w-100 product" src="" alt="First slide"></div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
-                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_6.jpeg" alt="First slide"></div>
+                            <div class="text-cardp">
+                                <p><a href="*">Multifuncional Canon Jato De Tinta Color Pixma Mg2510o</a></p>
+                                <p class="price">R$ 239,00</p>
+                                <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            </div>
                         </div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
-                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_7.jpeg" alt="First slide"></div>
+                            <div class="text-cardp">
+                                <p><a href="*">Multifuncional LaserJet Color HP Pro M180nw</a></p>
+                                <p class="price">R$ 1.690,05</p>
+                                <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            </div>
                         </div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
-                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_8.jpeg" alt="First slide"></div>
+                            <div class="text-cardp">
+                                <p><a href="*">Multifuncional Epson Ecotank L396 Wi-Fi</a></p>
+                                <p class="price">R$ 741,19</p>
+                                <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            </div>
                         </div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
-                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_9.jpeg" alt="First slide"></div>
+                            <div class="text-cardp">
+                                <p><a href="*">Impressora Samsung Laser Monocromática Wi-Fi</a></p>
+                                <p class="price">R$ 219,00</p>
+                                <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            </div>
                         </div>
                         <div class="cardp last-cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png" alt="First slide">
-                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
-                            <p class="price">R$ 219,00</p>
-                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_10.jpeg" alt="First slide"></div>
+                            <div class="text-cardp">
+                                <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
+                                <p class="price">R$ 514,71</p>
+                                <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                            </div>
                         </div>
                         <div class=" inivisible"><img class="d-block w-100 product" src="" alt="First slide"></div>
                     </div>
@@ -212,31 +318,67 @@
                         <div class="images-align">
                         <div class=" inivisible"><img class="d-block w-100 product" src="" alt="First slide"></div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png"  alt="First slide">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/sc_1.jpeg" alt="First slide"></div>
                             <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
                             <p class="price">R$ 219,00</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
                         </div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png"  alt="First slide">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/sc_2.jpeg" alt="First slide"></div>
                             <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
                             <p class="price">R$ 219,00</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
                         </div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png"  alt="First slide">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/sc_3.jpeg" alt="First slide"></div>
                             <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
                             <p class="price">R$ 219,00</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
                         </div>
                         <div class="cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png"  alt="First slide">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/sc_4.jpeg" alt="First slide"></div>
                             <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
                             <p class="price">R$ 219,00</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
                         </div>
                         <div class="cardp last-cardp">
-                            <img class="d-block w-100 product" src="img/impressora.png"  alt="First slide">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/sc_5.jpeg" alt="First slide"></div>
+                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
+                            <p class="price">R$ 219,00</p>
+                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                        </div>
+                        <div class=" inivisible"><img class="d-block w-100 product" src="" alt="First slide"></div>
+                    </div>
+                    </div>
+                    <div class="carousel-item">
+                    <div class="images-align">
+                        <div class=" inivisible"><img class="d-block w-100 product" src="" alt="First slide"></div>
+                        <div class="cardp">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_6.jpeg" alt="First slide"></div>
+                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
+                            <p class="price">R$ 219,00</p>
+                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                        </div>
+                        <div class="cardp">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_7.jpeg" alt="First slide"></div>
+                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
+                            <p class="price">R$ 219,00</p>
+                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                        </div>
+                        <div class="cardp">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_8.jpeg" alt="First slide"></div>
+                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
+                            <p class="price">R$ 219,00</p>
+                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                        </div>
+                        <div class="cardp">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_9.jpeg" alt="First slide"></div>
+                            <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
+                            <p class="price">R$ 219,00</p>
+                            <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
+                        </div>
+                        <div class="cardp last-cardp">
+                            <div class="div-flex flex-exception"><img class="d-block w-100 product" src="img/imp_10.jpeg" alt="First slide"></div>
                             <p><a href="*">Impressora Multifuncional HP Deskjet Ink Advantage 2676 Aio</a></p>
                             <p class="price">R$ 219,00</p>
                             <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div>
@@ -258,9 +400,9 @@
     </div>
 
     <footer id="footer1">
-        <div class="div-flex div-flex-h">
+        <div class="div-flex div-flex-h" id="flexfooter">
             <div class="footer-conteudo">
-                <img src="img/logo.jpeg" alt="">
+                <img src="../../img/newlogo.jpeg" alt="">
             </div>
             <div class="footer-conteudo footer-text">
                 <h2>Produtos</h2>
@@ -271,14 +413,14 @@
                 <div><i class="fas fa-phone-alt"></i>11 4002-8922</div>
                 <div><i class="fas fa-at"></i>atendimento@iprint.com</div>
             </div>
-            <div id="sub-footer">
-                <div class="div-flex div-flex-h">
-                    <div class="social-networks div-flex div-flex-h" id="facebook-icon"><i class="fab fa-facebook-f"></i></div>
-                    <div class="social-networks div-flex" id="instagram-icon"><i class="fab fa-instagram"></i></div>
-                    <div class="social-networks div-flex" id="youtube-icon"><i class="fab fa-youtube"></i></div>
-                </div>
-            </div>
         </div>
+        <footer id="sub-footer">
+        <div class="div-flex div-flex-h">
+            <div class="social-networks div-flex div-flex-h" id="facebook-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="social-networks div-flex" id="instagram-icon"><i class="fab fa-instagram"></i></div>
+            <div class="social-networks div-flex" id="youtube-icon"><i class="fab fa-youtube"></i></div>
+        </div>
+        </footer>
     </footer>
     <!-- <footer id="footer2">
             
@@ -292,95 +434,7 @@
 
 
 
-<div id="container-visibility">
-    <div class="container-fluid">
-    <div class="child row">
-            <form id="form" class="col-sm-6 col-xs-12">
-                <p class="title"> <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!</p>
-                    <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1500)" class="required-field field">
-                    <img src="../img/loading.gif" id="load">
-                    <!-- <i class="far fa-times-circle"></i> -->
-                <div id="init">
-                    <p class="text-init"> Se você já possui uma conta, pode fazer login com ela! Se ainda não possui, não se preocupe, nós cadastraremos você.</p>
-                    <p>_________________________ <or> OU </or> _________________________</p>
-                    
-                        <button id="btn-facebook" class="acol-sm-6 btn-social btns" value=""><i class="fab fa-facebook-square ico-facebook"></i> Entre com o Facebook </button> 
-                        <!-- <button id="btn-google" class="acol-sm-6 btn-social" value=""><img class="fa-google ico-google" src="img/google-icon.png">  Entre com o Google</button> -->
-                        <button type="button" id="pspsps" onclick="pspsps(window.location.href = '../ClientArea/index.html')">pspsps</button>
-                </div>
 
-                <div id="login-screen">
-                    <p class="welcome"> Bem-vindo(a) de volta, <user> Vivi Programmer Designer! </user></p>
-                    <input type="password" name="password" id="password" placeholder="Senha" class="required-field field"><p></p>
-                    <input type="button" id="btn-entrar" class="btns" value="Entrar" onclick="signIn()">
-                </div>
-
-                <div id="sign-screen">
-                        <p class="welcome"> Hmm... Nós não reconhecemos esse endereço de e-mail. Gostaria de se cadastrar?</p>
-                        <label>Tipo de pessoa: </label>
-                        <!-- <input type="radio" name="person" id="" checked onclick="radioCheck('fisica')"> Física
-                        <input type="radio" name="person" id="" onclick="radioCheck('juridica')"> Jurídica<br> -->
-
-                        <div class="custom-control custom-radio custom-control-inline" id="option">
-                            <input type="radio" id="customRadioInline1" name="person" class="custom-control-input" checked onclick="radioCheck('fisica')">
-                            <label class="custom-control-label" for="customRadioInline1">Física</label>
-                          </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="person" class="custom-control-input" onclick="radioCheck('juridica')">
-                            <label class="custom-control-label" for="customRadioInline2">Jurídica</label>
-                        </div>
-
-                        <div id="form-physical">
-                            <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field word-field"><br>
-                            <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field num-field" onblur="cpfValidate()">
-                            <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field">
-                            <input type="password" name="password1" id="password1PF" placeholder="Senha (mínimo 6 caracteres)" class="required-field field">
-                            <input type="password" name="password2" id="password2PF" placeholder="Confirme a senha" class="required-field field">
-                        </div>
-
-                        <div id="form-legal">
-                            <b>Dados da empresa</b>
-                            <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="required-field num-state field num-field">
-                            <input type="text" name="name" id="rs" placeholder="Razão social" class="required-field field word-field">
-                            <input type="text" name="name" id="name-f" placeholder="Nome fantasia" class="field">
-                            <input type="text" name="name" id="ie" placeholder="Inscrição estadual" class="field num-field"><br>
-
-                            <b>Dados pessoais</b>
-                            <input type="text" name="name" id="namePJ" placeholder="Nome completo" class="required-field field word-field">
-                            <input type="password" name="password1" id="password1PJ" placeholder="Senha (mínimo 6 caracteres)" class="required-field field">
-                            <input type="password" name="password2" id="password2PJ" placeholder="Confirme a senha" class="required-field field">
-                            
-                        </div>
-                        <div id="cep-container">
-                            <input type="text" name="cep" id="cep" placeholder="CEP" class="required-field num-state field num-field">
-                            <input type="button" class="btn-ok btns" value="OK" onclick="showAddress()"><br>
-                        </div>
-                            <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" id="span-cep">Não sei o CEP</a><br>
-                        <div id="address">
-                            <input type="text" name="logradouro" placeholder="Endereço" class="required-field field word-field"><br>
-                            <input type="number" name="numero" id="num" placeholder="Número" class="required-field field num-field">
-                            <input type="text" name="complemento" id="complemento" placeholder="Complemento">
-                            <input type="text" name="bairro" placeholder="Bairro" id="bairro" class="required-field word-field">
-                            <input type="text" name="cidade" placeholder="Cidade" id="cidade" class="required-field word-field">
-                            <input type="text" name="uf" placeholder="UF" id="uf" class="required-field word-field"><p></p>
-                            <input type="text" name="telefone" placeholder="Telefone" id="telefone" class="required-field num-field">
-                            <div id="legal-tel">
-                                <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field">
-                                <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field">
-                            </div>
-                            <input type="button" class="btns" value="Cadastrar" id="btn-login" onclick="registerClient()">
-                        </div>
-                </div>
-                <span id="span-invalid"></span>
-            </form>
-
-            <div id="slider" class="col-sm-6 d-none d-lg-block">
-                <img src="../img/printer.png" id="logo">
-                
-            </div>
-        </div>
-    </div>
-</div>
 
     <script src="js/style.js"></script>
     <script src="./js/script.js"></script>
