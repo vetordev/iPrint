@@ -13,6 +13,9 @@
 .search-ico #search-ico{
     top: 17px !important;
 }
+.flex-end {
+    justify-content: flex-end !important;
+}
 #containerr {
     width: 100%;
     height: calc(100vh - 70px);    
@@ -87,7 +90,34 @@
     box-shadow: none;
     text-shadow: none;
 }
-
+#card-confirm {
+    position: absolute;  
+    z-index: 20;
+    background-color: #FFF;
+    width: 300px;
+    height: 150px;
+    /* border: 1px solid #000; */
+    -webkit-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
+    box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.35);
+    display: none;
+    z-index: 61;
+    border-radius: 4px;
+    padding: 15px;
+}
+.btn-card {
+    width: 100px !important;
+    height: 35px !important;
+    margin-left: 10px;
+}
+#btn-exclud {
+    margin: 0 0 0 10px !important;
+    padding: 0 !important;
+}
+#buttons {
+    /* background-color: red; */
+    height: 35px;
+}
 /* .btn-exit:hover {
     background-color: #dc3545;
     box-shadow: none;

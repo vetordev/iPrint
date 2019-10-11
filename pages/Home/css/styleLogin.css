@@ -4,13 +4,24 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
 
+#body-filter1 {
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+   z-index: 40;
+   position: fixed;  
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+   display: none;
+}
 #body-filter {
    width: 100%;
    height: 100%;
-   /* background-color: rgba(0, 0, 0, 0.6); */
-   z-index: 40;
+   background-color: rgba(0, 0, 0, 0.6);
+   z-index: 41;
    position: fixed;  
-   display: flex;
+   /* display: flex; */
    justify-content: center;
    align-items: center;
    display: none;
@@ -39,6 +50,7 @@
    align-items: center;
    /* position: absolute; */
    top: -100px;
+   z-index: 30;
 }
 .child{
    

@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta+Mahee&display=swap');
 
-#body-filter {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 4;
-    position: absolute;
-    display: none;
-}
+
 #containerr {
     width: 100%;
     height: calc(100vh - 70px);    
@@ -80,7 +73,15 @@
 .client-address {
     border: 2px #ddd solid;
 }
-
+#card-confirm {
+    position: absolute !important;
+    z-index: 20;
+    background-color: #FFF;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    display: none;
+}
 #dos {
     border: 3px #19abfa solid;
 }

@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home - iPrint</title>
+    <title>iPrint - Edite sua conta</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../../css/site.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../js/navbar.js"></script>
@@ -16,10 +18,11 @@
     <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="body-filter" onclick="filterHidden()"></div>
     <div class="header">
         <div class="header-part1">
             <div class="logo">
-                <img src="../../img/logo.jpeg" alt="" id="logo-header">
+                    <img src="../../img/newlogo2.jpeg" alt="" id="logo-header">
             </div>
             <div class="search-bar">
                 <input type="text" name="" id="search-bar" placeholder="O que você procura?">
@@ -76,7 +79,7 @@
                     <img src="../../img/avatar4.jpeg" alt="" class="avatar" onclick="photoChoice('url(../../img/avatar4.jpeg)')">
                 </div>
                 </div>
-                <input type="text" name="email" id="email" placeholder="heyvitoria.lopes@gmail.com" class="disabled" disabled>
+                <input type="text" name="email" id="email" placeholder="heyvitoria.lopes@gmail.com" class="form-control disabled" disabled>
                 <form class="div-flex paddingVertical" id="physical">
                     <input type="text" name="name" id="name" placeholder="Nome completo">
                     <div class="little">
@@ -90,14 +93,14 @@
                     <input type="password" name="newer-pass2" id="newer-pass2" placeholder="Confirmar senha">
                     <br>
                     <input type="text" name="telefone1" id="telefone" placeholder="Telefone">
-                    <button id='button'>Salvar alterações</button>
+                    <button class='button'>Salvar alterações</button>
                 </form>
                 <form class="div-flex paddingVertical" id="legal">
                     <b>Dados da empresa</b>
-                    <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="required-field num-state field num-field">
+                    <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="required-field num-state field num-field disabled" disabled>
                     <input type="text" name="name" id="rs" placeholder="Razão social" class="required-field field word-field">
                     <input type="text" name="name" id="name-f" placeholder="Nome fantasia" class="field">
-                    <input type="text" name="name" id="ie" placeholder="Inscrição estadual" class="field num-field"><br>
+                    <input type="text" name="name" id="ie" placeholder="Inscrição estadual" class="field num-field disabled" disabled><br>
 
                     <b>Dados pessoais</b>
                     <input type="text" name="name" id="name" placeholder="Nome completo" class="required-field field word-field">
@@ -107,7 +110,7 @@
                     <input type="text" name="telefone1" id="telefone" placeholder="Telefone">
                     <input type="text" name="telefone2" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field field">
                     <input type="text" name="telefone3" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field field">
-                    <button id='button'>Salvar alterações</button>
+                    <button class='button'>Salvar alterações</button>
                 </form>
 
           </div>

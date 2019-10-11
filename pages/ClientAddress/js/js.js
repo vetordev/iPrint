@@ -1,7 +1,7 @@
 window.onload = function onload(){
     // loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
-    loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
-    // loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,']);
+    // loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+    loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,']);
 
 }
 
@@ -163,8 +163,22 @@ function addAddress() {
         
 }
 
+// function showCard(del) {
+//     var card = document.getElementById('card-confirm');
+//     card.style.display = "block";
+
+//     deleteAddress(del);
+// }
+// function confirmExclud(del) {
+
+// }
+
+
 function deleteAddress(del) {
     var coiso = document.getElementById(del);
+    
+    var boxaddress = document.getElementsByClassName('box-address');
+    
     var a;
     if (del == 2)
         a = coiso.parentNode.parentNode.parentNode;
@@ -173,6 +187,9 @@ function deleteAddress(del) {
     if (divQtd > 2)
         a.remove();
     else alert('você não pode remover todos seus endereços');
+    if (coiso.style.border == '3px solid rgb(25, 171, 250)'){
+        boxaddress[1].style.border = '3px solid rgb(25, 171, 250)';
+    }
 }
 
 function mainAddress(id) {

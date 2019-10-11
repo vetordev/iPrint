@@ -41,9 +41,6 @@
     /* position: absolute;
 	bottom: 0;   */
 }
-.box-gray {
-    /* padding: 0px !important; */
-}
 .address>p {
     font-size: 24px;
     margin: 5px;
@@ -60,10 +57,10 @@ input[type=text], input[type=password] {
     font-size: 17px;
 }
 
-#btn-save {
-    background-color: #FF4D01;
+/* #btn-save {
+    background-color: #FF4D01; */
     /* background-color: #130248; */
-    border: none;
+    /* border: none;
     border-radius: 4px;
     width: 170px;
     height: 40px;
@@ -72,4 +69,15 @@ input[type=text], input[type=password] {
     font-family: 'Mukta Mahee', sans-serif;
     font-weight: 500;
     font-size: 16px;
+} */
+.button {
+    height: 50px;
+    width: 200px;
+    color: #FFF;
+    border: none;
+    background-color: #FF4D01;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin: 10px 0px;
 }
