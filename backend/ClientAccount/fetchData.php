@@ -30,7 +30,7 @@ function fetchData($user_id, $type, $con){
 
     $row = $stmt->fetch(PDO::FETCH_OBJ);
 
-    $result = ['email' => $row->email_pf, 'cnpj' => $row->cpnj_pj, 'nomeR' => $row->nomeResp_pj, 'nomeF' => $row->nomeFant_pj, 'ie' => $row->ie_pj, 'rs' => $row->rs_pj, 'telComerc' => $row->telComerc_pj, 'telResid' => $row->telResid_pj, 'telCel' => $row->telCel_pj];
+    $result = ['email' => $row->email_pj, 'cnpj' => $row->cpnj_pj, 'nomeR' => $row->nomeResp_pj, 'nomeF' => $row->nomeFant_pj, 'ie' => $row->ie_pj, 'rs' => $row->rs_pj, 'telComerc' => $row->telComerc_pj, 'telResid' => $row->telResid_pj, 'telCel' => $row->telCel_pj];
     return $result;
   }
 

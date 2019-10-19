@@ -1,31 +1,13 @@
 # iPrint
 
-- ClientAddress
-- [x] Adicionar novo endereço
-- [x] Selecionar endereço principal
-- [x] Excluir endereços
-- [x] Editar endereços
-- [ ] Aviso de exclusão
-- [ ] Validação (animações)
 
-- ClientAccount
-- [x] Escolha de avatares
-- [x] Formulários específicos para cada tipo de pessoa
-- [x] Estilização
-- [ ] Validação (animações)
+### Autores
+* Júlia Oliveira
+* Otávio Magalhães
+* Vitor da Silva
+* Vitoria Lopes
+* Yan Velho
 
-- ClientArea
-- [ ] Botão de Exclusão de Conta
-- [ ] Reposicionar Botão de Exit
 
-- ClientEmail
-- [ ] Estilização
-- [ ] Validação (animações)
-- [ ] Avisos
 
-- Home
-- [x] Estilização
-- [ ] Fazer slider 2 funcionar
-- [x] Incluir tela de Login
-- [ ] Sincronizar tela de Login
-- [ ] Animações
+Projeto proposto pelo orientador Marcos Renato na Etec de Taboão da Serra
