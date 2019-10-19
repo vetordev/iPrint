@@ -1,6 +1,7 @@
 <?php
 
-require '../../php/connection.php';
+
+require '../php/connection.php';
 
 $user_id = $_POST['user_id'];
 $type = $_POST['type'];

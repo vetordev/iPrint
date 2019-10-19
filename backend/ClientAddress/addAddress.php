@@ -1,5 +1,6 @@
 <?php
-require '../../php/connection.php';
+
+require '../php/connection.php';
 
 $logradouro = $_POST['logradouro'];
 $complemento = $_POST['complemento'] ?: null;

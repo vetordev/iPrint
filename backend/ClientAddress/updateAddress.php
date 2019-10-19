@@ -1,5 +1,6 @@
 <?php
-require '../../php/connection.php';
+
+require '../php/connection.php';
 
 $cep = $_POST['cep'];
 $log = $_POST['logradouro'];

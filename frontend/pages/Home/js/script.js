@@ -153,7 +153,6 @@ function searchEmail(){
                 email : email
             }
         }).done(function(res){
-            alert(res)
         
             res = JSON.parse(res);
             exists = res.exists;
@@ -205,7 +204,7 @@ function registerClient() {
 
         
         $.ajax({
-            url : './php/registerClientPhysical.php',
+            url : '../../../backend/Home/registerClientPhysical.php',
             type: 'post',
 
             data : {
@@ -274,7 +273,7 @@ function signIn(){
     const senha = $('#password').val();
 
     $.ajax({
-        url : './php/signInClient.php',
+        url : '../../../backend/Home/signInClient.php',
         type: 'post',
 
         data: {

@@ -1,6 +1,7 @@
 <?php
 
-require '../../php/connection.php';
+
+require '../php/connection.php';
 
 $cnpj = $_POST['cnpj'];
 $rs = $_POST['rs'];

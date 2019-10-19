@@ -1,6 +1,7 @@
 <?php
 
-require '../../php/connection.php';
+
+require '../php/connection.php';
 
 $email = $_POST['email'];
 $senha = md5($_POST['senha']);
