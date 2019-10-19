@@ -1,6 +1,6 @@
 window.addEventListener('load', load => {
 
-  $('#btnSair').click(logout);
+  $('.logout').click(logout);
 
 });
 
