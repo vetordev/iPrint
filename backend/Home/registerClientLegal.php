@@ -1,6 +1,6 @@
 <?php
 
-require './connection.php';
+require '../../php/connection.php';
 
 $cnpj = $_POST['cnpj'];
 $rs = $_POST['rs'];
@@ -36,8 +36,16 @@ if(!existsCep($cep, $con)){
     
     insertAddress($endereço, $con);
 }
-$endereço = ['cep' => $cep, 'numero' => $numero];
+$endereço = ['cep' => $cep, 'numero' => $numero, 'comp' => $complemento];
 insertClienteAdressData($endereço, $email, $con);
+
+
+$result = pullId($email, $con);
+
+echo json_encode($result);
+
+
+
 
 function insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nomeRes, $telCel, $telResid, $telComerc, $con){
     $stmt = $con->prepare('INSERT INTO `tb_juridica`(`cpnj_pj`, `rs_pj`, `ie_pj`, `nomeFant_pj`, `nomeResp_pj`, `email_pj`, `senha_pj`, `telCel_pj`, `telResid_pj`, `telComerc_pj`) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
@@ -92,6 +100,7 @@ function insertClienteAdressData($endereço, $email, $con){
 
     $cep = $endereço['cep'];
     $numero = $endereço['numero'];
+    $comp = $endereço['comp'];
 
     $rs = $con->prepare('SELECT `id_pj` FROM `tb_juridica` WHERE `email_pj` = ?');
     $rs->bindParam(1, $email);
@@ -100,12 +109,25 @@ function insertClienteAdressData($endereço, $email, $con){
     $row = $rs->fetch(PDO::FETCH_OBJ);
     $id = $row->id_pj;
     
-    $stmt = $con->prepare('INSERT INTO `tb_clienteEnd`(`id_pj`, `cep`, `numero_clienteEnd`) VALUES(?, ?, ?) ');
+    $stmt = $con->prepare('INSERT INTO `tb_clienteEnd`(`id_pj`, `cep`, `numero_clienteEnd`, `comp_endereco`) VALUES(?, ?, ?, ?) ');
     $stmt->bindParam(1, $id);
     $stmt->bindParam(2, $cep);
     $stmt->bindParam(3, $numero);
+    $stmt->bindParam(4, $comp);
+    
 
     $stmt->execute();
+}
+function pullId($email, $con){
+    $stmt = $con->prepare('SELECT `id_pj` FROM `tb_juridica` WHERE `email_pj` = ?');
+    $stmt->bindParam(1, $email);
+    $stmt->execute();
+
+    $row =  $stmt->fetch(PDO::FETCH_OBJ);
+
+    $result = ['id' => ''];
+    $result['id'] = $row->id_pj;
+    return $result;
 }
 
 

@@ -116,7 +116,7 @@ function searchEmail(){
 
                 // IR PARA CADASTRO
                 $.ajax({
-                    url : './php/searchEmail.php',
+                    url : '../../../backend/Home/searchEmail.php',
                     type: 'post',
                     data: {
                         email : email
@@ -147,12 +147,14 @@ function searchEmail(){
         
         
         $.ajax({
-            url : './php/searchEmail.php',
+            url : '../../../backend/Home/searchEmail.php',
             type: 'post',
             data: {
                 email : email
             }
         }).done(function(res){
+            alert(res)
+        
             res = JSON.parse(res);
             exists = res.exists;
             //exists = 1 TRUE

@@ -1,6 +1,6 @@
 <?php
 
-require './connection.php';
+require '../../php/connection.php';
 
 $email = $_POST['email'];
 $senha = md5($_POST['senha']);
@@ -22,9 +22,10 @@ function existsInFisica($email, $senha, $con){
 
     $row = $stmt->fetch(PDO::FETCH_OBJ);
      
-    $result = ['id' => ''];
+    $result = ['id' => '', 'type' => ''];
     if (isset($row->id_pf)){
         $result['id'] = $row->id_pf;
+        $result['type'] = 'physical';
     }else{
         $result['id'] = '0';    
     }
@@ -39,9 +40,10 @@ function existsInJuridica($email, $senha, $con){
 
     $row = $stmt->fetch(PDO::FETCH_OBJ);
      
-    $result = ['id' => ''];
+    $result = ['id' => '', 'type' => ''];
     if (isset($row->id_pj)){
         $result['id'] = $row->id_pj;
+        $result['type'] = 'legal';
     }else{
         $result['id'] = '0';    
     }
