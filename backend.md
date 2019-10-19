@@ -10,7 +10,7 @@
 - [x] Verificar se o email já existe
 
 **ClientArea**
-- [ ] Logout
+- [x] Logout
 - [ ] Excluir conta
 - [x] Buscar dados do usuário
 
