@@ -18,10 +18,8 @@ const deleteAccount = (user_id, type) => {
     try {
       res = JSON.parse(res);
       if(res === "ok"){
-        // localStorage.clear();
-        // window.location.href = "../Home/"
-        alert('deu certo cachorro');
-
+        localStorage.clear();
+        window.location.href = "../Home/";
       }
     }catch{
       alert(res);
