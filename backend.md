@@ -16,7 +16,7 @@
 
 **ClientAddress**
 - [x] Buscar endereços
-- [ ] Adicionar endereços  `*` 
+- [x] Adicionar endereços
 - [ ] Atualizar endereços
 - [ ] Excluir endereços
 
@@ -30,3 +30,4 @@
 ## Notas
 
 `Atualizar endereços` => 
+

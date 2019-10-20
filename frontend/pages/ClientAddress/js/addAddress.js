@@ -1,8 +1,8 @@
 window.addEventListener('load', load => {
 
-  const btnaddress = document.getElementById('btn-add-address')
-  btnaddress.addEventListener('click', ch4Address);
-  btnaddress.addEventListener('click', addAddress);
+
+  $('#btn-add-address').click(ch4Address);
+  $('#btn-add-address').click(addAddress);
 
 });
 
