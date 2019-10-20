@@ -12,7 +12,7 @@ window.addEventListener('load', load => {
     }
   }).done(res => {
     res = JSON.parse(res);
-    
+    console.log(res);
     loadAddresses(res);
   });
 

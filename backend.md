@@ -11,7 +11,7 @@
 
 **ClientArea**
 - [x] Logout
-- [ ] Excluir conta
+- [x] Excluir conta
 - [x] Buscar dados do usuário
 
 **ClientAddress**
@@ -24,3 +24,9 @@
 - [x] Buscar dados do cliente
 - [ ] Atualizar dados do cliente
 - [ ] Atualizar dados do client e + senha `*`
+
+---
+
+## Notas
+
+`Atualizar endereços` => 

@@ -10,11 +10,8 @@ $uf =  $_POST['uf'];
 $cep = $_POST['cep'];
 $numero = $_POST['numero'];
 
-
 $user_id = $_POST['user_id'];
 $type = $_POST['type'];
-
-
 
 
 //Verificando se o cep existe
