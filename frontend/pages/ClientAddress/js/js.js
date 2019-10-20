@@ -208,6 +208,7 @@ function mainAddress(id) {
 }
 
 function editAddress(boxId){
+    alert('oi')
     const words = document.getElementsByClassName(boxId);
     const fields = document.getElementsByClassName('field-form');
     

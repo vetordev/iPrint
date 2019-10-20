@@ -2,6 +2,9 @@
 
 require '../php/connection.php';
 
+
+if($_POST['is']){
+
 $cep = $_POST['cep'];
 $log = $_POST['logradouro'];
 $num = $_POST['numero'];
@@ -19,5 +22,12 @@ function updateDataClient($cep, $num, $comp, $user_id, $type, $con){
   $stmt->bindParam(1, $num);
   $stmt->bindParam(1, $comp);
 }
+}else{
+  $
+}
+
+
+
+
 
 ?>
