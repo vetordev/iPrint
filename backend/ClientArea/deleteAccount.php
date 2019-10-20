@@ -2,8 +2,8 @@
 
 require '../php/connection.php';
 
-$user_id = $_POST['type'];
-$type = $_POST['user_id'];
+$user_id = $_POST['user_id'];
+$type = $_POST['type'];
 
 
 $res = deleteAccount($user_id, $type, $con);
