@@ -1,6 +1,7 @@
+drop database if exists iprint;
 create database iprint;
 use iprint;
-#drop database iprint;
+
 /*tabela pessoa física, quinta a ser executada*/
 create table tb_fisica(
 	id_pf int primary key auto_increment,
@@ -50,7 +51,8 @@ create table tb_clienteEnd(
     id_pj int,
 	constraint fk_idPJ foreign key (id_pj) references tb_juridica (id_pj)
 	on update cascade on delete cascade,
-    numero_clienteEnd varchar(10)
+    numero_clienteEnd varchar(10),
+    comp_endereco varchar(15)
 );
 
 /*tabela fornecedor, sexta a ser executada*/

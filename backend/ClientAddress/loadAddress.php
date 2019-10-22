@@ -39,8 +39,8 @@ function loadAdress($user_id, $type, $con){
     $data = $data . ',' . $row_end->bairro_endereco;
     $data = $data . ',' . $row_end->cidade_endereco;
     $data = $data . ',' . $row_end->uf_endereco;
-    $row->comp_endereco != null ? $data = $data . ',' . $row->comp_endereco : null;
-    
+    $row->comp_endereco != null ? $data = $data . ',' . $row->comp_endereco: null;
+    // $data = $data . ',';
     $response[$i] = $data;
     $i = $i + 1;
   }

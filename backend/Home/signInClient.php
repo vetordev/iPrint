@@ -1,6 +1,5 @@
 <?php
 
-
 require '../php/connection.php';
 
 $email = $_POST['email'];
