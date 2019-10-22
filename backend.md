@@ -11,7 +11,7 @@
 
 **ClientArea**
 - [x] Logout
-- [x] Excluir conta `excluir endereços`
+- [x] Excluir conta
 - [x] Buscar dados do usuário
 
 **ClientAddress**
