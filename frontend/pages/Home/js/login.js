@@ -105,6 +105,7 @@ function signIn(){
       }
       
   }).done(function(res){
+    
       res = JSON.parse(res);
       if (res.id != '0'){
         localStorage.setItem('type', res.type);
