@@ -1,7 +1,5 @@
 <?php
 
-
-
 require '../php/connection.php';
 
 $user_id = $_POST['user_id'];
