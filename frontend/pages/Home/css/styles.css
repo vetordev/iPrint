@@ -26,8 +26,8 @@
     height: 55%;
     justify-content: end;
     max-width: 100%;
-    /* align-items: flex-end; */
-    justify-content: end;
+    align-items: flex-end;
+    /* text-align: end; */
     /* align-items: center; */
     /* display: flex; */
     position: absolute;

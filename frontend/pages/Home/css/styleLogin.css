@@ -3,23 +3,20 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
-
-#body-filter1 {
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.6);
-   z-index: 40;
-   position: fixed;  
-   /* display: flex; */
-   justify-content: center;
-   align-items: center;
+#divv {
+   width: 100vw !important;
+   height: calc(100vh - 70px) !important;
+   margin: 0px;
+   position: fixed;
+   z-index: 60;
    display: none;
+   margin-top: 40px;
 }
 #body-filter {
    width: 100%;
    height: 100%;
    background-color: rgba(0, 0, 0, 0.6);
-   z-index: 41;
+   z-index: 60;
    position: fixed;  
    /* display: flex; */
    justify-content: center;
@@ -49,8 +46,9 @@
    justify-content: center;
    align-items: center;
    /* position: absolute; */
+   /* display: none; */
    top: -100px;
-   z-index: 30;
+   z-index: 61;
 }
 .child{
    

@@ -43,12 +43,16 @@ function showLogin() {
     loginContainer.style.display = "flex";
     var container = document.getElementsByClassName("container-fluid")[0];
     container.style.display = "flex";
+    var aloginContainer = document.getElementById("divv");
+    aloginContainer.style.display = "flex";
 }
 
 function filterHidden() {
-    var bodyFilter = document.getElementById('body-filter');
-    bodyFilter.style.display = 'none';
+    var loginContainer = document.getElementById("body-filter");
+    loginContainer.style.display = "none";
     var container = document.getElementsByClassName("container-fluid")[0];
     container.style.display = "none";
+    var aloginContainer = document.getElementById("divv");
+    aloginContainer.style.display = "none";
     // alert('raios');
 }
