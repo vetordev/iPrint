@@ -7,9 +7,9 @@ $type = $_POST['type'];
 
 
 deleteClientAddress($address, $con);
-if(!existsCep($cep, $con)){
-  deleteAddress($cep, $con);
-}
+// if(!existsCep($cep, $con)){
+//   deleteAddress($cep, $con);
+// }
 $res = deleteAccount($user_id, $type, $con);
 
 echo json_encode($res);
@@ -34,11 +34,11 @@ function existsCep($cep, $con){
   }
 
 }
-function deleteAddress($cep, $con){
-  $stmt = $con->prepare('DELETE FROM `tb_endereco` WHERE `cep` = ?');
-  $stmt->bindParam(1, $cep);
-  $stmt->execute();
-}
+// function deleteAddress($cep, $con){
+//   $stmt = $con->prepare('DELETE FROM `tb_endereco` WHERE `cep` = ?');
+//   $stmt->bindParam(1, $cep);
+//   $stmt->execute();
+// }
 
 
 function deleteAccount($user_id, $type, $con) {
