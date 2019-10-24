@@ -190,6 +190,8 @@ function deleteAddress(del) {
     if (coiso.style.border == '3px solid rgb(25, 171, 250)'){
         boxaddress[1].style.border = '3px solid rgb(25, 171, 250)';
     }
+    
+
 }
 
 function mainAddress(id) {

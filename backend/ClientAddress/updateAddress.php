@@ -2,35 +2,28 @@
 
 require '../php/connection.php';
 
-$address = $_POST['address'];
+$address = $_POST['address_id'];
 
-if($_POST['is']){
+$cep = $_POST['cep'];
+$log = $_POST['logradouro'];
+$num = $_POST['numero'];
+$bar = $_POST['bairro'];
+$cidade = $_POST['cidade'];
+$uf = $_POST['estado'];
+$comp = $_POST['complemento'];
 
-  $cep = $_POST['cep'];
-  $log = $_POST['logradouro'];
-  $num = $_POST['numero'];
-  $bar = $_POST['bairro'];
-  $cidade = $_POST['cidade'];
-  $uf = $_POST['estado'];
-  $comp = $_POST['complemento'];
+$user_id = $_POST['user_id'];
+$type = $_POST['type'];
 
-  $user_id = $_POST['user_id'];
-  $type = $_POST['type'];
-
-  #cep foi mudado
-  if (!existsCep($cep, $con))  {
-    $endereço = ['cep' => $cep, 'logradouro' => $log, 'bairro' => $bar, 'cidade' => $cidade, 'uf' => $uf];
-    insertAddress($endereço, $con);
-  }
-  updateClientAddress($cep, $num, $comp, $user_id, $type, $con);
-
-}else{
-  
+if (!existsCep($cep, $con))  {
+  $endereço = ['cep' => $cep, 'logradouro' => $log, 'bairro' => $bar, 'cidade' => $cidade, 'uf' => $uf];
+  insertAddress($endereço, $con);
 }
+updateClientAddress($cep, $num, $comp, $user_id, $type, $con);
 
 
 function updateClientAddress($cep, $num, $comp, $user_id, $type, $con){
-  $stmt = $con->prepare("UPDATE `tb_clienteEnd` SET `cep` = ? AND `numero_clienteEnd` = ? AND `comp_endereco` = ? WHERE `cep` = ?");
+  $stmt = $con->prepare("UPDATE `tb_clienteEnd` SET `cep` = ? AND `numero_clienteEnd` = ? AND `comp_endereco` = ? WHERE `id_clienteEnd` = ?");
   $stmt->bindParam(1, $cep);
   $stmt->bindParam(1, $num);
   $stmt->bindParam(1, $comp);
