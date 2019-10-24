@@ -1,6 +1,6 @@
 window.onload = function onload(){
-    // loadAddresses(['06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
-    loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+    loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+    // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
     // loadAddresses(['3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP, 102ca,']);
 }
 
@@ -15,11 +15,10 @@ function loadAddresses(address) {
     var id_init = document.getElementById('dos');
 
     var campos1 = address[0].split(',');
-    
     var id1 = campos1[0];
     id_init.id = id1;
     mainAddress(id1);
-    localStorage.setItem('id_end', id);
+    localStorage.setItem('id_end', id1);
     cep.innerHTML = campos1[1];
     logradouro.innerHTML = campos1[2];
     numero.innerHTML = campos1[3];
@@ -28,19 +27,23 @@ function loadAddresses(address) {
     uf.innerHTML = campos1[6];
     complemento.innerHTML = campos1[7];
 
-    var id2;
+    
+    // var id2;
     if (address.length == 2){
         var campos2 = address[1].split(',');
-        id2 = campos2[0];
-        alert(id2);
+        var id2 = campos2[0];
+        campos2 = campos2.slice(1,campos2.length);
         createElement(campos2, id2);
     }
     else if (address.length == 3) {
         var campos2 = address[1].split(',');
         var campos3 = address[2].split(',');
 
-        id2 = campos2[0];
+        var id2 = campos2[0];
+        campos2 = campos2.slice(1,campos2.length);
+        // alert(campos2);
         var id3 = campos3[0];
+        campos3 = campos3.slice(1,campos3.length);
         createElement(campos2, id2);
         createElement(campos3, id3);
     }
@@ -199,7 +202,7 @@ function deleteAddress(del) {
     if (divQtd > 2){
         a.remove();
     }
-    else alert('você não pode remover todos seus endereços');
+    else alert('Você não pode remover todos seus endereços.');
     if (coiso.style.border == '3px solid rgb(25, 171, 250)'){
         boxaddress[1].style.border = '3px solid rgb(25, 171, 250)';
     }
@@ -221,7 +224,6 @@ function mainAddress(id) {
 }
 
 function editAddress(boxId){
-    // alert(localStorage.getItem(id_end));
     const words = document.getElementsByClassName(boxId);
     const fields = document.getElementsByClassName('field-form');
     
@@ -229,18 +231,21 @@ function editAddress(boxId){
         fields[i].value = words[i].innerHTML;
     }
     showAddAddress();
+    
     var btnAdd = document.getElementById('btn-add-address');
     var btnEdit = document.getElementById('btn-edit-address');
     btnAdd.style.display = "none";
     btnEdit.style.display = "block";
     aux = boxId;
-    localStorage.getItem();
-    updateAddress();
 
     // alert('aaaa');
 }
+    
 
 function saveEditions() {
+    var pseudo_id = localStorage.getItem('id_end')
+
+    updateAddress(pseudo_id);
     const words = document.getElementsByClassName(aux);
     const fields = document.getElementsByClassName('field-form');
     for (var i = 0; i < words.length; i++){
