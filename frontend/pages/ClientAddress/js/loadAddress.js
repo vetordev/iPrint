@@ -1,6 +1,7 @@
 window.addEventListener('load', load => {
 
-  
+  loadClientAddress();
+
 
 });
 function loadClientAddress() {
