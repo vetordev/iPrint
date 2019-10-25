@@ -19,14 +19,15 @@ if (!existsCep($cep, $con))  {
   $endereço = ['cep' => $cep, 'logradouro' => $log, 'bairro' => $bar, 'cidade' => $cidade, 'uf' => $uf];
   insertAddress($endereço, $con);
 }
-updateClientAddress($cep, $num, $comp, $user_id, $type, $con);
+updateClientAddress($cep, $num, $comp, $address, $con);
 
 
-function updateClientAddress($cep, $num, $comp, $user_id, $type, $con){
-  $stmt = $con->prepare("UPDATE `tb_clienteEnd` SET `cep` = ? AND `numero_clienteEnd` = ? AND `comp_endereco` = ? WHERE `id_clienteEnd` = ?");
+function updateClientAddress($cep, $num, $comp, $address_id, $con){
+  $stmt = $con->prepare("UPDATE `tb_clienteEnd` SET `cep` = ?, `numero_clienteEnd` = ?, `comp_endereco` = ? WHERE `id_clienteEnd` = ?");
   $stmt->bindParam(1, $cep);
-  $stmt->bindParam(1, $num);
-  $stmt->bindParam(1, $comp);
+  $stmt->bindParam(2, $num);
+  $stmt->bindParam(3, $comp);
+  $stmt->bindParam(4, $address_id);
   $stmt->execute();
 }
 

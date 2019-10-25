@@ -1,7 +1,9 @@
 window.addEventListener('load', load =>{
-    
+    $('#btn-edit-address').click(updateAddress);
 });
-function updateAddress(id_end) {
+function updateAddress() {
+    const id_end = localStorage.getItem('id_end');
+
     const cep = $('#cep').val();
     const logradouro = $('#logradouro').val();
     const numero = $('#numero').val();
@@ -29,11 +31,12 @@ function updateAddress(id_end) {
       }
 
     }).done(res =>{
-      try {
-        res = JSON.parse(res);
-        alert(res);
-      } catch (error) {
-        alert(res);
-      }
+      // try {
+      //   res = JSON.parse(res);
+      //   alert(res);
+      // } catch (error) {
+      //   alert(res);
+      // }
+      alert(res);
     });
 }

@@ -1,5 +1,5 @@
 window.onload = function onload(){
-    loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+    // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
     // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
     // loadAddresses(['3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP, 102ca,']);
 }
@@ -246,8 +246,6 @@ function editAddress(boxId){
 
 function saveEditions() {
     var pseudo_id = localStorage.getItem('id_end')
-
-    updateAddress(pseudo_id);
     const words = document.getElementsByClassName(aux);
     const fields = document.getElementsByClassName('field-form');
     for (var i = 0; i < words.length; i++){
