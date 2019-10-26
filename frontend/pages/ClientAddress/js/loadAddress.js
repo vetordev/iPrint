@@ -19,6 +19,7 @@ function loadClientAddress() {
     res = JSON.parse(res);
     console.log(res);
     loadAddresses(res);
+    alert(res);
   });
 }
 
