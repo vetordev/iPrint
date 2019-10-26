@@ -203,6 +203,8 @@ function deleteAddress(del) {
     localStorage.setItem('id_erase', del);
     if (divQtd > 2){
         a.remove();
+        alert(del);
+        excludeAddress(del);
     }
     else alert('Você não pode remover todos seus endereços.');
     if (coiso.style.border == '3px solid rgb(25, 171, 250)'){
