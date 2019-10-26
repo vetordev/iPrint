@@ -21,7 +21,7 @@ if (!existsCep($cep, $con))  {
 }
 updateClientAddress($cep, $num, $comp, $address, $con);
 
-
+echo json_encode('ok');
 function updateClientAddress($cep, $num, $comp, $address_id, $con){
   $stmt = $con->prepare("UPDATE `tb_clienteEnd` SET `cep` = ?, `numero_clienteEnd` = ?, `comp_endereco` = ? WHERE `id_clienteEnd` = ?");
   $stmt->bindParam(1, $cep);

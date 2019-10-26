@@ -1,5 +1,6 @@
 window.addEventListener('load', load =>{
     $('#btn-edit-address').click(updateAddress);
+    $('#btn-edit-address').click(saveEditions);
 });
 function updateAddress() {
     const id_end = localStorage.getItem('id_end');
@@ -31,12 +32,11 @@ function updateAddress() {
       }
 
     }).done(res =>{
-      // try {
-      //   res = JSON.parse(res);
-      //   alert(res);
-      // } catch (error) {
-      //   alert(res);
-      // }
-      alert(res);
+      try {
+        res = JSON.parse(res);
+      } catch (error) {
+        alert(res);
+      }
+      
     });
 }

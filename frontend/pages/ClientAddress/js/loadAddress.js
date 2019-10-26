@@ -16,10 +16,13 @@ function loadClientAddress() {
       type : type
     }
   }).done(res => {
-    res = JSON.parse(res);
-    console.log(res);
-    loadAddresses(res);
-    alert(res);
+    try {
+      res = JSON.parse(res);
+      console.log(res);
+      loadAddresses(res);
+    } catch (error) {
+      alert(res);
+    }
   });
 }
 

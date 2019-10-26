@@ -118,4 +118,4 @@ create table tb_carrinho(
 
 
 
-
+SET SQL_SAFE_UPDATES = 0;
