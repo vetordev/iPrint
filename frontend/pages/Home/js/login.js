@@ -44,8 +44,9 @@ if (!(option == 'juridica')){
       res = JSON.parse(res);
       localStorage.setItem('type', 'physical');
       localStorage.setItem('user_id', res.id);
-      window.location.href = "../ClientArea/";
+      filterHidden();
   });
+
 } else {
   const cnpj = $('#cnpj').val();
   const rs = $('#rs').val();
@@ -85,11 +86,10 @@ if (!(option == 'juridica')){
 
       localStorage.setItem('type', 'legal');
       localStorage.setItem('user_id', res.id);
-      window.location.href = "../ClientArea/";
+      filterHidden();
   });
 }
   
-
 }
 function signIn(){
   const email = $('#email').val();
