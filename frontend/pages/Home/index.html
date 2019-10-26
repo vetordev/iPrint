@@ -21,11 +21,12 @@
     <!-- <script src="../../../backend/Home/searchEmail.php"></script> -->
 </head>
 <body>
-    <div id="body-filter" onclick="filterHidden()"></div>
-    <div class="div-flex" id="divv" onclick="filterHidden()">
+    <div id="body-filter" onclick="filterHidgden()"></div>
+    <div class="div-flex" id="divv" onclick="filterHigdden()">
     <div class="container-fluid">
         <div class="child row">
                 <form id="form" class="col-sm-6 col-xs-12">
+                    <i class="fas fa-times" onclick="filterHidden()" id="x"></i>
                     <p class="title"> <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!</p>
                         <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1500)" class="required-field field">
                         <img src="../../img/loading.gif" id="load">
