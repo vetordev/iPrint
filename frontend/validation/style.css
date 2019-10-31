@@ -1,0 +1,18 @@
+@keyframes nono{
+    0%, 100% {
+      transform: translateX(0)
+    }
+    35% {
+      transform: translateX(-3%)
+    }
+    70% {
+      transform: translateX(3%)
+    }
+ }
+ 
+ 
+ .wrong-field{
+    animation: nono 0.3s;
+    border-color: red;
+    animation-iteration-count: 2;
+ }

@@ -1,5 +1,10 @@
 window.addEventListener('load', load => {
 
+  loadClientAddress();
+
+
+});
+function loadClientAddress() {
   const user_id = localStorage.getItem('user_id');
   const type = localStorage.getItem('type');
 
@@ -11,11 +16,14 @@ window.addEventListener('load', load => {
       type : type
     }
   }).done(res => {
-    res = JSON.parse(res);
-    console.log(res);
-    loadAddresses(res);
+    try {
+      res = JSON.parse(res);
+      console.log(res);
+      loadAddresses(res);
+    } catch (error) {
+      alert(res);
+    }
   });
-
-});
+}
 
 

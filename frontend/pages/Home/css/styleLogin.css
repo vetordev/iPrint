@@ -289,7 +289,9 @@ or {
    height: 400px;
    overflow: none;
 }
-
+#sign-screen label {
+   color: #FFF;
+}
 #sign-screen::-webkit-scrollbar-track
 {
    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);

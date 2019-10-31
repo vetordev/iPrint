@@ -1,10 +1,10 @@
 window.addEventListener('load', () => {
-  $('#cep').focusout(showAddres);
+  $('#cep').focusout(showAddress);
   
     
 });
 
-const showAddres = () => {
+const showAddress = () => {
   $.ajax({
     url: 'https://viacep.com.br/ws/'+$('#cep').val()+'/json/unicode/',
 

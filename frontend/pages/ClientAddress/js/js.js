@@ -1,5 +1,5 @@
 window.onload = function onload(){
-    loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+    // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
     // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
     // loadAddresses(['3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP, 102ca,']);
 }
@@ -13,10 +13,12 @@ function loadAddresses(address) {
     var uf = document.getElementById('uf_cli');
     var complemento = document.getElementById('complemento_cli');
     var id_init = document.getElementById('dos');
+    var id_del = document.getElementById('doss');
 
     var campos1 = address[0].split(',');
     var id1 = campos1[0];
     id_init.id = id1;
+    id_del.id = id1;
     mainAddress(id1);
     localStorage.setItem('id_end', id1);
     cep.innerHTML = campos1[1];
@@ -96,7 +98,7 @@ function createElement(info, id) {
                 newBtn.setAttribute('onclick', "editAddress('"+boxId+"')")
                 newBtn2.setAttribute('type', 'button');
                 newBtn2.setAttribute('id', idDel);
-                newBtn2.setAttribute('onclick', 'deleteAddress(id)');
+                newBtn2.setAttribute('onclick', "deleteAddress('"+idDel+"')");
                 newBtn2.setAttribute('class', 'btn-del btn btn-danger');
 
 
@@ -201,11 +203,15 @@ function deleteAddress(del) {
     localStorage.setItem('id_erase', del);
     if (divQtd > 2){
         a.remove();
+        alert(del);
+        excludeAddress(del);
     }
     else alert('Você não pode remover todos seus endereços.');
     if (coiso.style.border == '3px solid rgb(25, 171, 250)'){
         boxaddress[1].style.border = '3px solid rgb(25, 171, 250)';
     }
+    
+
 }
 
 function mainAddress(id) {
@@ -243,9 +249,7 @@ function editAddress(boxId){
     
 
 function saveEditions() {
-    var pseudo_id = localStorage.getItem('id_end')
-
-    updateAddress(pseudo_id);
+    var pseudo_id = localStorage.getItem('id_end');
     const words = document.getElementsByClassName(aux);
     const fields = document.getElementsByClassName('field-form');
     for (var i = 0; i < words.length; i++){

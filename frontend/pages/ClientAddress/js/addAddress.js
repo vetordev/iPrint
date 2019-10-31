@@ -3,10 +3,12 @@ window.addEventListener('load', load => {
 
   $('#btn-add-address').click(ch4Address);
   $('#btn-add-address').click(addAddress);
+  
 
 });
 
 function ch4Address() {
+  
   const user_id = localStorage.getItem('user_id');
   const type = localStorage.getItem('type');
 
@@ -34,7 +36,11 @@ function ch4Address() {
       complemento : complemento
   }
   }).done(res => {
-    alert(res);
+    try {
+      res = JSON.parse(res);
+    } catch (error) {
+      alert(res)
+    }
   });
 }
 

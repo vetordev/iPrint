@@ -16,16 +16,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../js/navbar.js"></script>
     <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
+    <script src="../../js/validation.js"></script>
     <script src="js/login.js"></script>
     <script src="js/address.js"></script>
     <!-- <script src="../../../backend/Home/searchEmail.php"></script> -->
 </head>
 <body>
-    <div id="body-filter" onclick="filterHidden()"></div>
-    <div class="div-flex" id="divv" onclick="filterHidden()">
+    <div id="body-filter"></div>
+    <div class="div-flex" id="divv">
     <div class="container-fluid">
         <div class="child row">
                 <form id="form" class="col-sm-6 col-xs-12">
+                    <i class="fas fa-times" onclick="filterHidden()" id="x"></i>
                     <p class="title"> <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!</p>
                         <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1500)" class="required-field field">
                         <img src="../../img/loading.gif" id="load">
@@ -63,7 +65,8 @@
                             <div id="form-physical">
                                 <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field word-field"><br>
                                 <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field num-field" onblur="cpfValidate()">
-                                <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field">
+                                <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field" onkeyup="mascaraData(this)" maxlength="10">
+                                <!-- <input type="date" name="ddn" id="ddn" placeholder="Data de Nascimento"> -->
                                 <input type="password" name="password1" id="password1PF" placeholder="Senha (mínimo 6 caracteres)" class="required-field field">
                                 <input type="password" name="password2" id="password2PF" placeholder="Confirme a senha" class="required-field field">
                             </div>

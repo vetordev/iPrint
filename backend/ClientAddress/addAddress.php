@@ -14,6 +14,7 @@ $user_id = $_POST['user_id'];
 $type = $_POST['type'];
 
 
+echo 'oi';
 //Verificando se o cep existe
 if(!existsCep($cep, $con)){
   //Inserindo endereço na tabela de endereços
