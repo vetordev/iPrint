@@ -9,10 +9,9 @@
       transform: translateX(3%)
     }
  }
- 
- 
- .wrong-field{
-    animation: nono 0.3s;
-    border-color: red;
-    animation-iteration-count: 2;
- }
+
+.wrong-field{
+  animation: nono 0.3s;
+  border-color: red;
+  animation-iteration-count: 2;
+}

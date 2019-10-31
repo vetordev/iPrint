@@ -21,7 +21,7 @@ function photoChoice(avatar) {
     bodyFilter.style.display = 'none';
 }
 
-window.onload = function verificaP() {
+function verificaP() {
     var person = this.localStorage.getItem('type');
     var physical = document.getElementById('physical');
     var legal = document.getElementById('legal');
