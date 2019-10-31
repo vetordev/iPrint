@@ -16,6 +16,7 @@ $type = $_POST['type'];
 
 echo 'oi';
 //Verificando se o cep existe
+
 if(!existsCep($cep, $con)){
   //Inserindo endereço na tabela de endereços
   
@@ -28,6 +29,43 @@ insertClienteAdressData($endereço, $user_id, $type, $con);
 
 echo 'ok';
 
+function addressInUse($cep, $complemento, $numero, $type, $user_id, $con){
+  if($type == 'physical'){
+    $stmt = $con->prepare("SELECT `id_clienteEnd` FROM `tb_clienteEnd` WHERE `cep` = ? and `numero_clienteEnd` = ? and `comp_endereco` = ? and `id_pf` = ?");
+    $stmt->bindParam(1, $cep);
+    $stmt->bindParam(2, $numero);
+    $stmt->bindParam(2, $numero);
+    $stmt->bindParam(3, $complemento);
+    $stmt->bindParam(4, $user_id);
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_OBJ);
+
+    if($row->id_clienteEnd){
+      return false;
+    }else{
+      return true;
+    }
+  }else{
+    $stmt = $con->prepare("SELECT `id_clienteEnd` FROM `tb_clienteEnd` WHERE `cep` = ? and `numero_clienteEnd` = ? and `comp_endereco` = ? and `id_pj` = ?");
+    $stmt->bindParam(1, $cep);
+    $stmt->bindParam(2, $numero);
+    $stmt->bindParam(2, $numero);
+    $stmt->bindParam(3, $complemento);
+    $stmt->bindParam(4, $user_id);
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_OBJ);
+
+    if($row->id_clienteEnd){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  
+  
+}
 function existsCep($cep, $con){
   $stmt = $con->prepare("SELECT `cep` FROM `tb_endereco` WHERE `cep` = ?");
   $stmt->bindParam(1, $cep);
