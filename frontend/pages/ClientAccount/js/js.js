@@ -21,7 +21,11 @@ function photoChoice(avatar) {
     bodyFilter.style.display = 'none';
 }
 
-function verificaP() {
+
+
+window.addEventListener("load", event => {
+
+
     var person = this.localStorage.getItem('type');
     var physical = document.getElementById('physical');
     var legal = document.getElementById('legal');
@@ -32,7 +36,10 @@ function verificaP() {
         legal.style.display = 'none';
         physical.style.display = 'flex';
     }
-}
+})
+
+
+
 function filterHidden() {
     var bodyFilter = document.getElementById('body-filter');
     bodyFilter.style.display = 'none';

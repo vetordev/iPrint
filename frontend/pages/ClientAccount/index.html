@@ -22,7 +22,7 @@
     <script src="../../validation/validation.js"></script>
     <link rel="stylesheet" href="../../validation/style.css">
 </head>
-<body onload="verificaP()">
+<body>
     <div id="body-filter" onclick="filterHidden()"></div>
     <div class="header">
         <div class="header-part1">
@@ -67,7 +67,8 @@
         <div class="account">
           <p>Edite sua conta</p>
           <div class="box-gray div-flex">
-                <div class="photo-profile" onmouseover="photoShow()" onmouseout="photoHidden()" onclick="photoClick()">
+                <!-- <div class="photo-profile" onmouseover="photoShow()" onmouseout="photoHidden()" onclick="photoClick()"> -->
+                    <div class="photo-profile">
                     <div class="div-flex flex-total">
                         <div class="photo-profile photo-filter">
                             <div class="div-flex flex-total">    
@@ -98,7 +99,7 @@
                     <input type="password" name="newer-pass2" id="newer-pass2" placeholder="Confirmar senha" class="required-field">
                     <br>
                     <input type="text" name="telefone1" id="telefone" placeholder="Telefone" class="required-field">
-                    <button class='button save' type="button">Salvar alterações</button>
+                    <button class='button save' type="button" onclick="save()">Salvar alterações</button>
                 </form>
                 <form class="div-flex paddingVertical" id="legal">
                     <b>Dados da empresa</b>
@@ -115,7 +116,7 @@
                     <input type="text" name="telefone1" id="telefone-cel" placeholder="Telefone" class="required-field">
                     <input type="text" name="telefone2" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field field required-field">
                     <input type="text" name="telefone3" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field field required-field">
-                    <button class='button save' type="button">Salvar alterações</button>
+                    <button class='button save' type="button" onclick="save()">Salvar alterações</button>
                 </form>
 
           </div>

@@ -1,8 +1,9 @@
-window.onload = function onload(){
-    // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
-    // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
-    // loadAddresses(['3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP, 102ca,']);
-}
+// window.addEventListener('load', event => {
+//     // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+//     // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
+//     // loadAddresses(['3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP, 102ca,']);
+//     alert("saco");
+// })
 
 function loadAddresses(address) {
     var cep = document.getElementById('cep_cli');
@@ -170,6 +171,7 @@ function addAddress() {
     const fields = document.getElementsByClassName('field-form');
 
     var id = Math.random()+1;
+    save();
     createElement(fields, id);
 
     for (var i = 0; i < fields.length; i++) {

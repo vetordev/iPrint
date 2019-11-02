@@ -56,7 +56,12 @@ function save () {
     const fields = [... document.querySelectorAll(".required-field")];
     fields.forEach(field => {
         /* CASO HAJAM CAMPOS ERRADOS */
-        if (field.style.border == "3px solid rgba(255, 0, 0, 0.8)") return false;
-        else alert("aí sim ein");
+        if (field.style.border == "3px solid rgba(255, 0, 0, 0.8)"){
+            alert("Preencha todos os campos corretamente.");
+            break;
+            return false;
+        }
+        if (field.value == "") return false;
+        else alert("Dados salvos com sucesso.");
     }
 )}
