@@ -1,4 +1,12 @@
+window.addEventListener('load', () => {
+  $('#btn-facebook').click(loginWithFacebook);
+})
 
+function loginWithFacebook() {
+  $.ajax({
+    url : '../../../backend/Facebook'
+  })
+}
 
 function registerClient() {
 
