@@ -17,6 +17,9 @@
     <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
     <script src="js/fetchEmail.js"></script>
     <script src="js/updateEmail.js"></script>
+    <script src="../../validation/validation.js"></script>
+    <link rel="stylesheet" href="../../validation/style.css">
+
 </head>
 <body>
     <div id="body-darker">
@@ -66,11 +69,11 @@
         <p>Alterar e-mail</p>
         <div class="box-gray">
             <div class="row div-flex">
-                <input type="text" name="email-older" id="email-older" placeholder="Seu e-mail antigo">
-                <input type="text" name="email1" id="email1" placeholder="Seu novo e-mail">
-                <input type="text" name="email2" id="email2" placeholder="Confirme seu novo e-mail">
-                <input type="password" name="password" id="password" placeholder="Sua senha atual">
-                <button type="button" class="button" id="btn-save">Salvar alteração</button>
+                <input type="email" name="email-older" id="email-older" placeholder="Seu e-mail antigo" required class="required-field" required>
+                <input type="email" name="email1" id="email1" placeholder="Seu novo e-mail" required class="required-field">
+                <input type="email" name="email2" id="email2" placeholder="Confirme seu novo e-mail" required class="required-field">
+                <input type="password" name="password" id="password" placeholder="Sua senha atual" required class="required-field">
+                <button type="button" class="button" id="btn-save" onclick="save()">Salvar alteração</button>
             </div>
         </div>
     </div>

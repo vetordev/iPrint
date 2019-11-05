@@ -13,11 +13,14 @@
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="../../js/navbar.js"></script>
     <script type="text/javascript" src="js/js.js"></script>
     <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
     <script src="js/fetchData.js"></script>
     <script src="js/updateAccount.js"></script>
+    <script src="../../validation/validation.js"></script>
+    <link rel="stylesheet" href="../../validation/style.css">
 </head>
 <body>
     <div id="body-filter" onclick="filterHidden()"></div>
@@ -64,7 +67,8 @@
         <div class="account">
           <p>Edite sua conta</p>
           <div class="box-gray div-flex">
-                <div class="photo-profile" onmouseover="photoShow()" onmouseout="photoHidden()" onclick="photoClick()">
+                <!-- <div class="photo-profile" onmouseover="photoShow()" onmouseout="photoHidden()" onclick="photoClick()"> -->
+                    <div class="photo-profile">
                     <div class="div-flex flex-total">
                         <div class="photo-profile photo-filter">
                             <div class="div-flex flex-total">    
@@ -83,36 +87,36 @@
                 </div>
                 <input type="text" name="email" id="email" placeholder="heyvitoria.lopes@gmail.com" class="form-control disabled" disabled>
                 <form class="div-flex paddingVertical" id="physical">
-                    <input type="text" name="name" id="name" placeholder="Nome completo">
+                    <input type="text" name="name" id="name" placeholder="Nome completo" class="required-field">
                     <div class="little">
                         <div class="div-flex-h div-flex">
                             <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field num-field form-control disabled" onblur="cpfValidate()" disabled>
-                            <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field ">
+                            <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field required-field">
                         </div>
                     </div>
-                    <input type="password" name="older-pass" id="older-pass" placeholder="Senha antiga">
-                    <input type="password" name="newer-pass" id="newer-pass" placeholder="Nova senha">
-                    <input type="password" name="newer-pass2" id="newer-pass2" placeholder="Confirmar senha">
+                    <input type="password" name="older-pass" id="older-pass" placeholder="Senha antiga" class="required-field">
+                    <input type="password" name="newer-pass" id="newer-pass" placeholder="Nova senha" class="required-field">
+                    <input type="password" name="newer-pass2" id="newer-pass2" placeholder="Confirmar senha" class="required-field">
                     <br>
-                    <input type="text" name="telefone1" id="telefone" placeholder="Telefone">
-                    <button class='button save' type="button">Salvar alterações</button>
+                    <input type="text" name="telefone1" id="telefone" placeholder="Telefone" class="required-field">
+                    <button class='button save' type="button" onclick="save()">Salvar alterações</button>
                 </form>
                 <form class="div-flex paddingVertical" id="legal">
                     <b>Dados da empresa</b>
                     <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="required-field num-state field num-field disabled" disabled>
-                    <input type="text" name="name" id="rs" placeholder="Razão social" class="required-field field word-field">
-                    <input type="text" name="name" id="name-f" placeholder="Nome fantasia" class="field">
+                    <input type="text" name="name" id="rs" placeholder="Razão social" class="required-field field word-field required-field">
+                    <input type="text" name="name" id="name-f" placeholder="Nome fantasia" class="field required-field">
                     <input type="text" name="name" id="ie" placeholder="Inscrição estadual" class="field num-field disabled" disabled><br>
 
                     <b>Dados pessoais</b>
-                    <input type="text" name="name" id="name-e" placeholder="Nome completo" class="required-field field word-field">
-                    <input type="password" name="password1" id="password1" placeholder="Senha (mínimo 6 caracteres)" class="required-field field">
-                    <input type="password" name="password2" id="password2" placeholder="Confirme a senha" class="required-field field">
+                    <input type="text" name="name" id="name-e" placeholder="Nome completo" class="required-field field word-field required-field">
+                    <input type="password" name="password1" id="password1" placeholder="Senha (mínimo 6 caracteres)" class="required-field field required-field">
+                    <input type="password" name="password2" id="password2" placeholder="Confirme a senha" class="required-field field required-field">
                     <br>
-                    <input type="text" name="telefone1" id="telefone-cel" placeholder="Telefone">
-                    <input type="text" name="telefone2" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field field">
-                    <input type="text" name="telefone3" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field field">
-                    <button class='button save' type="button">Salvar alterações</button>
+                    <input type="text" name="telefone1" id="telefone-cel" placeholder="Telefone" class="required-field">
+                    <input type="text" name="telefone2" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field field required-field">
+                    <input type="text" name="telefone3" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field field required-field">
+                    <button class='button save' type="button" onclick="save()">Salvar alterações</button>
                 </form>
 
           </div>
