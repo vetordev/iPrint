@@ -79,3 +79,12 @@ function radioCheck(option_){
     } 
 }
 
+const wishIco = [...document.querySelectorAll(".wish-ico")];
+
+wishIco.forEach(ico => {
+	ico.addEventListener('click', event => {
+		// alert('aa');
+		ico.classList.remove('far');
+		ico.classList.add('fas');
+	})
+})

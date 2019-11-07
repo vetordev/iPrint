@@ -304,3 +304,14 @@ footer i {
 #instagram-icon {
     background-color: #bc2a8d;
 }
+.cardp .far {
+    color: black;
+    /* background-color: red; */
+}
+.cardp i {
+    float: right;
+    font-size: 24px;
+}
+.cardp .fas {
+    color: red;
+}
