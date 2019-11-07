@@ -9,7 +9,7 @@ SELECT * FROM tb_juridica;
 SELECT `CEP` FROM `TB_ENDEREÇO` WHERE `CEP` = '06763270';
 SELECT ID_pf FROM TB_FISICA WHERE EMAIL_PF = 'vito@vito.com' AND SENHA_PF = 'b1b26a61361b82f9dcdd';
 
-DELETE FROM `tb_clienteend` WHERE `id_clienteEnd` = 8;
+DELETE FROM `tb_clienteend` WHERE `id_clienteEnd` = 6;
 DELETE FROM `tb_fisica` WHERE `id_pf` = 6;
 
 

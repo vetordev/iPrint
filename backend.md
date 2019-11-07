@@ -17,9 +17,9 @@
 **ClientAddress**
 - [x] Buscar endereços
 - [x] Adicionar endereços
-- [ ] Atualizar endereços
-- [ ] Excluir endereços
-- [ ] Informar que tal endereço já existe
+- [x] Atualizar endereços
+- [x] Excluir endereços
+- [x] Informar que tal endereço já existe
 
 **ClientAccount**
 - [x] Buscar dados do cliente
