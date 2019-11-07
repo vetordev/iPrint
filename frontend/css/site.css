@@ -147,6 +147,9 @@ i {
     color: #FFF;
     font-size: 30px;
 }
+.icons .fa-heart{
+    cursor: pointer;
+}
 .icons {
     justify-content: space-between;
     display: flex;
