@@ -1,18 +1,8 @@
-<<<<<<< HEAD
 window.onload = function onload(){
     // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
     // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
     // loadAddresses(['3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP, 102ca,']);
 }
-=======
-// window.addEventListener('load', event => {
-//     // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c', '3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
-//     // loadAddresses(['1,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c,', '2,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP,apto 102 c']);
-//     // loadAddresses(['3,06567000,Avenida qJosé Lavechia,62,Bairro,São Paulo,SP, 102ca,']);
-//     alert("saco");
-// })
->>>>>>> 70161ab2cf8296def6c22cc586cc5cd1562c128e
-
 function loadAddresses(address) {
     var cep = document.getElementById('cep_cli');
     var logradouro = document.getElementById('logradouro_cli');
@@ -213,10 +203,10 @@ function deleteAddress(del) {
     localStorage.setItem('id_erase', del);
     if (divQtd > 2){
         a.remove();
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
         alert(del);
->>>>>>> 70161ab2cf8296def6c22cc586cc5cd1562c128e
+// >>>>>>> 70161ab2cf8296def6c22cc586cc5cd1562c128e
         excludeAddress(del);
     }
     else alert('Você não pode remover todos seus endereços.');
