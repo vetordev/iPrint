@@ -36,3 +36,9 @@
 - [ ] Não da pra editar caso a pessoa não tenha complemento
 - [ ] Limpar inputs caso as telas sejam fechadas (endereço e login)
 - [ ] Deixar campos referentes a rua, bairro, cidade e estado com apenas leitura
+
+- WishList  
+- [ ] Na home, mostrar os produtos chamando o meu método `loadProducts`
+- [ ] Na wishlit, mostrar os produtos chamando o meu método `loadWishlist`
+- [ ] Chamar um método meu para adicionar na wishlist `addWishlist`
+- [ ] Chamar um método meu para remover da wishlist `removeWishlist`
