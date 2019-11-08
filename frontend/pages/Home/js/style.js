@@ -24,19 +24,19 @@ email.addEventListener("keydown", event =>{
     load.style.display = "block";
 })
 
-const fields = [... document.querySelectorAll(".required-field")];
+// const fields = [... document.querySelectorAll(".required-field")];
 
-fields.forEach(field => {
-    field.addEventListener("blur", event => {
-        if (field.value == ""){
-            field.classList.add("wrong-field");
-            field.style.border = "3px solid rgba(255,0,0,0.8)";
-        }else{
-            field.style.border = "none";
-        }
-    });
+// fields.forEach(field => {
+//     field.addEventListener("blur", event => {
+//         if (field.value == ""){
+//             field.classList.add("wrong-field");
+//             field.style.border = "3px solid rgba(255,0,0,0.8)";
+//         }else{
+//             field.style.border = "none";
+//         }
+//     });
 
-});
+// });
 
 function showLogin() {
     var loginContainer = document.getElementById("body-filter");

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>iPrint - Meu Espaço</title>
+    <title>iPrint - Alteração de e-mail</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../../css/site.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,17 +15,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../js/navbar.js"></script>
     <script src="https://kit.fontawesome.com/b1f7af822a.js" crossorigin="anonymous"></script>
-    <script src="js/fetchData.js"></script>
-    <script src="js/logout.js"></script>
-    <script src="js/js.js"></script>
-    <script src="js/deleteAccount.js"></script>
+    <script src="../../validation/validation.js"></script>
+    <link rel="stylesheet" href="../../validation/style.css">
+    <script src="./js/script.js"></script>
+
 </head>
 <body>
-    <div id="body-filter" onclick="filterHidden()"></div>
+    <div id="body-darker">
     <div class="header">
         <div class="header-part1">
             <div class="logo">
-                <img src="../../img/newlogo2.jpeg" alt="" id="logo-header">
+                    <img src="../../img/newlogo2.jpeg" alt="" id="logo-header">
             </div>
             <div class="search-bar">
                 <input type="text" name="" id="search-bar" placeholder="O que você procura?">
@@ -61,65 +61,31 @@
             <button type="button" class="btn-navbar btn" id="btn-login-navbar">Login</button>
         </div>
     </div>
+
     <div id="containerr">
-            <div id="banner"></div>
-            <div id="myaccount">
-                <p>Meu espaço</p>
-                <!-- <div class="line"></div> -->
-                <div class="box-gray">
-                    <div class="div-flex">
-                        <div id="card-confirm">
-                            <p>Deseja mesmo excluir sua conta? Essa ação não poderá ser desfeita.</p>
-                            <div id="buttons" class="div-flex div-flex-h flex-end">
-                                <button type="button" class="btn-card">Cancelar</button>
-                                <button type="button" class="btn-card btn-danger btn del-account" id="btn-exclud">Excluir</button>
-                            </div>
-                        </div>
-                    </div>
-                
-                <i class="fas fa-power-off" title="Sair" class="logout"></i>
-                
-                <div class="div-flex">
-                    <div class="row row1 div-flex div-flex-h">
-                        <div class="div-flex col-lg-1 col-xs-12 div-flex">
-                            <div id="photo-profile"></div>
-                        </div>
-
-                        <div class="col-lg-3 col-xs-12 div-flex">
-                            <label for="name">Seu nome</label>
-                            <p id="username">Vitória Lopes</p>
-                        </div>
-
-                        <div class="col-lg-4 col-xs-12 div-flex">
-                            <label for="email">Seu melhor email</label>
-                            <p id="useremail">heyvitoria.lopes@gmail.com</p>
-                        </div>
-
-                        <div class="col-lg-3 col-xs-12 div-flex">
-                            <label for="tel">Telefone</label>
-                            <p id="usertel">(11) 4002-8922</p>
-                        </div>
-                    </div>
+        <div id="banner"></div>
+        <div class="favoritos">
+        <p>Favoritos</p>
+        <div class="box-gray">
+            <div class="div-flex">
+                <div id="text-null">
+                    <p>Parece que você ainda não tem nenhum favorito!</p>
+                    <p id="sad">:(</p>
                 </div>
-                <div class="div-flex">
-                    <div class="row row2 div-flex div-flex-h">
-                        <div class="col-lg-4 col-xs-12 div-flex">
-                            <button type="button" class="btn-account" id="btn-account-edit">Editar minha conta</button>
-                        </div>
-                        <div class="col-lg-4 col-xs-12 div-flex">
-                            <button type="button" class="btn-account" id="btn-address">Meus endereços</button>
-                        </div>
-                        <div class="col-lg-4 col-xs-12 div-flex">
-                            <button type="button" class="btn-account" id="btn-email">Alterar e-mail</button>
-                        </div>
-                    </div>
-                        <div class="btn-dg-container">
-                            <button type="button" class="btn btn-danger" id="btn-del-account" onclick="showCard()">Excluir conta</button>
-                        </div>
-                </div>
+                <div id="products">
+                    <!-- <div class="cardp"> -->
+                        <!-- <div class="div-flex flex-exception"><img class="product-image" src="../../img/no-image-default.png"></div>
+                        <p class='desc'><a href="*">Impressora Multifuncional Tanque de Tinta InkTank DCP-T310 Brother</a></p>
+                        <p class="price">R$ 794,87</p>
+                        <div class="div-flex flex-exception"><button type="button" class="btn-add-car">Adicionar ao carrinho</button></div> -->
+                    <!-- </div> -->
+                    <!-- <div class='div-flex flex-exception'><img class='product-image' src='../../img/no-image-default.png'></div><p class='desc'><a href='*'>"+wishDesc+"</a></p><p class='price'>"+wishPrice+"</p><div class='div-flex flex-exception'><button type='button' class='btn-add-car'>Adicionar ao carrinho</button></div> -->
                 </div>
             </div>
+        </div>
     </div>
+    </div>
+</div>
     <script type="text/javascript" src="../../routes.js"></script>
 </body>
 </html>

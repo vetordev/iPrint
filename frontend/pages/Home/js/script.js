@@ -79,3 +79,41 @@ function radioCheck(option_){
     } 
 }
 
+aux = 0;
+const wishIco = [...document.querySelectorAll(".wish-ico")];
+
+wishIco.forEach(ico => {
+	ico.addEventListener('click', event => {
+		// alert('aa');
+		if (aux == 0) {
+			ico.classList.remove('far');
+			ico.classList.add('fas');
+			aux = 1;
+		}else {
+			ico.classList.remove('fas');
+			ico.classList.add('far');
+			aux = 0;
+		}
+
+	})
+})
+
+
+
+// 
+// var cardp = [... document.querySelectorAll('.cardp')];
+// cardp.forEach(card => {
+//     card.addEventListener('mouseover', event => {
+// 		const wishIco = [... document.querySelectorAll('.wish-ico')];
+// 			wishIco.forEach(ico => {
+// 				ico.style.visibility = 'visible';
+// 			})
+//     })
+// })
+
+
+// wishIco.forEach(ico => {
+//     ico.addEventListener('hover', event => {
+//         alert('oi');
+//     })
+// })

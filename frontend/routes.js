@@ -28,7 +28,13 @@ btnEmail.addEventListener('click', event => {
 const logo = document.getElementsByClassName("logo");
 logo[0].addEventListener('click', event => {
     window.location.href = '../Home/index.html';
-})
+});
+
+const icoWishlist = document.querySelector("#wish-page");
+icoWishlist.addEventListener('click', event => {
+    window.location.href = '../Wishlist/index.html';
+    // alert('oi')
+});
 
 // const btnPspsps = document.querySelector("#pspsps");
 // btnPspsps.addEventListener('click', event => {

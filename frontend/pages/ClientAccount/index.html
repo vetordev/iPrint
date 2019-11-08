@@ -45,8 +45,8 @@
                 <split></split>
                 <div class="user-menu">
                     <div class="icons">
-                        <i class="fas fa-heart"></i>
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart" id="wish-page"></i>
+                        <i class="fas fa-shopping-cart" id="car"></i>
                     </div>
                         <button type="button" class="btn" id="btn-login-header">Login</button>
                 </div>
@@ -87,35 +87,35 @@
                 </div>
                 <input type="text" name="email" id="email" placeholder="heyvitoria.lopes@gmail.com" class="form-control disabled" disabled>
                 <form class="div-flex paddingVertical" id="physical">
-                    <input type="text" name="name" id="name" placeholder="Nome completo" class="required-field">
+                    <input type="text" name="name" id="name" placeholder="Nome completo" class="required-field just-letters" maxlength="100" minlength="3">
                     <div class="little">
                         <div class="div-flex-h div-flex">
                             <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field num-field form-control disabled" onblur="cpfValidate()" disabled>
-                            <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field required-field">
+                            <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field just-numbers required-field" maxlength="8" minlength="8">
                         </div>
                     </div>
-                    <input type="password" name="older-pass" id="older-pass" placeholder="Senha antiga" class="required-field">
-                    <input type="password" name="newer-pass" id="newer-pass" placeholder="Nova senha" class="required-field">
-                    <input type="password" name="newer-pass2" id="newer-pass2" placeholder="Confirmar senha" class="required-field">
+                    <input type="password" name="older-pass" id="older-pass" placeholder="Senha antiga" class="required-field" maxlength="50" minlength="6">
+                    <input type="password" name="newer-pass" id="newer-pass" placeholder="Nova senha" class="required-field" maxlength="50" minlength="6">
+                    <input type="password" name="newer-pass2" id="newer-pass2" placeholder="Confirmar senha" class="required-field" maxlength="50" minlength="6">
                     <br>
-                    <input type="text" name="telefone1" id="telefone" placeholder="Telefone" class="required-field">
+                    <input type="text" name="telefone1" id="telefone" placeholder="Telefone" class="required-field just-numbers" maxlength="11" minlength="11">
                     <button class='button save' type="button" onclick="save()">Salvar alterações</button>
                 </form>
                 <form class="div-flex paddingVertical" id="legal">
                     <b>Dados da empresa</b>
                     <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="required-field num-state field num-field disabled" disabled>
-                    <input type="text" name="name" id="rs" placeholder="Razão social" class="required-field field word-field required-field">
-                    <input type="text" name="name" id="name-f" placeholder="Nome fantasia" class="field required-field">
+                    <input type="text" name="name" id="rs" placeholder="Razão social" class="required-field field word-field required-field" maxlength="100" minlength="3">
+                    <input type="text" name="name" id="name-f" placeholder="Nome fantasia" class="field required-field" maxlength="70" minlength="2">
                     <input type="text" name="name" id="ie" placeholder="Inscrição estadual" class="field num-field disabled" disabled><br>
 
                     <b>Dados pessoais</b>
-                    <input type="text" name="name" id="name-e" placeholder="Nome completo" class="required-field field word-field required-field">
-                    <input type="password" name="password1" id="password1" placeholder="Senha (mínimo 6 caracteres)" class="required-field field required-field">
-                    <input type="password" name="password2" id="password2" placeholder="Confirme a senha" class="required-field field required-field">
+                    <input type="text" name="name" id="name-e" placeholder="Nome completo" class="required-field field word-field just-letters" maxlength="100" minlength="3">
+                    <input type="password" name="password1" id="password1" placeholder="Senha (mínimo 6 caracteres)" class="required-field field required-field" maxlength="70" minlength="6">
+                    <input type="password" name="password2" id="password2" placeholder="Confirme a senha" class="required-field field required-field" maxlength="70" minlength="6">
                     <br>
-                    <input type="text" name="telefone1" id="telefone-cel" placeholder="Telefone" class="required-field">
-                    <input type="text" name="telefone2" placeholder="Telefone residencial" id="telefoneR" class="required-field num-field field required-field">
-                    <input type="text" name="telefone3" placeholder="Telefone comercial" id="telefoneCom" class="required-field num-field field required-field">
+                    <input type="text" name="telefone1" id="telefone-cel" placeholder="Telefone" class="required-field just-numbers" maxlength="11" minlength="11">
+                    <input type="text" name="telefone2" placeholder="Telefone residencial" id="telefoneR" class="required-field just-numbers field required-field" maxlength="10" minlength="10">
+                    <input type="text" name="telefone3" placeholder="Telefone comercial" id="telefoneCom" class="required-field just-numbers field required-field" maxlength="10" minlength="10">
                     <button class='button save' type="button" onclick="save()">Salvar alterações</button>
                 </form>
 

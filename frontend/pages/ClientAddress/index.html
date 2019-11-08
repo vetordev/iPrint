@@ -47,8 +47,8 @@
                 <split></split>
                 <div class="user-menu">
                     <div class="icons">
-                        <i class="fas fa-heart"></i>
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart" id="wish-page"></i>
+                        <i class="fas fa-shopping-cart" id="car"></i>
                     </div>
                         <button type="button" class="login show-login" id="btn-login-header" onclick="showLogin()">Login</button>
                 </div>
@@ -108,13 +108,13 @@
     <img src="../img/clsoe.png" alt="" onclick="filterHidden()">
     <div class="div-flex flex-start">
         <h2>Seu novo endereço</h2>
-        <input type="text" class="field-form required-field" name="cep" id="cep" placeholder="CEP">
+        <input type="text" class="field-form required-field just-numbers" name="cep" id="cep" placeholder="CEP" maxlength="9">
         <input type="text" name="logradouro" class="field-form required-field disabled" id="logradouro" placeholder="Endereço" disabled>
-        <input type="text" name="numero" class="field-form required-field" id="numero" placeholder="Número">
+        <input type="text" name="numero" class="field-form required-field just-numbers" id="numero" placeholder="Número" maxlength="6">
         <input type="text" name="bairro" class="field-form required-field disabled" id="bairro" placeholder="Bairro" disabled>
         <input type="text" name="cidade" class="field-form required-field disabled" id="cidade" placeholder="Cidade" disabled>
         <input type="text" name="uf" class="field-form required-field disabled" id="uf" placeholder="UF" disabled>
-        <input type="text" name="complemento" class="field-form disabled" id="complemento" placeholder="Complemento">
+        <input type="text" name="complemento" class="field-form disabled" id="complemento" placeholder="Complemento" maxlength="20">
         <button type="button" class="btn-card" id="btn-add-address">Adicionar endereço</button>
         <button type="button" class="btn-card" id="btn-edit-address">Salvar alterações</button>
     </div>

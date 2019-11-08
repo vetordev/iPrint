@@ -304,3 +304,16 @@ footer i {
 #instagram-icon {
     background-color: #bc2a8d;
 }
+.cardp .far {
+    color: black;
+    /* background-color: red; */
+}
+.cardp .wish-ico {
+    float: right;
+    font-size: 24px;
+    /* display: none; */
+    /* visibility: hidden; */
+}
+.cardp .fas {
+    color: red;
+}
