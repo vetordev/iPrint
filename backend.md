@@ -1,8 +1,6 @@
 ## Tarefas do backend
 
-**Home**
-- [ ] Construir classe
-- [ ] Carregar produtos
+
 
 **ClientEmail**
 - [x] Buscar endereço
@@ -33,7 +31,7 @@
 
 ---
 **Wishlist**
-- [ ] Construir classe
+- [x] Construir classe
 - [x] Adicionar a lista
 - [x] Remover da lista
 - [x] Carregar a lista
