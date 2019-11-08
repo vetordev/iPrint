@@ -308,9 +308,11 @@ footer i {
     color: black;
     /* background-color: red; */
 }
-.cardp i {
+.cardp .wish-ico {
     float: right;
     font-size: 24px;
+    /* display: none; */
+    /* visibility: hidden; */
 }
 .cardp .fas {
     color: red;

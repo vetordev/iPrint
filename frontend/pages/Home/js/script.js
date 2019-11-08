@@ -97,3 +97,23 @@ wishIco.forEach(ico => {
 
 	})
 })
+
+
+
+// 
+// var cardp = [... document.querySelectorAll('.cardp')];
+// cardp.forEach(card => {
+//     card.addEventListener('mouseover', event => {
+// 		const wishIco = [... document.querySelectorAll('.wish-ico')];
+// 			wishIco.forEach(ico => {
+// 				ico.style.visibility = 'visible';
+// 			})
+//     })
+// })
+
+
+// wishIco.forEach(ico => {
+//     ico.addEventListener('hover', event => {
+//         alert('oi');
+//     })
+// })

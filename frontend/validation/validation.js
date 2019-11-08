@@ -1,20 +1,20 @@
-function mascaraData(campoData){
-    alert(campoData.value);
-    var data = campoData.value;
-    if (data.length == 2){
-        data += '/';
-        // document.forms[0].data.value = data;
-return true;              
-    }
-    if (data.length == 5){
-        data = data + '/';
-        document.forms[0].data.value = data;
-        return true;
-    }
-}
+// function mascaraData(campoData){
+//     alert(campoData.value);
+//     var data = campoData.value;
+//     if (data.length == 2){
+//         data += '/';
+//         // document.forms[0].data.value = data;
+// return true;              
+//     }
+//     if (data.length == 5){
+//         data = data + '/';
+//         document.forms[0].data.value = data;
+//         return true;
+//     }
+// }
 
 var stateEmail = 0;
-window.onload = function onload() {
+window.addEventListener('load', function(){
 const fields = [... document.querySelectorAll(".required-field")];
 var email1 = document.getElementById("email1");
 var email2 = document.getElementById("email2");
@@ -50,7 +50,34 @@ fields.forEach(field => {
         }
     });
 });
-}
+
+const justLetters = [... document.querySelectorAll('.just-letters')];
+justLetters.forEach(jL => {
+    jL.addEventListener('keydown', event => {
+        $(jL).keypress(function(e) {
+            var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
+            if (keyCode > 47 && keyCode < 58) {
+              e.preventDefault();
+            }
+          });
+    })
+})
+
+const justNumbers = [... document.querySelectorAll('.just-numbers')];
+justNumbers.forEach(jN => {
+    jN.addEventListener('keydown', event => {
+        $(jN).keypress(function(e) {
+            var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
+            if (!(keyCode > 47 && keyCode < 58)) {
+              e.preventDefault();
+            }
+          });
+    })
+})
+
+})
+
+
 
 function save () {
     const fields = [... document.querySelectorAll(".required-field")];
