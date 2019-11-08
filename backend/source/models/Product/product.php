@@ -4,15 +4,18 @@ namespace Source\Models\Product;
 
 use Exception;
 use PDO;
+use Source\Models\Request;
 
-class Product{
+class Product extends Request{
   
   /** @var PDO */
   private $connection;
 
+  
   public function __construct($connection)
   {
     $this->connection = $connection;
+    
   }
 
   public function index(){
@@ -20,15 +23,23 @@ class Product{
     try {
       $stmt->execute();
 
-      request('200');
-    } catch (Exception $exce) {
-      echo $exce;
-    }
+      $products = [];
+      while ($row = $stmt->fetch(PDO::FETCH_OBJ )) {
+        # Adicionando as informações de um produto ao array
+        $product = $row->name;
+        $product .= $row->desc;
+        $product .= $row->price;
+
+        $products[] = $product;
+      }
     
+      $this->request('200');
+
+    } catch (Exception $exce) {
+      $this->request($exce);
+    }
   }
 
-  private function request($req){
-    echo json_encode($req);
-  }
-
+  
+  
 }

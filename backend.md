@@ -36,7 +36,11 @@
 - [ ] Construir classe
 - [x] Adicionar a lista
 - [x] Remover da lista
-- [ ] Carregar a lista
+- [x] Carregar a lista
+
+**Product**
+- [x] Construir classe
+- [x] Carregar produtos
 
 
 ## Notas

@@ -6,9 +6,7 @@ namespace Source\Models\Wishlist;
 use Exception;
 use PDO;
 
-use function GuzzleHttp\json_encode;
-
-class Wishlist {
+class Wishlist implements Request{
 
   private $user_id;
   private $request;
@@ -38,10 +36,10 @@ class Wishlist {
         $products[] = $product;
       }
 
-      request($products);
+      $this->request($products);
 
     } catch (Exception $exce) {
-      echo $exce;
+      $this->request($exce);
     }
   }
   public function store($product){
@@ -54,10 +52,10 @@ class Wishlist {
     try {
       $stmt->execute();
 
-      request('200');
+      $this->request('200');
       
     } catch (Exception $exce) {
-      echo $exce;
+      $this->request($exce);
     }
 
   }
@@ -68,16 +66,13 @@ class Wishlist {
     try {
       $stmt->execute();
 
-      request('200');
+      $this->request('200');
       
     } catch (Exception $exce) {
-      echo $exce;
+      $this->request($exce);
     }
   }
 
-  private function request($req){
-    echo json_encode($req);
-  }
 }
 
 
