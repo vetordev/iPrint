@@ -9,7 +9,6 @@ use PDO;
 class Wishlist implements Request{
 
   private $user_id;
-  private $request;
 
   /** @var PDO*/
   private $connection;
