@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Source\Model\Wishlist;
+namespace Source\Models\Wishlist;
 
 use Exception;
 use PDO;
@@ -23,7 +23,7 @@ class Wishlist {
 
   }
   public function show(){
-    $stmt = $this->connection->prepare('SELECT `name`, `desc`, `price` FROM `Wishlist` WHERE `user_id` = ?');
+    $stmt = $this->connection->prepare('SELECT `p.name`, `p.desc`, `p.price` FROM `Wishlist` AS `w` JOIN `Product` AS `p` ON(`w.product_id` = `p.product_id`) WHERE `w.user_id` = ?');
     $stmt->bindParam(1, $this->user_id);
 
     try {
