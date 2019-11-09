@@ -40,3 +40,7 @@ icoWishlist.addEventListener('click', event => {
 // btnPspsps.addEventListener('click', event => {
 //     window.location.href = "../ClientArea/index.html";
 // });
+
+function ha(){
+    console.log('u');
+}

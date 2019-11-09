@@ -155,3 +155,7 @@ input[type=email], input[type=password] {
     font-size: 20px;
     margin: 10px 0px;
 }
+
+table {
+    /* border: 1px solid black; */
+}

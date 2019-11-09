@@ -49,10 +49,16 @@ if (!(option == 'juridica')){
         telefone : telefone
       }
   }).done(function (res) {
+    try {
       res = JSON.parse(res);
       localStorage.setItem('type', 'physical');
       localStorage.setItem('user_id', res.id);
       filterHidden();
+    } catch (error) {
+      console.log(res);
+    }
+
+      
   });
 
 } else {
@@ -90,11 +96,15 @@ if (!(option == 'juridica')){
       telComerc : telefoneComercial
     }
   }).done(function(res) {
+    try {
       res = JSON.parse(res);
-
       localStorage.setItem('type', 'legal');
       localStorage.setItem('user_id', res.id);
-      filterHidden();
+      filterHidden(); 
+    } catch (error) {
+      console.log(res);
+    }
+
   });
 }
   
@@ -113,15 +123,19 @@ function signIn(){
       }
       
   }).done(function(res){
-    
-      res = JSON.parse(res);
-      if (res.id != '0'){
-        localStorage.setItem('type', res.type);
-        localStorage.setItem('user_id', res.id);
-        window.location.href = "../ClientArea/";
-      }
+      try {
+        res = JSON.parse(res);
+        if (res.id != '0'){
+          localStorage.setItem('type', res.type);
+          localStorage.setItem('user_id', res.id);
+          window.location.href = "../ClientArea/";
+        }
       //se retornar 0 a senha está incorreta
       //...
+      } catch (error) {
+        console.log(res);
+      }
+      
   });
 }
 
