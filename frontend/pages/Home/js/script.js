@@ -89,6 +89,7 @@ wishIco.forEach(ico => {
 			ico.classList.remove('far');
 			ico.classList.add('fas');
 			aux = 1;
+			// storeWishlist();
 		}else {
 			ico.classList.remove('fas');
 			ico.classList.add('far');

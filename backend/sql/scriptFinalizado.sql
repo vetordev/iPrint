@@ -1,5 +1,5 @@
 drop database if exists iprint;
-create database iprint;
+create database if not exists iprint;
 use iprint;
 
 /*tabela pessoa física, quinta a ser executada*/
