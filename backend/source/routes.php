@@ -3,7 +3,7 @@
 use Source\Models\Product\Product;
 use Source\Models\Wishlist\Wishlist;
 
-require './php/connection.php';
+require '../php/connection.php';
 
 define("TYPE", $_POST['type']);
 define("METHOD", $_POST['method']);
@@ -25,7 +25,7 @@ switch (TYPE) {
     elseif(METHOD === 'destroy')
       $req = $Wishlist->destroy(data);
     
-      echo $req;
+    echo $req;
     break;
   
   case 'product':

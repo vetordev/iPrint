@@ -20,7 +20,7 @@ class Wishlist implements Request{
 
   }
   public function show(){
-    $stmt = $this->connection->prepare('SELECT `p.name`, `p.desc`, `p.price` FROM `Wishlist` AS `w` JOIN `Product` AS `p` ON(`w.product_id` = `p.product_id`) WHERE `w.user_id` = ?');
+    $stmt = $this->connection->prepare('SELECT `p.name`, `p.desc`, `p.price`, `p.product_id`, `w.wish_id` FROM `Wishlist` AS `w` JOIN `Product` AS `p` ON(`w.product_id` = `p.product_id`) WHERE `w.user_id` = ?');
     $stmt->bindParam(1, $this->user_id);
 
     try {
@@ -28,9 +28,13 @@ class Wishlist implements Request{
       $products = [];
       while ($row = $stmt->fetch(PDO::FETCH_OBJ )) {
         # Adicionando as informações de um produto ao array
-        $product = $row->name;
-        $product .= $row->desc;
-        $product .= $row->price;
+        $product = $row->name . ',';
+        //$product .= $row->desc . ',';
+        $product .= $row->price . ',';
+        $product .= $row->product_id . ',';
+        $product .= $row->wish_id;
+
+        /*  */
 
         $products[] = $product;
       }
@@ -42,11 +46,9 @@ class Wishlist implements Request{
     }
   }
   public function store($product){
-    $stmt = $this->connection->prepare('INSERT INTO `Wishlist`(`name`, `desc`, `price`, `user_id`) VALUES (?, ?, ?, ?)');
-    $stmt->bindParam(1, $product['name']);
-    $stmt->bindParam(2, $product['desc']);
-    $stmt->bindParam(3, $product['price']);
-    $stmt->bindParam(4, $this->user_id);
+    $stmt = $this->connection->prepare('INSERT INTO `Wishlist`(`product_id`, `user_id`) VALUES (?, ?, ?, ?)');
+    $stmt->bindParam(1, $product);
+    $stmt->bindParam(2, $this->user_id);
 
     try {
       $stmt->execute();
