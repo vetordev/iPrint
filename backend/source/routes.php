@@ -24,7 +24,7 @@ switch (TYPE) {
 
     elseif(METHOD === 'destroy')
       $req = $Wishlist->destroy(data);
-    
+      
     echo $req;
     break;
   

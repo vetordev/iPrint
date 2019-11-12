@@ -8,14 +8,9 @@ use Source\Models\Request;
 
 class Product extends Request{
   
-  /** @var PDO */
-  private $connection;
-
-  
   public function __construct($connection)
   {
     $this->connection = $connection;
-    
   }
 
   public function index(){

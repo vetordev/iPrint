@@ -27,7 +27,7 @@
 
 ---
 
-- [ ] Criar um arquivo que direcione as outras classes
+- [x] Criar um arquivo que direcione as outras classes `Routes`
 
 ---
 **Wishlist**
@@ -39,6 +39,17 @@
 **Product**
 - [x] Construir classe
 - [x] Carregar produtos
+
+**Address**
+- [ ] função para verificar se o cep existe
+- [ ] inserir o endereço de um cliente
+- [ ] inserir um endereço
+- [ ] apagar um endereço de um cliente
+
+
+
+
+
 
 
 ## Notas
