@@ -42,10 +42,11 @@
 
 **Address**
 - [x] função para verificar se o cep existe
-- [ ] inserir o endereço de um cliente
+- [x] inserir o endereço de um cliente
 - [x] inserir um endereço
-- [ ] apagar um endereço de um cliente
-- [ ] Reescrever método de update
+- [x] apagar um endereço de um cliente
+- [x] Reescrever método de update
+- [x] Mostrar endereços de um cliente
 
 
 

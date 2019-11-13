@@ -14,6 +14,13 @@ DELETE FROM `tb_fisica` WHERE `id_pf` = 6;
 
 
 
+
 DESC tb_clienteend;
 UPDATE `tb_fisica` SET `nome_pf` = 'vitor', `senha_pf` = 'e10adc3949ba59abbe56e057f20f883e', `ddn_pf` = '2002-03-12', `telefone_pf` = '40028922' WHERE `id_pf` = 1;
 UPDATE `tb_juridica` SET `nomeFant_pj` = 'raioto', `nomeResp_pj` = 'vitorio', `telCel_pj` = '40028922', `telResid_pj` = '40028922', `telComerc_pj` = '40028922' WHERE `id_pj` = 3;
+
+
+
+--
+
+SELECT `e`.`logra_endereco`, `e`.`bairro_endereco`, `e`.`cidade_endereco`, `e`.`.uf_endereco`, `ce`.`numero_ClienteEnd`, `ce`.`comp_endereco`, `ce`.`id_clienteEnd` FROM `tb_endereco` AS `e` JOIN `tb_clienteEnd` AS `ce`;

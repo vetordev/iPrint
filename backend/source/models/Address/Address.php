@@ -30,7 +30,35 @@ class Address extends Request{
   }
 
   public function show(){
+     # Caso o cliente seja físico
+    if ($this->data['typeUser'] == 'physical')
+      $stmt = $this->connection->prepare("SELECT `e`.`cep`, `e`.`logra_endereco`, `e`.`bairro_endereco`, `e`.`cidade_endereco`, `e`.`uf_endereco`, `ce`.`numero_ClienteEnd`, `ce`.`comp_endereco`, `ce`.`id_clienteEnd` FROM `tb_endereco` AS `e` NATURAL JOIN `tb_clienteEnd` AS `ce` WHERE `id_pf` = ?");
+    
+    # Caso o cliente seja jurídico
+    elseif($this->data['typeUser'] == 'legal')
+      $stmt = $this->connection->prepare("SELECT `e`.`cep`, `e`.`logra_endereco`, `e`.`bairro_endereco`, `e`.`cidade_endereco`, `e`.`uf_endereco`, `ce`.`numero_ClienteEnd`, `ce`.`comp_endereco`, `ce`.`id_clienteEnd` FROM `tb_endereco` AS `e` NATURAL JOIN `tb_clienteEnd` AS `ce` WHERE `id_pj` = ?");
+    
+    $stmt->bindParam(1, $this->data['address_client_id']);
+    try {
+      $stmt->execute();
 
+      $enderecos = [];
+      while ($row = $stmt->fetch(PDO::FETCH_OBJ )) {
+
+        $endereco = [$row->id_clienteEnd];
+        $endereco[] = $row->cep;
+        $endereco[] = $row->logra_endereco;
+        $endereco[] = $row->numero_clienteEnd;
+        $endereco[] = $row->bairro_endereco;
+        $endereco[] = $row->cidade_endereco;
+        $endereco[] = $row->uf_endereco;
+        $endereco[] = $row->comp_endereco;
+
+        $enderecos[] = $endereco;
+      }
+    } catch (Exception $exce) {
+      echo $exce;
+    }
   }
 
   /* Alterar um endereço */
