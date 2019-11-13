@@ -11,5 +11,6 @@ class Request{
 
   private function request($req) {
     return json_encode($req);
+    
   }
 }

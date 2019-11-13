@@ -41,10 +41,11 @@
 - [x] Carregar produtos
 
 **Address**
-- [ ] função para verificar se o cep existe
+- [x] função para verificar se o cep existe
 - [ ] inserir o endereço de um cliente
-- [ ] inserir um endereço
+- [x] inserir um endereço
 - [ ] apagar um endereço de um cliente
+- [ ] Reescrever método de update
 
 
 
