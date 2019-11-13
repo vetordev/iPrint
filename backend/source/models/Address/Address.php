@@ -25,7 +25,7 @@ class Address extends Request{
       $this->createAddress();
 
     # insere o endereço de um usuário no banco  
-    storeClientAddress();   
+    $this->storeClientAddress();  
     
   }
 
@@ -56,6 +56,8 @@ class Address extends Request{
 
         $enderecos[] = $endereco;
       }
+
+      $this->request($enderecos);
     } catch (Exception $exce) {
       echo $exce;
     }
@@ -114,7 +116,7 @@ class Address extends Request{
     
   }
   /* Cria um endereço no banco */
-  private function createAddress(){
+    private function createAddress(){
     $stmt = $this->connection->prepare('INSERT INTO `tb_endereco` VALUES (?, ?, ?, ?, ?)');
     $stmt->bindParam(1, $this->data['cep']);
     $stmt->bindParam(2, $this->data['logradouro']);
