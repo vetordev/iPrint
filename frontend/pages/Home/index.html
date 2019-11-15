@@ -93,14 +93,14 @@
                             <div id="address">
                                 <input type="text" name="logradouro" placeholder="Endereço" class="required-field field word-field just-letters" maxlength="50"><br>
                                 <input type="number" name="numero" id="num" placeholder="Número" class="required-field field just-numbers" maxlength="6">
-                                <input type="text" name="complemento" id="complemento" placeholder="Complemento" maxlength="20">
-                                <input type="text" name="bairro" placeholder="Bairro" id="bairro" class="required-field just-letters" maxlength="30">
-                                <input type="text" name="cidade" placeholder="Cidade" id="cidade" class="required-field just-letters" maxlength="40">
-                                <input type="text" name="uf" placeholder="UF" id="uf" class="required-field just-letters" maxlength="2" minlength="2"><p></p>
-                                <input type="text" name="telefone" placeholder="Telefone" id="telefone" class="required-field just-numbers" maxlength="11">
+                                <input type="text" name="complemento" id="complemento" placeholder="Complemento" class="field" maxlength="20">
+                                <input type="text" name="bairro" placeholder="Bairro" id="bairro" class="required-field field just-letters" maxlength="30">
+                                <input type="text" name="cidade" placeholder="Cidade" id="cidade" class="required-field field just-letters" maxlength="40">
+                                <input type="text" name="uf" placeholder="UF" id="uf" class="required-field field just-letters" maxlength="2" minlength="2"><p></p>
+                                <input type="text" name="telefone" placeholder="Telefone" id="telefone" class="field required-field just-numbers" maxlength="11">
                                 <div id="legal-tel">
-                                    <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field just-numbers" maxlength="10">
-                                    <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field just-numbers" maxlength="10">
+                                    <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field just-numbers field" maxlength="10">
+                                    <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field just-numbers field" maxlength="10">
                                 </div>
                                 <input type="button" class="btns" value="Cadastrar" id="btn-login" onclick="registerClient()">
                             </div>

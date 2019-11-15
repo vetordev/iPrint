@@ -55,4 +55,20 @@ function filterHidden() {
     var aloginContainer = document.getElementById("divv");
     aloginContainer.style.display = "none";
     // alert('raios');
+
+    var fields = document.getElementsByClassName('field');
+
+    for (var i = 0; i < fields.length; i++){
+        fields[i].value = '';
+        
+    }
+    var wrongFields = [... document.querySelectorAll(".wrong-field")];
+    wrongFields.forEach(wrongf => {
+      wrongf.classList.remove("wrong-field");
+      wrongf.style.border = "none";
+    });
+
+    // init.classList.add("init-fade");
+    singScreen.style.display = 'none';
+    init.style.display = 'block';
 }
