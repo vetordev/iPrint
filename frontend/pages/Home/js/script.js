@@ -80,16 +80,23 @@ function radioCheck(option_){
 }
 
 aux = 0;
-const wishIco = [...document.querySelectorAll(".wish-ico")];
+const wishIco = [... document.querySelectorAll(".wish-ico")];
 
 wishIco.forEach(ico => {
 	ico.addEventListener('click', event => {
-		// alert('aa');
 		if (aux == 0) {
 			ico.classList.remove('far');
 			ico.classList.add('fas');
 			aux = 1;
-			// storeWishlist();
+
+			var productName = ico.parentNode.children[2].children[0].children[0].innerHTML;
+			alert(productName)
+			const data = {
+				product: productName
+			}
+
+			storeWishlist(data);
+			
 		}else {
 			ico.classList.remove('fas');
 			ico.classList.add('far');

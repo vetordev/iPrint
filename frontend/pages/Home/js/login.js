@@ -15,16 +15,16 @@ var aux = "ok";
 
 var wfields = document.getElementsByClassName('wrong-field');
 
-for (var i = 0; i < fields.length; i++){
-    if (fields[i].value == '') {
-      fields[i].classList.add('wrong-field');
-      fields[i].style.border = "3px solid rgba(255,0,0,0.8)";
+// for (var i = 0; i < fields.length; i++){
+//     if (fields[i].value == '') {
+//       fields[i].classList.add('wrong-field');
+//       fields[i].style.border = "3px solid rgba(255,0,0,0.8)";
 
-      aux = "wrong";
-    }else aux = "ok";
-}
+//       aux = "wrong";
+//     }else aux = "ok";
+// }
 
-if (aux == "ok") {
+// if (aux == "ok") {
   
     filterHidden();
     const logradouro = $('[name=logradouro]').val();
@@ -124,11 +124,6 @@ if (aux == "ok") {
 
       });
     }
-}else{
-  alert(wfields.id);
-  alert(fields.id);
-  return false;
-}
   
 }
 function signIn(){
