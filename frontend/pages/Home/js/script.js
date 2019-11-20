@@ -79,14 +79,16 @@ function radioCheck(option_){
     } 
 }
 
-aux = 0;
+
 const wishIco = [... document.querySelectorAll(".wish-ico")];
 
 wishIco.forEach(ico => {
+	aux = 0;
 	ico.addEventListener('click', event => {
 
 		var productName = ico.parentNode.children[2].children[0].children[0].innerHTML;
-		alert(productName)
+		// alert(productName)
+
 		const data = {
 			product: productName
 		}
