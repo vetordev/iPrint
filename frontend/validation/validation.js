@@ -52,29 +52,29 @@ fields.forEach(field => {
 });
 })
 
-// const justLetters = [... document.querySelectorAll('.just-letters')];
-// justLetters.forEach(jL => {
-//     jL.addEventListener('keydown', event => {
-//         $(jL).keypress(function(e) {
-//             var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
-//             if (keyCode > 47 && keyCode < 58) {
-//               e.preventDefault();
-//             }
-//           });
-//     })
-// })
+const justLetters = [... document.querySelectorAll('.just-letters')];
+justLetters.forEach(jL => {
+    jL.addEventListener('keydown', event => {
+        $(jL).keypress(function(e) {
+            var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
+            if (keyCode > 47 && keyCode < 58) {
+              e.preventDefault();
+            }
+          });
+    })
+})
 
-// const justNumbers = [... document.querySelectorAll('.just-numbers')];
-// justNumbers.forEach(jN => {
-//     jN.addEventListener('keydown', event => {
-//         $(jN).keypress(function(e) {
-//             var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
-//             if (!(keyCode > 47 && keyCode < 58)) {
-//               e.preventDefault();
-//             }
-//           });
-//     })
-// })
+const justNumbers = [... document.querySelectorAll('.just-numbers')];
+justNumbers.forEach(jN => {
+    jN.addEventListener('keydown', event => {
+        $(jN).keypress(function(e) {
+            var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
+            if (!(keyCode > 47 && keyCode < 58)) {
+              e.preventDefault();
+            }
+          });
+    })
+})
 
 
 
@@ -145,3 +145,47 @@ function mNum(num){
     num=num.replace(/\D/g,"")
     return num
 }
+function numCas()
+{
+    // alert('a');
+    var str = document.getElementsByName('numero')[0].value;
+    var sub = str.replace(/[^\d]+/g,'');
+    str = sub;
+
+}
+function VerificaCPF (cpf) {
+    alert('a');
+    if (vercpf(cpf)) 
+    {return true;}else 
+    {errors="1";if (errors) alert('CPF NÃO VÁLIDO');
+    document.retorno = (errors == '');}}
+
+function vercpf (cpf) {
+var texto =  cpf;
+var er = /[^a-z0-9]/gi;
+texto = texto.replace(er, "");
+console.log(texto);
+
+    cpf = texto;
+    
+
+if (cpf.length != 11 || cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999")
+return false;
+add = 0;
+for (i=0; i < 9; i ++)
+add += parseInt(cpf.charAt(i)) * (10 - i);
+rev = 11 - (add % 11);
+if (rev == 10 || rev == 11)
+rev = 0;
+if (rev != parseInt(cpf.charAt(9)))
+return false;
+add = 0;
+for (i = 0; i < 10; i ++)
+add += parseInt(cpf.charAt(i)) * (11 - i);
+rev = 11 - (add % 11);
+if (rev == 10 || rev == 11)
+rev = 0;
+if (rev != parseInt(cpf.charAt(10)))
+return false;
+alert('O CPF INFORMADO É VÁLIDO.');return true;
+    }

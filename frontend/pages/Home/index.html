@@ -64,8 +64,8 @@
                             </div>
     
                             <div id="form-physical">
-                                <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field just-letters" maxlength="100"><br>
-                                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field just-numbers" maxlength="14" onkeydown="fMasc(this, mCPF)">
+                                <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field just-letters" maxlength="50"><br>
+                                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field just-numbers" maxlength="14" onkeydown="fMasc(this, mCPF)" onblur="VerificaCPF(id)">
                                 <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field just-numbers" onkeydown="mascaraData(this)" maxlength="10">
                                 <!-- <input type="date" name="ddn" id="ddn" placeholder="Data de Nascimento"> -->
                                 <input type="password" name="password1" id="password1PF" placeholder="Senha (mínimo 6 caracteres)" class="required-field field" minlength="6" maxlength="70">
@@ -81,8 +81,8 @@
     
                                 <b>Dados pessoais</b>
                                 <input type="text" name="name" id="namePJ" placeholder="Nome completo" class="required-field field word-field just-letters" maxlength="100">
-                                <input type="password" name="password1" id="password1PJ" placeholder="Senha (mínimo 6 caracteres)" class="required-field field" minlength="6" maxlength="70">
-                                <input type="password" name="password2" id="password2PJ" placeholder="Confirme a senha" class="required-field field" minlength="6" maxlength="70">
+                                <input type="password" name="password1" onpaste="return false" id="password1PJ" placeholder="Senha (mínimo 6 caracteres)" class="required-field field" minlength="6" maxlength="70">
+                                <input type="password" name="password2" id="password2PJ" onpaste="return false" placeholder="Confirme a senha" class="required-field field" minlength="6" maxlength="70">
                                 
                             </div>
                             <div id="cep-container">
@@ -92,7 +92,7 @@
                                 <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" id="span-cep">Não sei o CEP</a><br>
                             <div id="address">
                                 <input type="text" name="logradouro" placeholder="Endereço" class="required-field field word-field just-letters" maxlength="50"><br>
-                                <input type="number" name="numero" id="num" placeholder="Número" class="required-field field just-numbers" maxlength="6">
+                                <input type="text" name="numero" id="num" placeholder="Número" class="required-field field just-numbers" maxlength="6" onkeypress="numCas()">
                                 <input type="text" name="complemento" id="complemento" placeholder="Complemento" class="field" maxlength="20">
                                 <input type="text" name="bairro" placeholder="Bairro" id="bairro" class="required-field field just-letters" maxlength="30">
                                 <input type="text" name="cidade" placeholder="Cidade" id="cidade" class="required-field field just-letters" maxlength="40">
