@@ -363,11 +363,14 @@ or {
 }
 #form-legal {
    display: none;
+
 }
 #legal-tel{
    display: none;
 }
-
+#form-legal b {
+   color: #FFF;
+}
 /* ANIMAÇÕES */
 
 /* SURGIMENTO DO FORM */

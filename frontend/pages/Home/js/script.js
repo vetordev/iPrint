@@ -79,21 +79,32 @@ function radioCheck(option_){
     } 
 }
 
-aux = 0;
-const wishIco = [...document.querySelectorAll(".wish-ico")];
+
+const wishIco = [... document.querySelectorAll(".wish-ico")];
 
 wishIco.forEach(ico => {
+	aux = 0;
 	ico.addEventListener('click', event => {
-		// alert('aa');
+
+		var productName = ico.parentNode.children[2].children[0].children[0].innerHTML;
+		// alert(productName)
+
+		const data = {
+			product: productName
+		}
+
 		if (aux == 0) {
 			ico.classList.remove('far');
 			ico.classList.add('fas');
 			aux = 1;
-			// storeWishlist();
+
+			storeWishlist(data);			
 		}else {
 			ico.classList.remove('fas');
 			ico.classList.add('far');
 			aux = 0;
+
+			destroyWishlist(data);
 		}
 
 	})
