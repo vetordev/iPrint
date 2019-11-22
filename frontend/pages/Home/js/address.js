@@ -19,7 +19,7 @@ window.addEventListener('load', function(){
 
 function showAddress(){
     var cep = document.getElementById('cep');
-    if (cep.value != "")
+    if (cep.value.length == 9)
     {
         singScreen.style.overflow = "auto";
         address.style.display = "block";

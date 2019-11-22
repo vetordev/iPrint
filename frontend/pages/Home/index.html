@@ -27,7 +27,7 @@
     <div class="div-flex" id="divv">
     <div class="container-fluid">
         <div class="child row">
-                <form id="form" class="col-sm-6 col-xs-12">
+                <form id="form" name="form" class="col-sm-6 col-xs-12">
                     <i class="fas fa-times" onclick="filterHidden()" id="x"></i>
                     <p class="title"> <b>Entre</b> ou <b>Cadastre-se</b> com seu endereço de e-mail!</p>
                         <input type="text" name="email" id="email" placeholder="E-mail" onkeyup="setTimeout(searchEmail, 1500)" maxlength="100" class="required-field field">
@@ -64,9 +64,9 @@
                             </div>
     
                             <div id="form-physical">
-                                <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field just-letters" maxlength="50"><br>
-                                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field just-numbers" maxlength="14" onkeydown="fMasc(this, mCPF)" onblur="VerificaCPF(id)">
-                                <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field just-numbers" onkeydown="mascaraData(this)" maxlength="10">
+                                <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field just-letters" maxlength="50" onkeydown="justLetters()"><br>
+                                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field just-numbers" oninput="justNumbers()" maxlength="14" onkeydown="fMasc(this, mCPF)" onblur="VerificaCPF(id)" onkeydown="justNumbers()">
+                                <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field just-numbers" oninput="justNumbers()" onkeydown="mascaraData(this)" maxlength="10">
                                 <!-- <input type="date" name="ddn" id="ddn" placeholder="Data de Nascimento"> -->
                                 <input type="password" name="password1" id="password1PF" placeholder="Senha (mínimo 6 caracteres)" class="required-field field" minlength="6" maxlength="70">
                                 <input type="password" name="password2" id="password2PF" placeholder="Confirme a senha" class="required-field field" minlength="6" maxlength="70">
@@ -74,10 +74,10 @@
     
                             <div id="form-legal">
                                 <b>Dados da empresa</b>
-                                <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="required-field num-state field num-field just-numbers" maxlength="18" onkeydown="fMasc(this, mCNPJ)">
+                                <input type="text" name="name" id="cnpj" placeholder="CNPJ" class="required-field num-state field num-field just-numbers" maxlength="18" onkeydown="fMasc(this, mCNPJ)" oninput="justNumbers()">
                                 <input type="text" name="name" id="rs" placeholder="Razão social" class="required-field field word-field just-letters" maxlength="100">
                                 <input type="text" name="name" id="name-f" placeholder="Nome fantasia" class="field" maxlength="70">
-                                <input type="text" name="name" id="ie" placeholder="Inscrição estadual" class="field num-field just-numbers" maxlength="11"><br>
+                                <input type="text" name="name" id="ie" placeholder="Inscrição estadual" class="field num-field just-numbers" maxlength="11" oninput="justNumbers()"><br>
     
                                 <b>Dados pessoais</b>
                                 <input type="text" name="name" id="namePJ" placeholder="Nome completo" class="required-field field word-field just-letters" maxlength="100">
@@ -86,21 +86,21 @@
                                 
                             </div>
                             <div id="cep-container">
-                                <input type="text" name="cep" id="cep" placeholder="CEP" class="required-field num-state field num-field just-numbers" maxlength="9" minlength="8" onkeypress="fMasc(this, mCEP)">
+                                <input type="text" name="cep" id="cep" placeholder="CEP" class="required-field num-state field num-field just-numbers" maxlength="9" minlength="8" onkeypress="fMasc(this, mCEP)" oninput="justNumbers()">
                                 <input type="button" class="btn-ok btns" value="OK" onclick="showAddress()"><br>
                             </div>
                                 <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" id="span-cep">Não sei o CEP</a><br>
                             <div id="address">
                                 <input type="text" name="logradouro" placeholder="Endereço" class="required-field field word-field just-letters" maxlength="50"><br>
-                                <input type="text" name="numero" id="num" placeholder="Número" class="required-field field just-numbers" maxlength="6" onkeypress="numCas()">
+                                <input type="text" name="numero" id="num" placeholder="Número" class="required-field field just-numbers" maxlength="6" onkeypress="justNumbers()" >
                                 <input type="text" name="complemento" id="complemento" placeholder="Complemento" class="field" maxlength="20">
                                 <input type="text" name="bairro" placeholder="Bairro" id="bairro" class="required-field field just-letters" maxlength="30">
                                 <input type="text" name="cidade" placeholder="Cidade" id="cidade" class="required-field field just-letters" maxlength="40">
                                 <input type="text" name="uf" placeholder="UF" id="uf" class="required-field field just-letters" maxlength="2" minlength="2"><p></p>
-                                <input type="text" name="telefone" placeholder="Telefone" id="telefone" class="field required-field just-numbers" maxlength="14" onkeydown="fMasc(this, mTel)">
+                                <input type="text" name="telefone" placeholder="Telefone" id="telefone" class="field required-field just-numbers" maxlength="14" onkeydown="fMasc(this, mTel)" oninput="justNumbers()">
                                 <div id="legal-tel">
-                                    <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field just-numbers field" maxlength="13" onkeydown="fMasc(this, mTel)" maxlength="10">
-                                    <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field just-numbers field" maxlength="13" onkeydown="fMasc(this, mTel)" maxlength="10">
+                                    <input type="text" name="telefone" placeholder="Telefone residencial" id="telefoneR" class="required-field just-numbers field" maxlength="13" onkeydown="fMasc(this, mTel)" maxlength="10" oninput="justNumbers()">
+                                    <input type="text" name="telefone" placeholder="Telefone comercial" id="telefoneCom" class="required-field just-numbers field" maxlength="13" onkeydown="fMasc(this, mTel)" maxlength="10" oninput="justNumbers()">
                                 </div>
                                 <input type="button" class="btns" value="Cadastrar" id="btn-login" onclick="registerClient()">
                             </div>

@@ -127,6 +127,7 @@ var wfields = document.getElementsByClassName('wrong-field');
   
 }
 function signIn(){
+  var botao = document.getElementById('btn-entrar');
   const email = $('#email').val();
   const senha = $('#password').val();
 
@@ -145,12 +146,15 @@ function signIn(){
         if (res.id != '0'){
           localStorage.setItem('type', res.type);
           localStorage.setItem('user_id', res.id);
-          window.location.href = "../ClientArea/";
-        }
+          botao.value = "Myself"
+        }else alert("Senha incorreta");
+
+        
       //se retornar 0 a senha está incorreta
       //...
       } catch (error) {
         console.log(res);
+        
       }
       
   });

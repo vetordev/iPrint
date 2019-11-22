@@ -12,7 +12,7 @@
 //         return true;
 //     }
 // }
-
+var errado = 0;
 var stateEmail = 0;
 window.addEventListener('load', function(){
 const fields = [... document.querySelectorAll(".required-field")];
@@ -30,8 +30,10 @@ fields.forEach(field => {
         if (field.value == ""){
             field.classList.add("wrong-field");
             field.style.border = "3px solid rgba(255,0,0,0.8)";
+            errado += 1;
         }else{
             field.style.border = "1px solid #ddd";
+            errado -= 1;
             
             /* EMAILS DIFERENTES*/
             // if (email1.value != email2.value && email1.value != "" && email2.value != ""){
@@ -52,21 +54,21 @@ fields.forEach(field => {
 });
 })
 
+function justLetters() {
 const justLetters = [... document.querySelectorAll('.just-letters')];
 justLetters.forEach(jL => {
-    jL.addEventListener('keydown', event => {
         $(jL).keypress(function(e) {
             var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
             if (keyCode > 47 && keyCode < 58) {
               e.preventDefault();
             }
           });
-    })
 })
+}
 
+function justNumbers() {
 const justNumbers = [... document.querySelectorAll('.just-numbers')];
 justNumbers.forEach(jN => {
-    jN.addEventListener('keydown', event => {
         $(jN).keypress(function(e) {
             var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
             if (!(keyCode > 47 && keyCode < 58)) {
@@ -74,8 +76,22 @@ justNumbers.forEach(jN => {
             }
           });
     })
-})
+}
 
+// function just()
+// {
+    
+//     var digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwyxz ";
+//     var campo_temp;
+//        for (var i=0;i<document.formm.nome1.value.length;i++){
+//           campo_temp=document.formm.nome1.value.substring(i,i+1);
+//               if (digits.indexOf(campo_temp)==-1){
+//                 document.formm.nome1.value = document.formm.nome1.value.substring(0,i);
+//                 return false;
+//               }
+//         }
+
+// }
 
 
 
@@ -83,7 +99,7 @@ function save () {
     const fields = [... document.querySelectorAll(".required-field")];
     fields.forEach(field => {
         /* CASO HAJAM CAMPOS ERRADOS */
-        if (field.style.border == "3px solid rgba(255, 0, 0, 0.8)"){
+        if (field.style.border == "3px solid rgba(255, 0, 0, 0.8)" || errado != 0){
             alert("Preencha todos os campos corretamente.");
             break;
             return false;
