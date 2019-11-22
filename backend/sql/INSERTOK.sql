@@ -1,4 +1,4 @@
-﻿use iPrint;
+use iprint;
 
 insert into tb_endereco value('1','Apartamento','jd. vista alegre','embu das artes','sp');
 insert into tb_endereco value('2','Casa','jd. tereza','embu das artes','sp');
@@ -17,17 +17,17 @@ insert into tb_juridica value('3','145emp.i','Empresa Lopes','11934812165','lope
 insert into tb_juridica value('4','emptec','Empresa delicia','11974898165','delicia@gmail.com','44487591988472','44489616','Delicius','Mariana Melo','119597218461','47047410');
 insert into tb_juridica value('5','empInova','Empresa InovaArt','11454857165','InovaArt@gmail.com','14487591658472','45189516','InovaArt','Pamella Souza','11916902354','47049632');
 
-insert into tb_fisica value('1','fale34','11944708194','jubi.rodrigues14@gmail.com','2003-05-18','47046880','Júlia Oliveira','41014787831','549587612');
-insert into tb_fisica value('2','arvoFr2','11948591675','claudio.lima@gmail.com','1997-06-21','47049958','Claudio Lima','45887794581','459863210');
-insert into tb_fisica value('3','JeviVal','11912548956','Beatris.melo@gmail.com','1977-09-20','47047859','Beatris Oliveira Melo','26756635816','102320159');
-insert into tb_fisica value('4','LoucoFome','11958946781','Erica.leite@gmail.com','1968-04-14','47041562','Erica Leite','56948157569','102365487');
-insert into tb_fisica value('5','MesLado','11915489563','sss.mandrak@gmail.com','1980-06-09','47044587','Sergio Souza da Silva','20136594878','954876123');
+insert into tb_fisica value('1','jubi.rodrigues14@gmail.com','fale34','2003-05-18','47046880','11944708194','Júlia Oliveira','41014787831','549587612');
+insert into tb_fisica value('2','claudio.lima@gmail.com','arvoFr2','1997-06-21','47049958','11948591675','Claudio Lima','45887794581','459863210');
+insert into tb_fisica value('3','Beatris.melo@gmail.com','JeviVal','1977-09-20','47047859','11912548956','Beatris Oliveira Melo','26756635816','102320159');
+insert into tb_fisica value('4','Erica.leite@gmail.com','LoucoFome','1968-04-14','47041562','11958946781','Erica Leite','56948157569','102365487');
+insert into tb_fisica value('5','sss.mandrak@gmail.com','MesLado','1980-06-09','47044587','11915489563','Sergio Souza da Silva','20136594878','954876123');
 
-insert into tb_clienteEnd value('1','1','1','1','45','Condominio');
-insert into tb_clienteEnd value('2','2','2','2','5','Casa');
-insert into tb_clienteEnd value('3','3','3','3','4','Apartamento');
-insert into tb_clienteEnd value('4','4','4','4','7','Condominio');
-insert into tb_clienteEnd value('5','5','5','5','8','Apartamento');
+insert into tb_clienteEnd value('1','1','1',null,'4','Condominio');
+insert into tb_clienteEnd value('2','2','2',null,'5','Casa');
+insert into tb_clienteEnd value('3',null,'3','3','4','Apartamento');
+insert into tb_clienteEnd value('4',null,'4','4','7','Condominio');
+insert into tb_clienteEnd value('5','5','5',null,'8','Apartamento');
 
 insert into tb_forn value('1','1','Valeria Silva','val.forn@gmail.com','458719564','15498562345871','4');
 insert into tb_forn value('2','2','Jonatas Oliveira','jonatas@gmail.com','741258963','41587296514826','6');
@@ -47,11 +47,11 @@ insert into tb_estoq value('3','1','2019-09-20','75','Estoque de Contingência')
 insert into tb_estoq value('4','4','2018-04-30','60','Estoque Inativo');
 insert into tb_estoq value('5','3','2019-02-10','85','Estoque Médio');
 
-insert into tb_compra value('1','2019-06-20','1','3');
-insert into tb_compra value('2','2018-05-25','2','2');
-insert into tb_compra value('3','2019-04-14','4','1');
-insert into tb_compra value('4','2019-03-30','3','5');
-insert into tb_compra value('5','2019-12-12','5','4');
+insert into tb_compra value('1','2019-06-20',null,'3');
+insert into tb_compra value('2','2018-05-25','2',null);
+insert into tb_compra value('3','2019-04-14',null,'1');
+insert into tb_compra value('4','2019-03-30',null,'5');
+insert into tb_compra value('5','2019-12-12','5',null);
 
 insert into tb_carrinho value('1','5','3','5');
 insert into tb_carrinho value('2','1','1','10');

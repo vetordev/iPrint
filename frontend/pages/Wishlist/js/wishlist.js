@@ -37,6 +37,7 @@ const showWishlist = () => {
             res = JSON.parse(res);
             if(res === '200')
                 console.log('show ok');
+            console.log(res);
         } catch (error) {
             console.log(error);
         }

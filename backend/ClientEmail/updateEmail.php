@@ -66,7 +66,6 @@ function emailAndPasswordCorrect($email, $password, $user_id, $type, $con){
     }
     
   }
- 
 
 }
 

@@ -46,7 +46,7 @@ class Wishlist extends Request{
   }
   public function store($product){
     $stmt = $this->connection->prepare('INSERT INTO `Wishlist`(`product_id`, `client_id`) VALUES (?, ?, ?, ?)');
-    $stmt->bindParam(1, $product);
+    $stmt->bindParam(1, $product['product_id']);
     $stmt->bindParam(2, $this->client_id);
 
     try {

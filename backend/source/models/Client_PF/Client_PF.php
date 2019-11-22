@@ -58,6 +58,7 @@ class Client_PF extends Request {
     }
     return $result;
   }
+
   public function login($data){
     $stmt = $this->connection->prepare("SELECT `id_pf` FROM `tb_fisica` WHERE `email_pf` = ? AND `senha_pf` = ?");
     $stmt->bindParam(1, $data['email']);
@@ -75,5 +76,23 @@ class Client_PF extends Request {
     }
     return $result;
   }
+  public function fetchEmail($data){
+    $stmt = $this->connection->prepare("SELECT `email_pf` FROM `tb_fisica` WHERE `id_pf` = ?");
+    $stmt->bindParam(1, $data['user_id']);
+    $stmt->execute();
+
+    $row =  $stmt->fetch(PDO::FETCH_OBJ);
+
+    return $row->email_pf;
+  }
+
+  public function updatedEmail($data){
+    $newemail = ['email' => $data['newemail']];
+    if (!$this->emailExists($newemail)){
+      
+    }
+  }
+  
+
 
 }
