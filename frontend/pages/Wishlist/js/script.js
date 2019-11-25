@@ -1,6 +1,6 @@
 window.onload = function load() {
     // alert('function, io');
-    this.loadWishes(['Impressora3D,R$2980', 'Scanner,R$700', 'Ola, dsada', 'aaaa, bbbbb', 'hjghj,aaa', 'jhdjdsj,jkkkkk']);
+    this.loadWishes(['Impressora3D,R$2980', 'Scanner,R$700']);
 }
 
 function loadWishes(wishes) {
