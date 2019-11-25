@@ -8,7 +8,14 @@ function loginWithFacebook() {
   })
 }
 
+function minhaArea() {
+  window.location.href = "../../ClientArea/";
+}
+
 function registerClient() {
+  
+  var botao = document.getElementById('btn-login-header');
+  var mine = document.getElementById('mine');
 var fields = document.getElementsByClassName('field');
 
 var aux = "ok";
@@ -71,6 +78,7 @@ var wfields = document.getElementsByClassName('wrong-field');
           localStorage.setItem('type', 'physical');
           localStorage.setItem('user_id', res.id);
           filterHidden();
+          botao.value = "Myself";
         } catch (error) {
           console.log(res);
         }
@@ -118,6 +126,8 @@ var wfields = document.getElementsByClassName('wrong-field');
           localStorage.setItem('type', 'legal');
           localStorage.setItem('user_id', res.id);
           filterHidden(); 
+          botao.style.display = "none";
+          mine.style.display = 'block';
         } catch (error) {
           console.log(res);
         }
@@ -127,7 +137,8 @@ var wfields = document.getElementsByClassName('wrong-field');
   
 }
 function signIn(){
-  var botao = document.getElementById('btn-entrar');
+  var mine = document.getElementById('mine');
+  var botao = document.getElementById('btn-login-header');
   const email = $('#email').val();
   const senha = $('#password').val();
 
@@ -146,7 +157,8 @@ function signIn(){
         if (res.id != '0'){
           localStorage.setItem('type', res.type);
           localStorage.setItem('user_id', res.id);
-          botao.value = "Myself"
+          botao.style.display = 'none';
+          mine.style.display = 'block';
         }else alert("Senha incorreta");
 
         
