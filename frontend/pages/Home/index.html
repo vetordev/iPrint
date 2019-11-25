@@ -65,7 +65,7 @@
     
                             <div id="form-physical">
                                 <input type="text" name="name" id="namePF" placeholder="Nome completo" class="required-field field just-letters" maxlength="50" onkeydown="justLetters()"><br>
-                                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field just-numbers" oninput="justNumbers()" maxlength="14" onkeydown="fMasc(this, mCPF)" onblur="VerificaCPF(id)" onkeydown="justNumbers()">
+                                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="required-field num-state field just-numbers" oninput="justNumbers()" maxlength="14" onkeydown="fMasc(this, mCPF)" onblur="VerificaCPF(value)" onkeydown="justNumbers()">
                                 <input type="text" name="ddn" id="ddn" placeholder="Data de Nascimento" class="required-field field num-field just-numbers" oninput="justNumbers()" onkeydown="mascaraData(this)" maxlength="10">
                                 <!-- <input type="date" name="ddn" id="ddn" placeholder="Data de Nascimento"> -->
                                 <input type="password" name="password1" id="password1PF" placeholder="Senha (mínimo 6 caracteres)" class="required-field field" minlength="6" maxlength="70">
