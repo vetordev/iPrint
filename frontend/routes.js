@@ -36,6 +36,13 @@ icoWishlist.addEventListener('click', event => {
     // alert('oi')
 });
 
+// const btnClientArea = document.getElementById("mine");
+// btnClientArea.addEventListener('click', event => {
+//     alert("oi");
+//     window.location.href = 'http://localhost/iprint/frontend/pages/ClientArea/index.html';
+// })
+
+
 // const btnPspsps = document.querySelector("#pspsps");
 // btnPspsps.addEventListener('click', event => {
 //     window.location.href = "../ClientArea/index.html";
