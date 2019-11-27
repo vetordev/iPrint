@@ -35,7 +35,7 @@ insertClienteAdressData($endereço, $email, $con);
 
 $result = pullId($email, $con);
 
-echo $result;
+echo json_encode($result);
 
 function insertClientData($name, $ddn, $cpf, $telefone, $email, $senha, $con){
     $stmt = $con->prepare('INSERT INTO `tb_fisica`(`nome_pf`, `ddn_pf`, `cpf_pf`, `telefone_pf`, `email_pf`, `senha_pf`) VALUES(?, ?, ?, ?, ?, ?)');
@@ -114,7 +114,7 @@ function pullId($email, $con){
     $row =  $stmt->fetch(PDO::FETCH_OBJ);
 
     $result = ['id' => ''];
-    $result['id'] = $row->id;
+    $result['id'] = $row->id_pf;
     return $result;
 }
 

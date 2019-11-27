@@ -14,6 +14,7 @@ function minhaArea() {
 
 function registerClient() {
   
+    alert('IAIAIA');
   var botao = document.getElementById('btn-login-header');
   var mine = document.getElementById('mine');
 var fields = document.getElementsByClassName('field');
