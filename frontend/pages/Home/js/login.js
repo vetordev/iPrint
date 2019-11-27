@@ -9,7 +9,7 @@ function loginWithFacebook() {
 }
 
 function minhaArea() {
-  window.location.href = "../../ClientArea/";
+  window.location.href = "../ClientArea/";
 }
 
 function registerClient() {
