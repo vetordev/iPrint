@@ -14,7 +14,7 @@ function minhaArea() {
 
 function registerClient() {
   
-    alert('IAIAIA');
+ 
   var botao = document.getElementById('btn-login-header');
   var mine = document.getElementById('mine');
 var fields = document.getElementsByClassName('field');
@@ -34,7 +34,7 @@ var wfields = document.getElementsByClassName('wrong-field');
 
 // if (aux == "ok") {
   
-    filterHidden();
+ 
     const logradouro = $('[name=logradouro]').val();
     const numero = $('[name=numero]').val();
     const complemento = $('[name=complemento]').val();
@@ -135,7 +135,7 @@ var wfields = document.getElementsByClassName('wrong-field');
 
       });
     }
-  
+  filterHidden(); 
 }
 function signIn(){
   var mine = document.getElementById('mine');

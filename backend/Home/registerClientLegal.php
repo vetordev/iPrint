@@ -49,7 +49,8 @@ echo json_encode($result);
 
 
 function insertClientData($cnpj, $rs, $ie, $nomeF, $email, $senha, $nomeRes, $telCel, $telResid, $telComerc, $con){
-    $stmt = $con->prepare('INSERT INTO `tb_juridica`(`cpnj_pj`, `rs_pj`, `ie_pj`, `nomeFant_pj`, `nomeResp_pj`, `email_pj`, `senha_pj`, `telCel_pj`, `telResid_pj`, `telComerc_pj`) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+
+    $stmt = $con->prepare('INSERT INTO `tb_juridica`(`cnpj_pj`, `rs_pj`, `ie_pj`, `nomeFant_pj`, `nomeResp_pj`, `email_pj`, `senha_pj`, `telCel_pj`, `telResid_pj`, `telComerc_pj`) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $stmt->bindParam(1, $cnpj);
     $stmt->bindParam(2, $rs);
     $stmt->bindParam(3, $ie);
