@@ -24,13 +24,13 @@ function fetchData($user_id, $type, $con){
 
 
   }else{
-    $stmt = $con->prepare("SELECT `email_pj`, `cpnj_pj`, `nomeResp_pj`, `nomeFant_pj`, `ie_pj`, `rs_pj`, `telComerc_pj`, `telResid_pj`, `telCel_pj` FROM `tb_juridica` WHERE `id_pj` = ?");
+    $stmt = $con->prepare("SELECT `email_pj`, `cnpj_pj`, `nomeResp_pj`, `nomeFant_pj`, `ie_pj`, `rs_pj`, `telComerc_pj`, `telResid_pj`, `telCel_pj` FROM `tb_juridica` WHERE `id_pj` = ?");
     $stmt->bindParam(1, $user_id);
     $stmt->execute();
 
     $row = $stmt->fetch(PDO::FETCH_OBJ);
 
-    $result = ['email' => $row->email_pj, 'cnpj' => $row->cpnj_pj, 'nomeR' => $row->nomeResp_pj, 'nomeF' => $row->nomeFant_pj, 'ie' => $row->ie_pj, 'rs' => $row->rs_pj, 'telComerc' => $row->telComerc_pj, 'telResid' => $row->telResid_pj, 'telCel' => $row->telCel_pj];
+    $result = ['email' => $row->email_pj, 'cnpj' => $row->cnpj_pj, 'nomeR' => $row->nomeResp_pj, 'nomeF' => $row->nomeFant_pj, 'ie' => $row->ie_pj, 'rs' => $row->rs_pj, 'telComerc' => $row->telComerc_pj, 'telResid' => $row->telResid_pj, 'telCel' => $row->telCel_pj];
     return $result;
   }
 
