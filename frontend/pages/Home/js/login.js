@@ -1,5 +1,19 @@
 window.addEventListener('load', () => {
   $('#btn-facebook').click(loginWithFacebook);
+  const user_id = localStorage.getItem("user");
+  var botao = document.getElementById('btn-login-header');
+  var mine = document.getElementById('mine');
+  
+  // alert(user_id)
+  if (user_id == null) {
+    botao.style.display = 'block';
+    mine.style.display = 'none';
+    // alert(user_id)
+  }else {
+    // alert('i')
+    botao.style.display = 'none';
+    mine.style.display = 'block';
+  }
 })
 
 function loginWithFacebook() {
@@ -160,6 +174,7 @@ function signIn(){
           localStorage.setItem('user_id', res.id);
           botao.style.display = 'none';
           mine.style.display = 'block';
+          filterHidden();
         }else alert("Senha incorreta");
 
         
